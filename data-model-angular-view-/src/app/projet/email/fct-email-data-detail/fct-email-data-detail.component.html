@@ -1,0 +1,40 @@
+<div class="row ">
+  <div class="card ">
+    <div class="card-header centry">Liste des emails</div>
+    <div class="card-body scroller">
+      <table class="table table-hover table-striped table-bordered">
+        <thead>
+        <th class="centry">email_id</th>
+        <th class="centry">E-mail</th>
+        <th class="centry">cat</th>
+        <th class="centry">country</th>
+        <th class="centry">state</th>
+        <th class="centry">user Ref</th>
+        <th class="centry">city</th>
+        <th class="centry">post code</th>
+        <th class="centry">Phone</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let e of emailDatas; index as i">
+          <td class="">{{e.email_id}}</td>
+          <td class="">{{e.email}}</td>
+          <td class="centry">{{e.cat_id.name}}</td>
+          <td class="centry">{{e.ct_id.reference}}</td>
+          <td class="centry">{{e.state_id.name}}</td>
+          <td class="centry">{{e.user_id.reference}}</td>
+          <td class="centry">{{e.city}}</td>
+          <td class="centry">{{e.codePost}}</td>
+          <td class="centry">{{e.phone}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+</div>
+<div>
+
+</div>
+
+

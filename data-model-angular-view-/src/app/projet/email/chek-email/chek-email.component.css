@@ -1,0 +1,32 @@
+*{
+  font-size: 18px;
+}
+.card{
+  width: 90%;
+  height: auto;
+  margin-top:  5%;
+  margin-left:  5%;
+}
+.card-header{
+  background-color: #1D2231;
+  font-size: 19px;
+  color: #ffffff;
+}
+button{
+  margin: 4px;
+  padding: 8px 20px;
+  font-size: 16px;
+  background-color: #1D2231;
+  color: #ffffff;
+}
+
+button:hover{
+  font-size: 18px;
+  padding: 6px 17px;
+  background-color: #ffffff;
+  color: #1D2231;
+}
+textarea{
+  margin-top: 20px;
+  border: 2px solid #8390A2;
+}

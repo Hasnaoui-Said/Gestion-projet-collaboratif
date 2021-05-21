@@ -1,0 +1,109 @@
+<nav class="navbar menu navbar-inverse col-sm col-md col-lg col-xl col-" style="border-radius: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="menu-users nav navbar-nav navbar-right">
+      <li class="user">
+        <a routerLink="" routerLinkActive="active">
+          <i class="fas fa-users"></i>
+          Users
+        </a>
+      </li>
+    </ul>
+    <ul class="menu-users nav navbar-nav navbar-right">
+      <li class="input-search">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="search a user...">
+      </li>
+    </ul>
+    <ul class="menu-user nav navbar-nav navbar-right">
+      <li class="user">
+        <a routerLink="" routerLinkActive="active">
+          <i class="fas fa-user"></i>
+          Welcome : {{this.user.firstName}} {{this.user.lastName}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row body-content">
+  <div class="col-md-10">
+    <div class="row">
+      <div class="col-md-3">
+        <label>Email:</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.email}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Last Name :</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.firstName}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Last Name :</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.lastName}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Phone:</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.phone}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>City:</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.ville}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Reference:</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.ct_id.reference}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>State:</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.stateUser}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 edit">
+        <button class="btn edit-btn btn-outline-primary">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

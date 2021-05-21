@@ -1,0 +1,29 @@
+
+<nav  *ngIf="!booleans" class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h1 class="ifrozet">Ifrozet<small  class="Sarl">Sarl</small></h1>
+    </div>
+    <div class="navbar-header">
+      <h1><a><img src="../assets/image/logoScren.png" alt="logo"></a></h1>
+    </div>
+    <div class="navbar-header">
+      <h4><a class="contacts"  routerLink="/home" routerLinkActive="active">Home</a></h4>
+      <h4><a class="contacts" href="#">A Propos De Nous</a></h4>
+      <h4><a class="contacts" href="#">Nos Services</a></h4>
+      <h4><a class="contacts" href="#">Nous Contacter</a></h4>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="login">
+        <a  routerLink="/login" routerLinkActive="active">
+        <span class=" glyphicon glyphicon-log-in"></span>
+        Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

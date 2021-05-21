@@ -1,0 +1,42 @@
+<div class="backLogin col-sm col-lg col-xl col-md container logIn-container" *ngIf="!booleans"style="
+  background-image:url('../../assets/image/BackLogin.jpg');
+width: 100%;
+height: 100%;">
+  <div class="rwo">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <form class="color" #loginForm="ngForm" (ngSubmit)="loginUser()">
+          <small class="text-danger">{{msg}}</small>
+          <h1 class="signnow">Please Sign in</h1>
+          <label><b>Username or mail</b></label>
+          <input type="email" placeholder="Username or mail" name="email" [(ngModel)]="user.email">
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Password" name="password" [(ngModel)]="user.password">
+          <div class="row">
+            <div class="col-sm">
+              <div class="custom-checkbox"><input type="checkbox">Remember me</div>
+            </div>
+          </div>
+          <input class="logIn col-lg col-sm col-md btn btn-block btn-outline-info" type="submit" value="Sing in">
+          <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+              <a href="#"><p>Forget password?</p></a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</div><!--
+<router-outlet></router-outlet>-->
+
+
+
+
+

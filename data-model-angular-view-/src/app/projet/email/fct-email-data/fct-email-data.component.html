@@ -1,0 +1,168 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header" style="text-align: center">Test: data-Megration</div>
+    <div class="card-body">
+      <!--<div class="row">
+         <div class="col-md-1 form-group"></div>
+         <div class="col-md-8 col-sm-8 form-group">
+           <label>E-mail*:</label>
+           <imput type="email" name="textarea" class="form-control"
+                     style="width:560px;height:75px;"[(ngModel)]="emailData.email">
+           </imput>
+         </div>
+         <div class="col-md-3 form-group"></div>
+       </div>
+       <div class="row">
+         <div class="col-md-1 form-group"></div>
+         <div class="col-md-8 col-sm-8 form-group">
+           <label>Phone:</label>
+           <textarea type="email" name="textarea" class="form-control"
+                     style="width:560px;height:75px;">
+           </textarea>
+         </div>
+         <div class="col-md-3 form-group"></div>
+       </div>-->
+      <small class="text-danger">{{this.isExist}}</small>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>Email *:</label>
+          </div>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="emailData.email">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>Cat:</label></div>
+            <div class="col-md-9">
+              <select class="form-select form-select-lg mb-3 form-control"
+                      aria-label="form-select-lg example" [(ngModel)]="emailData.cat_id.name">
+                <option selected  data-live-search="true" value="">--select a Kategory--</option>
+                <optgroup *ngFor="let c of categories;">
+                  <option value="{{c.name}}">{{c.name}}</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>State :</label>
+            </div>
+            <div class="col-md-9">
+              <select class="form-select form-select-lg mb-3 form-control"
+                      aria-label=".form-select-lg example" [(ngModel)]="emailData.state_id.name">
+                <option selected data-live-search="true" value="">--select a state--</option>
+                <optgroup *ngFor="let c of states;">
+                  <option value="{{c.name}}">{{c.name}}</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>City :</label>
+            </div>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="emailData.city">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+
+          <div class="row">
+            <div class="col-md-3">
+              <label>Country :</label>
+            </div>
+            <div class="col-md-9">
+              <select class="selectpicker form-select form-select-lg mb-3 form-control multiple-task"
+                      aria-label=".form-select-lg example" [(ngModel)]="emailData.ct_id.reference">
+                <option selected value="">--select a country--</option>
+                <optgroup *ngFor="let c of countrys;index as i ">
+                  <option value="{{c.reference}}">{{c.reference}}</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>FirmaName :</label>
+            </div>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="emailData.firmaName">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-md-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>codePost :</label>
+            </div>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="emailData.codePost">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
+              <label>Phone *:</label>
+            </div>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="emailData.phone">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+    </div>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <button class="btn btn-outline-info btn-block" (click)="save()">SAVE</button>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

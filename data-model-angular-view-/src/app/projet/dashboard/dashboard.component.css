@@ -1,0 +1,213 @@
+.size h5{
+  font-size: 20px;
+  color: red;
+}
+
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 3rem;
+}
+
+.card-single {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 1.3rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-body span {
+  font-size: 1.5rem;
+  color: #777;
+  padding-right: 1.4rem;
+}
+
+.card-body h5 {
+  color: #8390A2;
+  font-size: 1rem;
+}
+
+.card-body h4 {
+  color: #1D2231;
+  font-size: 1.1rem;
+  margin-top: .2rem;
+}
+
+.card-footer {
+  padding: .2rem 1rem;
+  background: #f9fafc;
+}
+
+.card-footer a {
+  color: #027581;
+}
+
+.recent {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.activity-card,
+.summary-card,
+.bday-card {
+  background: #fff;
+  border-radius: 7px;
+}
+
+.activity-card h3 {
+  color: #8390A2;
+  margin: 1rem;
+}
+
+.activity-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activity-card thead {
+  background: #efefef;
+  text-align: left;
+}
+.h-3{
+  padding-top: 20px;
+}
+
+th, td {
+  font-size: .9rem;
+  padding: 1rem 1rem;
+  color: #1D2231;
+}
+
+td {
+  font-size: .8rem;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9fafc;
+}
+
+.badge {
+  padding: .2rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: .7rem;
+}
+
+.badge.success {
+  background: #DEF7EC;
+  color: #027581;
+}
+
+.badge.warning {
+  background: #F0F6B2;
+  color: orange;
+}
+
+.td-team {
+  display: flex;
+  align-items: center;
+}
+
+.img-1,
+.img-2,
+.img-3 {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  margin-left: -15px;
+  border: 3px solid #efefef;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-1 {
+}
+
+.img-2 {
+}
+
+.img-3 {
+}
+
+.summary-card {
+  margin-bottom: 1.5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.summary-single {
+  padding: .5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.summary-single span {
+  font-size: 1.5rem;
+  color: #777;
+  padding-right: 1rem;
+}
+
+.summary-single h5 {
+  color: #027581;
+  font-size: 1.1rem;
+  margin-bottom: 0rem !important;
+}
+
+.summary-single small {
+  font-weight: 700;
+  color: #8390A2;
+}
+
+.bday-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: .3rem;
+}
+
+.bday-card {
+  padding: 1rem;
+}
+
+.bday-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid #efefef;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: .7rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center button {
+  background: #027581;
+  color: #fff;
+  border: 1px solid #027581;
+  border-radius: 4px;
+  padding: .4rem 1rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.card-footer {
+  background-color: #8390A2;
+  color: #ffffff;
+}
+
+.card-footer a {
+  background-color: #8390A2;
+  color: #ffffff;
+}
+.box{
+  margin-bottom:20px;
+}
