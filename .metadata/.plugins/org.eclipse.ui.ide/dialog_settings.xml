@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\work-space\Ifrozet\data-model-eclipse-bisnesse\database_model"/>
+			<item value="C:\Users\HASNAOUI\git\angular-10-spring-boot-jwt-authentication\spring-boot-server"/>
+			<item value="F:\the leçons\fstg\fstg S5\S5\java\POO JAVA\development\eclipse-workspaceJ2EE\gestionhotelMeLocal"/>
+			<item value="E:\git\angular-10-spring-boot-jwt-authentication\spring-boot-server"/>
+			<item value="C:\Users\HASNAOUI\git\business-intellegente"/>
+		</list>
+	</section>
+</section>

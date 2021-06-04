@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;SwaggerConfig.java&apos; to &apos;business-intelligence-suite/src/main/java/uninfz.ifrozet.ma.config&apos;&#x0D;&#x0A;- Original project: &apos;business-intellegente&apos;&#x0D;&#x0A;- Destination element: &apos;business-intelligence-suite/src/main/java/uninfz.ifrozet.ma.config&apos;&#x0D;&#x0A;- Original element: &apos;com.example.projet.config.SwaggerConfig.java&apos;" description="Copy compilation unit" destination="=business-intelligence-suite/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;uninfz.ifrozet.ma.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.projet.config{SwaggerConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1622730285437" units="1" version="1.0"/>
+</session>

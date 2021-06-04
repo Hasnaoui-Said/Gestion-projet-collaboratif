@@ -1,5 +1,5 @@
 
-<nav  *ngIf="!booleans" class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
+<nav *ngIf="!isLoggedIns"  class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <h1 class="ifrozet">Ifrozet<small  class="Sarl">Sarl</small></h1>
@@ -9,7 +9,7 @@
     </div>
     <div class="navbar-header">
       <h4><a class="contacts"  routerLink="/home" routerLinkActive="active">Home</a></h4>
-      <h4><a class="contacts" href="#">A Propos De Nous</a></h4>
+      <h4><a class="contacts" routerLink="/login" routerLinkActive="active">A Propos De Nous</a></h4>
       <h4><a class="contacts" href="#">Nos Services</a></h4>
       <h4><a class="contacts" href="#">Nous Contacter</a></h4>
     </div>

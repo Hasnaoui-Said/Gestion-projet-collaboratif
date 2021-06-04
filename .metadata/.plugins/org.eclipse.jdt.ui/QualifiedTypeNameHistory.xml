@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.web.servlet.support.SpringBootServletInitializer"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.security.jwt.AuthEntryPointJwt"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.security.jwt.AuthTokenFilter"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.security.service.UserDetailsServiceImpl"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.security.service.UserDetailsImpl"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.beans.User"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.beans.Role"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.beans.ERole"/>
+    <fullyQualifiedTypeName name="uninfz.ifrozet.ma.enumeration.ERole"/>
+</qualifiedTypeNameHistroy>

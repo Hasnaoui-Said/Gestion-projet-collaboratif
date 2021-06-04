@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {DimUserService} from '../controller/service/dim-user.service';
 import {DimUser} from '../controller/model/dim-user.model';
 import {NgForm} from '@angular/forms';
+import {AuthService} from '../controller/service/auth.service';
+import {TokenStorageService} from '../controller/service/token-storage.service';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {UserService} from "../controller/service/user.service";
 
 
 @Component({
@@ -10,8 +15,71 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+/*apres*/
 
-  constructor(private userService: DimUserService) { }
+  form: any = {};
+  isLoggedIn = false;
+
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+
+  constructor(private authService: AuthService,
+              private router: Router,
+              private tokenStorage: TokenStorageService,
+              private http: HttpClient,
+              private userService: UserService,
+  ) { }
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
+  }
+  get isLoggedIns(): boolean {
+    return this.userService.isLoggedIns;
+  }
+
+  set isLoggedIns(value: boolean) {
+    this.userService.isLoggedIns = value;
+  }
+
+  private goToMenu(){
+    this.router.navigate(['/menu']);
+  }
+
+
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = false;
+        this.isLoggedIns = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        /*this.reloadPage();*/
+        this.router.navigate(['/menu']);
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+        this.isLoggedIns = false;
+      }
+    );
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
+
+
+
+
+ /* avant
+ constructor(private userService: DimUserService) { }
 
   ngOnInit(): void {
   }
@@ -28,5 +96,5 @@ export class LoginComponent implements OnInit {
   }
   get booleans(): boolean {
     return this.userService.booleans;
-  }
+  }*/
 }

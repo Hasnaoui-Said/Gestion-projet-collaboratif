@@ -1,4 +1,5 @@
-<section *ngIf="booleans" class="section">
+<!--*ngIf="booleans"-->
+<section *ngIf="isLoggedIn"  class="section">
 
 <input type="checkbox" id="sidebar-toggle" xmlns="http://www.w3.org/1999/html">
 <div class="sidebar">
@@ -71,7 +72,7 @@
 		        c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"/>
         </svg>
       </span></a>
-      <a title="LogOut" (click)="logoutUser()" routerLink="/home" routerLinkActive="activate" style="margin-right: 10px">LogOut</a>
+      <a title="LogOut" (click)="logout()" routerLink="/" routerLinkActive="activate" style="margin-right: 10px">LogOut</a>
     </div>
   </header>
 

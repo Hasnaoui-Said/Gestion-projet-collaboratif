@@ -33,6 +33,11 @@ const routes: Routes = [
   {path: 'notFounded', component: NotFoundComponent},
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  /*{path: 'logout', component: AppComponent,
+    children: [
+      {path: '', component: HomeComponent},
+  ]
+  },*/
   {path: 'menu', component: MenuComponent,
     children: [
       {path: 'dashboard', component: DashboardComponent},
