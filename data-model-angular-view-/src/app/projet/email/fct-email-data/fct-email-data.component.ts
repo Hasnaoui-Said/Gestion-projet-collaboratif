@@ -32,7 +32,7 @@ export class FctEmailDataComponent implements OnInit {
   }
 
   public save(){
-    this.emailData.user_id.userName = this.user.userName;
+    this.emailData.user_id.username = this.user.username;
     return this.fctEmailDateService.save();
   }
 

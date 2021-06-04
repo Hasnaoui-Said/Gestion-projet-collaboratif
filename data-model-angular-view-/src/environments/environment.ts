@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    baseUrlStock : 'http://localhost:8095/news-lettre-app',
 };
 
 /*

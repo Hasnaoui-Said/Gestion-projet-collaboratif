@@ -1,5 +1,5 @@
 
-<nav *ngIf="!isLoggedIns"  class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
+<nav *ngIf="!isLoggedIns "  class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
   <div class="container-fluid">
     <div class="navbar-header">
       <h1 class="ifrozet">Ifrozet<small  class="Sarl">Sarl</small></h1>
@@ -23,7 +23,10 @@
     </ul>
   </div>
 </nav>
-
+<!--
+<ng-template #loggedOut>
+  Please login.
+</ng-template>-->
 <main>
   <router-outlet></router-outlet>
 </main>

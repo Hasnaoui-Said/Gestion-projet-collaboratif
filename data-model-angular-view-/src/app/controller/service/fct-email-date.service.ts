@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {FctEmailData} from '../model/fct-email-data.model';
 import {DimUser} from '../model/dim-user.model';
 import {Observable} from 'rxjs';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -14,21 +15,22 @@ export class FctEmailDateService {
   private _isExist: string;
   private _emailDatas: Array<FctEmailData>;
 
-  private url = 'http://localhost:8036//news-lettre-app';
+  private url = 'http://localhost:8095/news-lettre-app';
 
   constructor(private http: HttpClient) {
   }
   public findAll() {
-    this.http.get<Array<FctEmailData>>(this.url + '/fct-email-data/').subscribe(
+    this.http.get<Array<FctEmailData>>(environment.baseUrlStock + '/fct-email-data/').subscribe(
       data => {
         this.emailDatas = data;
+        console.log('seccessful Data e-mail');
       }, error => {
-        alert('error lors du loading Data e-mail');
+        alert('error lors du loading Data e-mail ');
       }
     );
   }
   public save() {
-    this.http.post<number>(this.url + '/fct-email-data/', this.emailData).subscribe(
+    this.http.post<number>(environment.baseUrlStock + '/fct-email-data/', this.emailData).subscribe(
       data => {
         if (data > 0) {
           this.emailDatas.push(this.clone(this.emailData));
@@ -71,7 +73,7 @@ export class FctEmailDateService {
     cloneEmail.cat_id.name = emailData.cat_id.name;
     cloneEmail.ct_id.reference = emailData.ct_id.reference;
     cloneEmail.state_id.name = emailData.state_id.name;
-    cloneEmail.user_id.userName = emailData.user_id.userName;
+    cloneEmail.user_id.username = emailData.user_id.username;
     return cloneEmail;
   }
 

@@ -3,7 +3,7 @@ import {DimUserService} from './controller/service/dim-user.service';
 import {DimUser} from './controller/model/dim-user.model';
 import {AuthService} from './controller/service/auth.service';
 import {TokenStorageService} from './controller/service/token-storage.service';
-import {UserService} from "./controller/service/user.service";
+import {UserService} from './controller/service/user.service';
 
 
 @Component({
@@ -16,7 +16,8 @@ export class AppComponent {
   constructor(private dimuserService: DimUserService,
               private authService: AuthService,
               private userService: UserService,
-              private tokenStorage: TokenStorageService
+              private tokenStorage: TokenStorageService,
+              private token: TokenStorageService
   ) { }
 
   get isLoggedIns(): boolean {
@@ -35,6 +36,8 @@ export class AppComponent {
   roles: string[] = [];
   signupForm: any;
 
+  currentUser: any;
+
 
 
   ngOnInit(): void {
@@ -42,6 +45,8 @@ export class AppComponent {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
+    this.isLoggedIns = false;
+    this.currentUser = this.token.getUser();
   }
 
   /*onSubmit(): void {
@@ -82,7 +87,8 @@ export class AppComponent {
   }
   get isbooleans(): boolean {
     return this.dimuserService.booleans;
-  }/*
+  }
+  /*
   get isLoggedIns(): boolean {
     return this.menuComponent.isLoggedIns;
   }*/

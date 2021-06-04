@@ -3,6 +3,7 @@ import {DimUser} from '../model/dim-user.model';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class DimUserService {
   private _msg: string;
   private _users: Array<DimUser>;
 
-  private url = 'http://localhost:8036//news-lettre-app';
+  private url = 'http://localhost:8095/news-lettre-app';
   private _booleans: boolean;
   private _logoutUser: boolean;
   private _clic: boolean;
@@ -33,7 +34,7 @@ export class DimUserService {
   }
 
   public findAll() {
-    this.http.get<Array<DimUser>>(this.url + '/dim-user/').subscribe(
+    this.http.get<Array<DimUser>>(environment.baseUrlStock + '/dim-user/').subscribe(
       data => {
         this.users = data;
       }, error => {
