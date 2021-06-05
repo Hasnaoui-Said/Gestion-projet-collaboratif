@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/news-lettre-app/fct-email-data")
+@RequestMapping("/news-lettre-app/fct-email-data/test")
 public class ControllerTest {
 
 	@GetMapping("/")

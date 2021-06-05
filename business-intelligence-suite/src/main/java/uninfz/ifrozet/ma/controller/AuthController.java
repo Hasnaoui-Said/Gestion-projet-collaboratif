@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import uninfz.ifrozet.ma.security.service.*;
+import uninfz.ifrozet.ma.security.impl.UserDetailsImpl;
 import uninfz.ifrozet.ma.security.jwt.*;
 import uninfz.ifrozet.ma.util.request.*;
 import uninfz.ifrozet.ma.util.response.*;
@@ -32,7 +32,7 @@ import uninfz.ifrozet.ma.repository.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/news-lettre-app/auth")
 public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import uninfz.ifrozet.ma.beans.User;
 import uninfz.ifrozet.ma.repository.UserRepository;
+import uninfz.ifrozet.ma.security.impl.UserDetailsImpl;
 
 
 @Service

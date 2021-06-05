@@ -8,6 +8,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+
 @Entity
 @Table(	name = "Dim_users", 
 		uniqueConstraints = { 
@@ -31,7 +32,17 @@ public class User {
 	@NotBlank
 	@Size(max = 120)
 	private String password;
+	private String firstname;
+	private String lastname;
+	private String cin;
+	private String dateNess;
+	private String ville;
+	private String codePoste;
+	private String state;
 
+	@ManyToOne
+	private Dim_country ct_id;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "Cfg_user_roles", 
 				joinColumns = @JoinColumn(name = "user_id"), 
@@ -45,6 +56,72 @@ public class User {
 		this.username = username;
 		this.email = email;
 		this.password = password;
+	}
+
+	
+
+	public Dim_country getCt_id() {
+		return ct_id;
+	}
+
+	public void setCt_id(Dim_country ct_id) {
+		this.ct_id = ct_id;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCin() {
+		return cin;
+	}
+
+	public void setCin(String cin) {
+		this.cin = cin;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getDateNess() {
+		return dateNess;
+	}
+
+	public void setDateNess(String dateNess) {
+		this.dateNess = dateNess;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+	public String getCodePoste() {
+		return codePoste;
+	}
+
+	public void setCodePoste(String codePoste) {
+		this.codePoste = codePoste;
 	}
 
 	public Long getId() {
