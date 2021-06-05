@@ -31,13 +31,12 @@ export const  routingsComponents = [AppComponent , EmailModefyComponent , ChekEm
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'notFounded', component: NotFoundComponent},
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  /*{path: 'logout', component: AppComponent,
-    children: [
+  {path: '', component: HomeComponent,
+   /* children: [
       {path: '', component: HomeComponent},
-  ]
-  },*/
+    ]*/
+  },
+  {path: 'home', component: HomeComponent},
   {path: 'menu', component: MenuComponent,
     children: [
       {path: 'dashboard', component: DashboardComponent},

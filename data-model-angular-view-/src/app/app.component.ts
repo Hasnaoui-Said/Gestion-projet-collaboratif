@@ -13,12 +13,55 @@ import {UserService} from './controller/service/user.service';
 })
 export class AppComponent {
   title = 'data-model-angular-view';
+
+  form: any = {};
+  isLoggedIn = false;
+  private _isLoggedInTest = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+  signupForm: any;
+
+  currentUser: any;
   constructor(private dimuserService: DimUserService,
               private authService: AuthService,
               private userService: UserService,
               private tokenStorage: TokenStorageService,
               private token: TokenStorageService
   ) { }
+
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+      this.isLoggedIns = true;
+      console.log('app is logs if ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
+      console.log('app is log ' + this.isLoggedIn);
+    } else if (!this.tokenStorage.getToken()) {
+      console.log('app is logs else ss1324 ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
+      console.log('app is log isLoggedIn ' + this.isLoggedIn);
+      this.isLoggedIns = true;
+    }
+    this.currentUser = this.token.getUser();
+
+
+  }
+
+  get isLogged(): boolean {
+    if (this._isLoggedInTest == null){
+      this._isLoggedInTest = false;
+    }
+    if (!this.tokenStorage.getToken()) {
+      this._isLoggedInTest = false;
+    }else if (this.tokenStorage.getToken()) {
+      this._isLoggedInTest = true;
+    }
+    return this._isLoggedInTest;
+  }
+
+  set isLoggedInTest(value: boolean) {
+    this._isLoggedInTest = value;
+  }
 
   get isLoggedIns(): boolean {
     return this.userService.isLoggedIns;
@@ -29,25 +72,6 @@ export class AppComponent {
   }
 
   /*test debut*/
-  form: any = {};
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
-  signupForm: any;
-
-  currentUser: any;
-
-
-
-  ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
-    }
-    this.isLoggedIns = false;
-    this.currentUser = this.token.getUser();
-  }
 
   /*onSubmit(): void {
     this.authService.login(this.form).subscribe(
@@ -66,9 +90,9 @@ export class AppComponent {
     );
   }*/
 
-  /*reloadPage(): void {
+  reloadPage(): void {
     window.location.reload();
-  }*/
+  }
 
   /*test fin*/
   get user(): DimUser {

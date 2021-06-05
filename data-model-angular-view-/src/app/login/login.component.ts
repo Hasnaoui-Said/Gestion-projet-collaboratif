@@ -6,7 +6,7 @@ import {AuthService} from '../controller/service/auth.service';
 import {TokenStorageService} from '../controller/service/token-storage.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {UserService} from "../controller/service/user.service";
+import {UserService} from '../controller/service/user.service';
 
 
 @Component({
@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
+      this.isLoggedIns = true;
       this.roles = this.tokenStorage.getUser().roles;
     }
   }
@@ -47,6 +48,9 @@ export class LoginComponent implements OnInit {
 
   private goToMenu(){
     this.router.navigate(['/menu']);
+    /*this.reloadPage();
+    window.location.reload();
+    this.router.navigate(['/menu']);*/
   }
 
 
@@ -61,7 +65,8 @@ export class LoginComponent implements OnInit {
         this.isLoggedIns = true;
         this.roles = this.tokenStorage.getUser().roles;
         /*this.reloadPage();*/
-        this.router.navigate(['/menu']);
+        this.goToMenu();
+        this.isLoggedIns = false;
       },
       err => {
         this.errorMessage = err.error.message;

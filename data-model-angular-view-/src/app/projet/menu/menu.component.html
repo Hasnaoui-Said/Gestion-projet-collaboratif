@@ -1,5 +1,5 @@
 <!--*ngIf="booleans"-->
-<section *ngIf="isLoggedIn && !currentUser ; else loggedOut" class="section">
+<section *ngIf="isLoggedIn && !currentUser ; else loggedOut" class="section" >
 
 <input type="checkbox" id="sidebar-toggle" xmlns="http://www.w3.org/1999/html">
 <div class="sidebar">
@@ -84,7 +84,7 @@
 
 </section>
 <ng-template #loggedOut>
-   <h2 style="text-align: center">Please login. <br>
+   <h2 style="text-align: center; margin-top: 30px">Please login. <br>
      <a routerLink="/login" routerLinkActive="active">LogIn</a>
    </h2>
 </ng-template>
