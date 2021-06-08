@@ -15,7 +15,7 @@ import uninfz.ifrozet.ma.beans.Dim_email_state;
 import uninfz.ifrozet.ma.beans.Fct_email_data;
 import uninfz.ifrozet.ma.beans.User;
 import uninfz.ifrozet.ma.repository.Fct_email_dataDao;
-import uninfz.ifrozet.ma.util.Fct_email_dataVo;
+import uninfz.ifrozet.ma.util.request.Fct_email_dataVo;
 
 
 @Service

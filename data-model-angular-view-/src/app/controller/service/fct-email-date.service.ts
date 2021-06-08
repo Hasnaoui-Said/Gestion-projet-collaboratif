@@ -20,7 +20,7 @@ export class FctEmailDateService {
   constructor(private http: HttpClient) {
   }
   public findAll() {
-    this.http.get<Array<FctEmailData>>(environment.baseUrlStock + '/fct-email-data/').subscribe(
+    this.http.get<Array<FctEmailData>>(environment.baseUrlData + '/fct-email-data/').subscribe(
       data => {
         this.emailDatas = data;
         console.log('seccessful Data e-mail');
@@ -30,7 +30,7 @@ export class FctEmailDateService {
     );
   }
   public save() {
-    this.http.post<number>(environment.baseUrlStock + '/fct-email-data/', this.emailData).subscribe(
+    this.http.post<number>(environment.baseUrlData + '/fct-email-data/', this.emailData).subscribe(
       data => {
         if (data > 0) {
           this.emailDatas.push(this.clone(this.emailData));

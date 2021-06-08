@@ -15,7 +15,7 @@ export class DimCountryService {
   constructor(private http: HttpClient) { }
 
   public findAll() {
-    this.http.get<Array<DimCountry>>(environment.baseUrlStock + '/dim-country/').subscribe(
+    this.http.get<Array<DimCountry>>(environment.baseUrlData + '/dim-country/').subscribe(
       data => {
         this.countrys = data;
       }, error => {

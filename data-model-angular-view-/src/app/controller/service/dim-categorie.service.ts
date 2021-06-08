@@ -16,7 +16,7 @@ export class DimCategorieService {
   constructor(private http: HttpClient) { }
 
   public findAll() {
-    this.http.get<Array<DimCategorie>>(environment.baseUrlStock + '/dim-categorie/').subscribe(
+    this.http.get<Array<DimCategorie>>(environment.baseUrlData + '/dim-categorie/').subscribe(
       data => {
         this.categories = data;
       }, error => {

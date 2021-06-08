@@ -17,7 +17,7 @@ export class DimStateService {
   constructor(private http: HttpClient) { }
 
   public findAll() {
-    this.http.get<Array<DimEmailState>>(environment.baseUrlStock + '/dim-email-state/').subscribe(
+    this.http.get<Array<DimEmailState>>(environment.baseUrlData + '/dim-email-state/').subscribe(
       data => {
         this.states = data;
       }, error => {

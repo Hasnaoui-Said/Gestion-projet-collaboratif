@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import uninfz.ifrozet.ma.beans.Dim_country;
 import uninfz.ifrozet.ma.beans.User;
 import uninfz.ifrozet.ma.repository.UserRepository;
-import uninfz.ifrozet.ma.util.UserRepoVo;
+import uninfz.ifrozet.ma.util.request.UserRepoVo;
 
 
 @Service

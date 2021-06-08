@@ -5,7 +5,8 @@
 
 export const environment = {
   production: true,
-  baseUrlStock : 'http://localhost:8095/news-lettre-app',
+  baseUrlData : 'http://localhost:8095/news-lettre-app',
+  baseUrlDataAuth : 'http://localhost:8095/news-lettre-app/auth-controller',
 };
 
 /*

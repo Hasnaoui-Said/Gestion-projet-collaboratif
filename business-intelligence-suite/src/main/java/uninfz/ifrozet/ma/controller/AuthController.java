@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -30,9 +31,9 @@ import uninfz.ifrozet.ma.beans.Role;
 import uninfz.ifrozet.ma.beans.User;
 import uninfz.ifrozet.ma.repository.*;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = {"http://localhost:4200"}, maxAge = 3600)
 @RestController
-@RequestMapping("/news-lettre-app/auth")
+@RequestMapping("/news-lettre-app/auth-controller")
 public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -71,6 +72,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/signup")
+	@PreAuthorize("hasRole('MODERATOR')")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity

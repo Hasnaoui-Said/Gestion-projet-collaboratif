@@ -34,7 +34,7 @@ export class DimUserService {
   }
 
   public findAll() {
-    this.http.get<Array<DimUser>>(environment.baseUrlStock + '/dim-user/').subscribe(
+    this.http.get<Array<DimUser>>(environment.baseUrlData + '/dim-user/').subscribe(
       data => {
         this.users = data;
       }, error => {
