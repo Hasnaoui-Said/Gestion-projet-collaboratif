@@ -3,6 +3,7 @@ package uninfz.ifrozet.ma.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,10 +41,12 @@ public class Dim_userWs {
 	public User findByEmail(@PathVariable String email) {
 		return dim_userService.findByEmail(email);
 	}
+
 	
-	@GetMapping("/reference/{reference}")
-	public User findByReference(@PathVariable String reference) {
-		return dim_userService.findByEmail(reference);
+	@GetMapping("/username/{username}")
+	//@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR') or hasRole('ROLE_ADMIN')")
+	public User findByUsername(@PathVariable String username) {
+		return dim_userService.findByUsername(username);
 	}
 
 	@DeleteMapping("/email/{email}")

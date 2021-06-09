@@ -43,16 +43,16 @@ public class Dim_userService {
 			return null;
 		}
 	}
-	
+
 	public User findByEmail(String ref) {
 		return dim_userDao.findByEmail(ref);
+	}
+	public User findByUsername(String ref) {
+		return userVo.findByUsername(ref);
 	}
 	
 	public User findByEmailAndPassword(String email,String password) {
 		return dim_userDao.findByEmailAndPassword( email, password);
-	}
-	public User findByUsername(String ref) {
-		return userVo.findByUsername(ref);
 	}
 
 
