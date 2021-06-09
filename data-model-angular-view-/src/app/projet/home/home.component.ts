@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DimUserService} from '../../controller/service/dim-user.service';
 import {UserService} from "../../controller/service/user.service";
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,18 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private userService: UserService,
-              private dimUserService: DimUserService
+              private dimUserService: DimUserService,
+              private appComponent: AppComponent,
   ) { }
 
   ngOnInit(): void {
   }
-
+  get isLogged(): boolean {
+    return this.appComponent.isLogged;
+  }
+  get roles(): string [] {
+    return this.appComponent.userRoles;
+  }
 
   get isLoggedIns(): boolean {
     return this.userService.isLoggedIns;

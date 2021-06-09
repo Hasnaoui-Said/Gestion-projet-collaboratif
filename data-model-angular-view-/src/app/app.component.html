@@ -1,30 +1,53 @@
+<section *ngIf="!isLogged" class="app-home">
+  <!--<nav class="first-title card navbar navbar-inverse color col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
+    <div class="container-fluid">
+      <div class="navbar-header ">
+        <h1 class="ifrozet">IFROZET SARL ADAROUCHE</h1>
+      </div>
+    </div>
+  </nav>-->
+  <nav class="first-title">
+        <h1 class="ifrozet">IFROZET SARL ADAROUCHE</h1>
+  </nav>
 
-<nav *ngIf="!isLogged"  class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <h1 class="ifrozet">Ifrozet<small  class="Sarl">Sarl</small></h1>
+<!--  <hr *ngIf="!isLogged" class="hr-1" >  -->
+  <input type="checkbox" id="sidebar-toggle" xmlns="http://www.w3.org/1999/html">
+  <nav class="seconde-title card navbar navbar-expand-md navbar-inverse color col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <h3 class="contacts" routerLink="/home" routerLinkActive="active">ACCUEIL</h3>
+      </div>
+      <div class="navbar-header">
+        <h3 class="contacts" routerLink="/home" routerLinkActive="active">A PROPOS DE NOUS</h3>
+      </div>
+      <div class="navbar-header">
+        <h3 class="contacts" routerLink="/home" routerLinkActive="active">CONTACT</h3>
+      </div>
+      <div class="navbar-header">
+        <h3 class="contacts" (click)="goToLogin()">
+          <span class=" glyphicon glyphicon-log-in"></span>
+          CONNEXION
+        </h3>
+      </div>
+      <div class="navbar-header accueil">
+        <dev class="line"><span class="ti-unlink"></span></dev>
+        <label for="sidebar-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+               viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+        </label>
+      </div>
     </div>
-    <div class="navbar-header">
-      <h1><a><img src="../assets/image/logoScren.png" alt="logo"></a></h1>
-    </div>
-    <div class="navbar-header">
-      <h4><a class="contacts"  routerLink="/home" routerLinkActive="active">Home</a></h4>
-      <h4><a class="contacts" routerLink="/login" routerLinkActive="active">A Propos De Nous</a></h4>
-      <h4><a class="contacts" href="#">Nos Services</a></h4>
-      <h4><a class="contacts" href="#">Nous Contacter</a></h4>
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="login">
-        <a  routerLink="/login" routerLinkActive="active">
-        <span class=" glyphicon glyphicon-log-in"></span>
-        Login
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<!--<ng-template #loggedOut>
-</ng-template>-->
-<main>
+  </nav>
+
+<!--  <hr *ngIf="!isLogged" class="hr-2" >-->
+  <!--<ng-template #loggedOut>
+  </ng-template>-->
+
+</section>
+
+<main class="app-main">
   <router-outlet></router-outlet>
 </main>

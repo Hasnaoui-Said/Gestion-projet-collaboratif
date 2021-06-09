@@ -4,6 +4,7 @@ import {DimUser} from './controller/model/dim-user.model';
 import {AuthService} from './controller/service/auth.service';
 import {TokenStorageService} from './controller/service/token-storage.service';
 import {UserService} from './controller/service/user.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -21,13 +22,15 @@ export class AppComponent {
   errorMessage = '';
   roles: string[] = [];
   signupForm: any;
+  private _clicLogin: boolean;
 
   currentUser: any;
   constructor(private dimuserService: DimUserService,
               private authService: AuthService,
               private userService: UserService,
               private tokenStorage: TokenStorageService,
-              private token: TokenStorageService
+              private token: TokenStorageService,
+              private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -66,10 +69,28 @@ export class AppComponent {
   get isLoggedIns(): boolean {
     return this.userService.isLoggedIns;
   }
+  get userRoles(): string[] {
+    return this.roles;
+  }
+  set userRoles(value: string []) {
+    this.roles = value;
+  }
 
   set isLoggedIns(value: boolean) {
     this.userService.isLoggedIns = value;
   }
+
+  private goToLogin(){
+    this.router.navigate(['/login']);
+  }
+
+  /*get clicLogin(): boolean {
+    return this._clicLogin;
+  }
+
+  set clicLogin(value: boolean) {
+    this._clicLogin = value;
+  }*/
 
   /*test debut*/
 

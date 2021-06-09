@@ -7,6 +7,7 @@ import {TokenStorageService} from '../controller/service/token-storage.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {UserService} from '../controller/service/user.service';
+import {AppComponent} from '../app.component';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
               private tokenStorage: TokenStorageService,
               private http: HttpClient,
               private userService: UserService,
+              private appComponent: AppComponent,
   ) { }
 
   ngOnInit(): void {
@@ -64,6 +66,7 @@ export class LoginComponent implements OnInit {
         this.isLoggedIn = false;
         this.isLoggedIns = true;
         this.roles = this.tokenStorage.getUser().roles;
+        this.userRoles = this.tokenStorage.getUser().roles;
         /*this.reloadPage();*/
         this.goToMenu();
         this.isLoggedIns = false;
@@ -75,7 +78,12 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
+  get userRoles(): string [] {
+    return this.appComponent.userRoles;
+  }
+  set userRoles(value: string []) {
+     this.appComponent.userRoles = value;
+  }
   reloadPage(): void {
     window.location.reload();
   }

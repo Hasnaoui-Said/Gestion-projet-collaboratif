@@ -1,12 +1,29 @@
 
 
+.color{
+  background-color: #ffffff;
+  border: none;
+}
+
+
+
+hr{
+  background-color: #00c5f7;
+  margin: -20px 80px 0px 80px;
+  font-size: 15px;
+  size: 2px;
+}
 .ifrozet{
   font-size: 40px;
-  color: blue;
+  color: #00c5f7;
+  padding-top: 15px ;
+  padding-bottom: 15px ;
+  position: center;
+  font-weight: 900;
 }
 .Sarl {
   font-size: 40px;
-  color: #f1f5f9;
+  color: green;
 }
 
 .login {
@@ -14,24 +31,111 @@
 }
 
 .contacts {
-  color: #cccccc;
+  color: black;
+  margin-top: 8px;
 }
 
 .contacts:hover {
-  color: blue;
+  color:  #00c5f7;
   cursor: pointer;
   text-decoration: none;
 }
 
 .login a:hover {
-  color: blue;
+  color: #00c5f7;
   cursor: pointer;
   text-decoration: none;
 }
+/*
 
-@media only screen and (max-width: 400px) {
-  nav img {
-     display: none;
+.app-home{
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  margin: -10px;
+  z-index: 2;
 }
+
+.seconde-title{
+  margin-top: -10px;
 }
+.first-title, .seconde-title{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 0px;
+  border-bottom: 2px #00c5f7 solid;
+}
+.seconde-title{
+ position: page;
+}
+
+
+.app-main{
+  margin-top: 160px;
+  position: absolute;
+  width: 100%;
+}
+*/
+.first-title{
+  border-bottom: 2px solid #00c5f7;
+  background-color: #ffffff;
+  position: fixed;
+  display: inline-block;
+  width: 80%;
+  margin-left: 10%;
+  z-index: 2;
+}
+.first-title h1{
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.seconde-title{
+  margin-top: 64px;
+  display: inline-block;
+  border-bottom: 2px solid #00c5f7;
+  width: 80%;
+  margin-left: 10%;
+}
+#sidebar-toggle {
+  display: none;
+}
+
+label svg{
+  display: none;
+}
+
+@media only screen and (max-width: 791px) {
+  .contacts{
+    display: none;
+  }
+
+  .first-title, .seconde-title{
+    width: 100%;
+    margin: 0px;
+  }
+  .seconde-title{
+    margin-top: 10px;
+  }
+  .ifrozet{
+    font-size: 20px;
+    font-weight: 900;
+  }
+  label svg{
+    display: inline-block;
+  }
+  .accueil{
+    margin-top: 40px;
+    padding-right: 10px;
+  }
+}
+
+.accueil svg:active{
+
+}
+
+
 
