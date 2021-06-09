@@ -18,12 +18,13 @@ import {AppComponent} from '../app.component';
 export class LoginComponent implements OnInit {
 /*apres*/
 
-  form: any = {};
+  private form: any = {};
   isLoggedIn = false;
 
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  private _userName: string;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -57,6 +58,7 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(): void {
+    this.userName = this.form.username;
     this.authService.login(this.form).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -78,6 +80,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
   get userRoles(): string [] {
     return this.appComponent.userRoles;
   }
@@ -89,9 +92,18 @@ export class LoginComponent implements OnInit {
   }
 
 
+  get userName(): string {
+    if (this._userName == null){
+      this._userName = '';
+    }
+    return this._userName;
+  }
 
+  set userName(value: string) {
+    this._userName = value;
+  }
 
- /* avant
+  /* avant
  constructor(private userService: DimUserService) { }
 
   ngOnInit(): void {

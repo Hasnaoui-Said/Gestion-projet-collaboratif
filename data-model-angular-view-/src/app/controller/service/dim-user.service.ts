@@ -3,7 +3,8 @@ import {DimUser} from '../model/dim-user.model';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-import {environment} from "../../../environments/environment";
+import {environment} from '../../../environments/environment';
+import {AuthService} from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,10 @@ export class DimUserService {
     this._clic = value;
   }
 
-  constructor(private http: HttpClient, private router: Router ) {
+  constructor(private http: HttpClient,
+              private router: Router,
+              private authService: AuthService,
+  ) {
   }
 
   public findAll() {
@@ -76,7 +80,22 @@ export class DimUserService {
   set users(value: Array<DimUser>) {
     this._users = value;
   }
-
+  get username(): string {
+    let un = this.authService.username;
+    return un;
+  }
+  public findByUsername(userName: string) {
+    this.http.get<DimUser>(this.url + '/dim-user/username/' + this.username).subscribe(
+      data => {
+        if (data != null) {
+          this.user = data;
+          console.log('this name is dim user ' + this.username);
+        }
+      }, error => {
+        console.log('notFounded dim user ' + this.username);
+      }
+    );
+  }
   public loginUser(user: DimUser) {
     this.http.post<DimUser>(this.url + '/dim-user/login/' , user).subscribe(
     data => {

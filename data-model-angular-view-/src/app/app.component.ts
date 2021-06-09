@@ -38,11 +38,11 @@ export class AppComponent {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
       this.isLoggedIns = true;
-      console.log('app is logs if ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
-      console.log('app is log ' + this.isLoggedIn);
+      /*console.log('app is logs if ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
+      console.log('app is log ' + this.isLoggedIn);*/
     } else if (!this.tokenStorage.getToken()) {
-      console.log('app is logs else ss1324 ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
-      console.log('app is log isLoggedIn ' + this.isLoggedIn);
+      /*console.log('app is logs else ss1324 ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
+      console.log('app is log isLoggedIn ' + this.isLoggedIn);*/
       this.isLoggedIns = true;
     }
     this.currentUser = this.token.getUser();
@@ -65,6 +65,7 @@ export class AppComponent {
   set isLoggedInTest(value: boolean) {
     this._isLoggedInTest = value;
   }
+
 
   get isLoggedIns(): boolean {
     return this.userService.isLoggedIns;

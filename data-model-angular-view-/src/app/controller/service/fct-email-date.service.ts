@@ -77,6 +77,7 @@ export class FctEmailDateService {
     return cloneEmail;
   }
 
+
   get emailData(): FctEmailData {
     if (this._emailData == null){
       this._emailData = new FctEmailData();

@@ -123,13 +123,24 @@ label svg{
   .ifrozet{
     font-size: 20px;
     font-weight: 900;
-  }
-  label svg{
-    display: inline-block;
+    width: 85%;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 10%;
+    margin-right: 5%;
   }
   .accueil{
-    margin-top: 40px;
-    padding-right: 10px;
+    margin-top: 0px;
+    padding-right: 0px;
+    width: 10%;
+    display: inline-block;
+  }
+  label svg{
+    display: block;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .accueil-home{
   }
 }
 
@@ -138,4 +149,13 @@ label svg{
 }
 
 
+@media only screen and (max-width: 349px) {
+  .first-title{
+    padding-bottom: 25px;
+  }
+  .app-main{
+    border-top: 2px red solid;
+    padding-top: 30px;
+  }
+}
 

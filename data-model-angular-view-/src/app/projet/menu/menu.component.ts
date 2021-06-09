@@ -41,13 +41,13 @@ export class MenuComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
 
-      this.isLoggedIns = true;
+      this.isLoggedIns = true;/*
       console.log('menu is logs if ' + this.isLoggedIns);
-      console.log('menu is log ' + this.isLoggedIn);
+      console.log('menu is log ' + this.isLoggedIn);*/
     }else if (!this.tokenStorage.getToken()) {
-      this.isLoggedIns = true;
+      this.isLoggedIns = true;/*
       console.log('menu is logs if ' + this.isLoggedIns);
-      console.log('menu is log ' + this.isLoggedIn);
+      console.log('menu is log ' + this.isLoggedIn);*/
     }
     this.isLoggedIn = !!this.tokenStorage.getToken();
 

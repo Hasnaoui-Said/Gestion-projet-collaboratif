@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {environment} from '../../../environments/environment';
+import {DimUser} from '../model/dim-user.model';
 
 const AUTH_API = 'http://localhost:8095/news-lettre-app/auth';
 
@@ -14,20 +15,62 @@ const httpOptions = {
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
-
+  _username: string;
+  private _user: DimUser;
+  constructor(
+    private http: HttpClient,
+  ) { }
+  public findByUsername(userName: string) {
+    this.http.get<DimUser>(environment.baseUrlData + '/dim-user/username/' + this.username).subscribe(
+      data => {
+        if (data != null) {
+          this.user = data;
+          console.log('this name is auth service ' + this.username);
+        }
+      }, error => {
+        console.log('notFounded auth service ' + this.username);
+      }
+    );
+  }
   login(credentials): Observable<any> {
+    this.username = this.cloneUser(credentials.username);
     return this.http.post(environment.baseUrlDataAuth + '/signin', {
       username: credentials.username,
       password: credentials.password
     }, httpOptions);
   }
+  private cloneUser(value: string) {
+    let cloneValue =  '';
+    cloneValue = value;
+    return cloneValue;
+  }
+  get username(): string {
+    if (this._username == null){
+      this._username = '';
+    }
+    return this._username;
+  }
 
+  set username(value: string) {
+    this._username = value;
+  }
   register(user): Observable<any> {
     return this.http.post(AUTH_API + 'signup', {
       username: user.username,
       email: user.email,
       password: user.password
     }, httpOptions);
+  }
+
+
+  get user(): DimUser {
+    if (this._user == null){
+      this._user = new DimUser();
+    }
+    return this._user;
+  }
+
+  set user(value: DimUser) {
+    this._user = value;
   }
 }

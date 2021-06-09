@@ -81,6 +81,26 @@
         <div class="col-8 form-group">
           <div class="row">
             <div class="col-md-3">
+              <label>User test:</label>
+            </div>
+            <div class="col-md-9">
+              <select class="form-select form-select-lg mb-3 form-control"
+                      aria-label=".form-select-lg example" [(ngModel)]="emailData.state_id.name">
+                <option selected data-live-search="true" value="">--select a state--</option>
+                <optgroup *ngFor="let c of users;">
+                  <option value="{{c.username}}">{{c.username}}</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 form-group"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 form-group"></div>
+        <div class="col-8 form-group">
+          <div class="row">
+            <div class="col-md-3">
               <label>City :</label>
             </div>
             <div class="col-md-9">
