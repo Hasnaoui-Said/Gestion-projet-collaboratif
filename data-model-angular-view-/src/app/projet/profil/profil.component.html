@@ -1,3 +1,45 @@
+<section>
+  <nav class="users-user navbar">
+    <form class="">
+      <a class="users" routerLink="" routerLinkActive="active">
+        <i   class="fas fa-users"></i>
+        Users
+      </a>
+      <a class="user" routerLink="" routerLinkActive="active">
+        Welcome {{this.user.lastname}}
+        <i class="fas fa-user"></i>
+      </a>
+    </form>
+  </nav>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="image-profile col-md-3">
+        <img src="../../../assets/image/fa-user.png" alt="">
+      </div>
+      <div class="info-image col-md-9">
+        <h1>{{user.lastname}} {{user.firstname}}</h1>
+        <h3>{{user.lastname}}</h3>
+        <a class="edit-me">
+          <i class=" fas fa-camera"> change profile</i>
+        </a>
+      </div>
+    </div>
+  <div class="row">
+      <div class="col-md-3">
+        <label>user-name</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text">
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!--
 <nav class="navbar menu navbar-inverse col-sm col-md col-lg col-xl col-" style="border-radius: 0px;">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -20,7 +62,7 @@
       <li class="user">
         <a routerLink="" routerLinkActive="active">
           <i class="fas fa-user"></i>
-          Welcome : <!--{{this.user.firstName}} {{this.user.lastName}}-->
+          Welcome :&lt;!&ndash;{{this.user.firstName}} {{this.user.lastName}}&ndash;&gt;
         </a>
       </li>
     </ul>
@@ -44,7 +86,7 @@
       </div>
       <div class="col-md-7">
         <div>
-          <div>{{this.user.firstName}}</div>
+          <div>{{this.user.firstname}}</div>
         </div>
       </div>
     </div>
@@ -54,7 +96,7 @@
       </div>
       <div class="col-md-7">
         <div>
-          <div>{{this.user.lastName}}</div>
+          <div>{{this.user.lastname}}</div>
         </div>
       </div>
     </div>
@@ -64,7 +106,7 @@
       </div>
       <div class="col-md-7">
         <div>
-          <div><!--{{this.user.phone}}--></div>
+          <div>{{this.user.phone}}</div>
         </div>
       </div>
     </div>
@@ -74,17 +116,27 @@
       </div>
       <div class="col-md-7">
         <div>
-          <div><!--{{this.user.ville}}--></div>
+          <div>{{this.user.ville}}</div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <label>Reference:</label>
+        <label>Pays:</label>
       </div>
       <div class="col-md-7">
         <div>
-          <div><!--{{this.user.ct_id.reference}}--></div>
+          <div>{{this.user.ct_id.reference}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label>User name:</label>
+      </div>
+      <div class="col-md-7">
+        <div>
+          <div>{{this.user.username}}</div>
         </div>
       </div>
     </div>
@@ -94,7 +146,7 @@
       </div>
       <div class="col-md-7">
         <div>
-          <div><!--{{this.user.stateUser}}--></div>
+          <div>{{this.user.state}}</div>
         </div>
       </div>
     </div>
@@ -107,3 +159,4 @@
 </div>
 
 
+-->

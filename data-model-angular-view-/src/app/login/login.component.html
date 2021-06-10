@@ -54,12 +54,13 @@ height: 100%;">
       novalidate
     >
       <div class="form-group">
-        <label for="username">Username {{userName}}</label>
+        <label for="username">Username</label>
         <input
           type="text"
           class="form-control"
           name="username"
           [(ngModel)]="form.username"
+          [ngModel]="userName"
           required
           #username="ngModel"
         />
@@ -112,6 +113,8 @@ height: 100%;">
     <div class="alert alert-success" *ngIf="isLoggedIn">
       <div>
         <a routerLink="/menu" routerLinkActive="active">Go to menu</a>
+        <a routerLink="/menu" routerLinkActive="active">Go to menu</a>
+        <p routerLink="/menu" routerLinkActive="active">login user-name --> {{email}}</p>
       </div>
       Logged in as {{ roles }}.
     </div>

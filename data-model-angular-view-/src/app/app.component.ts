@@ -15,6 +15,8 @@ import {Router} from '@angular/router';
 export class AppComponent {
   title = 'data-model-angular-view';
 
+  private _userName: string;
+  private _user: DimUser;
   form: any = {};
   isLoggedIn = false;
   private _isLoggedInTest = false;
@@ -117,13 +119,6 @@ export class AppComponent {
   }
 
   /*test fin*/
-  get user(): DimUser {
-    return this.dimuserService.user;
-  }
-
-  public  loginUser(){
-    this.dimuserService.loginUser(this.user);
-  }
 
   get msg(): string {
     return this.dimuserService.msg;
@@ -138,5 +133,6 @@ export class AppComponent {
   get isLoggedIns(): boolean {
     return this.menuComponent.isLoggedIns;
   }*/
+
 
 }

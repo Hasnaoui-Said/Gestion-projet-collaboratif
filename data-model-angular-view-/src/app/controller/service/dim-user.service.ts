@@ -103,7 +103,7 @@ export class DimUserService {
         this.booleans = true;
         this.user = data;
         this.router.navigate(['/menu']);
-        console.log('reponce recieved ' + this.user.firstName);
+        console.log('reponce recieved ' + this.user.firstname);
       } else {
         console.log('reponce recieved bad user');
         this.msg = 'Bad credentials, enter an email et password valid';

@@ -27,12 +27,15 @@ export class MenuComponent implements OnInit {
   showModeratorBoard = false;
   username: string;
 
+
+  private email: string;
+
   constructor( private userService: DimUserService,
                private authService: AuthService,
                private userServices: UserService,
                private tokenStorage: TokenStorageService,
                private token: TokenStorageService,
-               private router: Router
+               private router: Router,
   ) { }
 
 
@@ -41,24 +44,24 @@ export class MenuComponent implements OnInit {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
 
-      this.isLoggedIns = true;/*
-      console.log('menu is logs if ' + this.isLoggedIns);
-      console.log('menu is log ' + this.isLoggedIn);*/
+      this.isLoggedIns = true;
+
+      this.authService.findByEmail(this.tokenStorage.getUser().email);
+/*
+      console.log('menu to auth --  ' + this.tokenStorage.getUser().email);
+      /!* a supp *!/
+      this.roles = this.tokenStorage.getUser().roles;
+      this.email = this.tokenStorage.getUser().email;
+      console.log('login  2 ' + this.email);
+      console.log('login  3 ' + this.roles);
+      /!* supp *!/*/
+
     }else if (!this.tokenStorage.getToken()) {
-      this.isLoggedIns = true;/*
-      console.log('menu is logs if ' + this.isLoggedIns);
-      console.log('menu is log ' + this.isLoggedIn);*/
+      this.isLoggedIns = true;
     }
     this.isLoggedIn = !!this.tokenStorage.getToken();
 
-    /*if (this.isLoggedIn) {
-      this.reloadPage();
-    }*/
     if (this.isLoggedIn) {
-      /*if (!this.br){
-        location.reload();
-        this.br = true;
-      }*/
       this.isLoggedIns = true;
 
       const user = this.tokenStorage.getUser();
@@ -121,7 +124,7 @@ export class MenuComponent implements OnInit {
 /*fin test*/
 
   get user(): DimUser {
-    return this.userService.user;
+    return this.authService.user;
   }
 
   /*public  logoutUser(){

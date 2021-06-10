@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: uninfz.ifrozet.ma.BusinessIntelligenceSuiteApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.067 s - in uninfz.ifrozet.ma.BusinessIntelligenceSuiteApplicationTests

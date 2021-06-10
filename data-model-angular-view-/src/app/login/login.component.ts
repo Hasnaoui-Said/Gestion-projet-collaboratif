@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
 
   private form: any = {};
   isLoggedIn = false;
-
+  private _userName: string;
+  private _email: string;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  private _userName: string;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -58,16 +58,18 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(): void {
-    this.userName = this.form.username;
     this.authService.login(this.form).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
-
         this.isLoginFailed = false;
         this.isLoggedIn = false;
         this.isLoggedIns = true;
         this.roles = this.tokenStorage.getUser().roles;
+        this.email = this.tokenStorage.getUser().email;
+        console.log('login  1 ' + this.roles);
+        console.log('login  2 ' + this.email);
+        console.log('login  3 ' + this.userRoles);
         this.userRoles = this.tokenStorage.getUser().roles;
         /*this.reloadPage();*/
         this.goToMenu();
@@ -79,6 +81,17 @@ export class LoginComponent implements OnInit {
         this.isLoggedIns = false;
       }
     );
+  }
+
+  get email(): string {
+    if (this._email == null){
+      this._email = '';
+    }
+    return this._email;
+  }
+
+  set email(value: string) {
+    this._email = value;
   }
 
   get userRoles(): string [] {
@@ -122,4 +135,5 @@ export class LoginComponent implements OnInit {
   get booleans(): boolean {
     return this.userService.booleans;
   }*/
+
 }

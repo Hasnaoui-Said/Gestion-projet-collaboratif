@@ -1,27 +1,30 @@
 import {DimCountry} from './dim-country.model';
 
 export class DimUser {
-  public userId: number;
-  public lastName: string;
-  public firstName: string;
+  public id: number;
+  public lastname: string;
+  public firstname: string;
   public phone: string;
+  public codePoste: string;
   public ville: string;
+  public cin: string;
+  public dateNess: string;
   public email: string;
-  public password: string;
   public username: string;
-  public stateUser: string;
+  public state: string;
   // tslint:disable-next-line:variable-name
   public ct_id: DimCountry;
 
   constructor() {
-    this.lastName = '';
-    this.firstName = '';
+    this.lastname = '';
+    this.firstname = '';
     this.username = '';
-    this.stateUser = '';
+    this.state = '';
     this.phone = '';
+    this.dateNess = '';
     this.ville = '';
     this.email = '';
-    this.password = '';
+    this.codePoste = '';
     this.ct_id = new DimCountry();
   }
 }

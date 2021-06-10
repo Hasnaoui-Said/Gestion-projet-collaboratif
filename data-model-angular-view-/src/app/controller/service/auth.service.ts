@@ -20,18 +20,19 @@ export class AuthService {
   constructor(
     private http: HttpClient,
   ) { }
-  public findByUsername(userName: string) {
-    this.http.get<DimUser>(environment.baseUrlData + '/dim-user/username/' + this.username).subscribe(
+  public findByEmail(email: string) {
+    this.http.get<DimUser>(environment.baseUrlData + '/dim-user/email/' + email).subscribe(
       data => {
         if (data != null) {
           this.user = data;
-          console.log('this name is auth service ' + this.username);
+          /*console.log('this name is auth service ' + email);*/
         }
       }, error => {
-        console.log('notFounded auth service ' + this.username);
+        console.log('notFounded auth service mail');
       }
     );
   }
+
   login(credentials): Observable<any> {
     this.username = this.cloneUser(credentials.username);
     return this.http.post(environment.baseUrlDataAuth + '/signin', {

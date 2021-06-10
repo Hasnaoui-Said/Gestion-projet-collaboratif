@@ -1,4 +1,44 @@
+section{
+  width: 100%;
+}
+form a{
+  position: absolute;
+  cursor: pointer;
+  text-decoration: none;
+}
 
+.users{
+  left: 5%;
+  top: 0px;
+}
+
+.user{
+  right: 5%;
+  top: 0px;
+}
+
+.image-profile img{
+  cursor: pointer;
+  width: 160px;
+  height: 200px;
+}
+.edit-me{
+   border-radius: 5px ;
+ }
+.edit-me i{
+  background-color: #00c5f7;
+  color: #ffffff;
+  padding: 4px;
+  cursor: pointer;
+  padding: 5px;
+  border-right: 2px;
+}
+
+.info-image{
+  margin-top: 40px;
+  width: 100%;
+}
+/*
 nav{
   border: none;
   background-color: #f1f5f9;
@@ -49,4 +89,4 @@ nav{
   margin: 20px;
   padding: 20px;
 }
-
+*/

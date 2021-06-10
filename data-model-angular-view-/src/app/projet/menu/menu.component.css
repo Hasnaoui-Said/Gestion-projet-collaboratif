@@ -227,7 +227,7 @@
   left: 0;
   top: 0;
   z-index: 100;
-  background: rgb(2, 2, 87);;
+  background: rgb(2, 2, 87);
   color: #fff;
   overflow-y: auto;
   transition: width 500ms;

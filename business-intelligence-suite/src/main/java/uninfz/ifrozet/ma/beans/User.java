@@ -38,6 +38,7 @@ public class User {
 	private String dateNess;
 	private String ville;
 	private String codePoste;
+	private String phone;
 	private String state;
 
 	@ManyToOne
@@ -74,6 +75,14 @@ public class User {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getCin() {

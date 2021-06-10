@@ -9,11 +9,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import uninfz.ifrozet.ma.beans.DataCheck;
 import uninfz.ifrozet.ma.beans.Dim_categorie;
 import uninfz.ifrozet.ma.beans.Dim_country;
 import uninfz.ifrozet.ma.beans.Dim_email_state;
 import uninfz.ifrozet.ma.beans.Fct_email_data;
 import uninfz.ifrozet.ma.beans.User;
+import uninfz.ifrozet.ma.repository.DataCkeckDao;
 import uninfz.ifrozet.ma.repository.Fct_email_dataDao;
 import uninfz.ifrozet.ma.util.request.Fct_email_dataVo;
 
@@ -23,6 +25,8 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 
 	@Autowired
 	private Fct_email_dataDao email_dataDao ;
+	@Autowired
+	private DataCkeckDao ckeckDao ;
 	@Autowired
 	private Dim_userService userService  ;
 	@Autowired
@@ -35,12 +39,16 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 	public Fct_email_data findByEmail(String ref) {
 		return email_dataDao.findByEmail(ref);
 	}
+	public DataCheck findByEmailTest(String ref) {
+		return ckeckDao.findByEmail(ref);
+	}
 
 	public int deleteByEmail(String ref) {
 		return email_dataDao.deleteByEmail(ref);
 	}
 
 	public List<String> stringToArraylist(String st){
+		System.out.println("etap 3");
 		List<String> list = new ArrayList<String>();
 		System.out.println(st);
 		String s = st.replace("\n", ",");
@@ -57,37 +65,53 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		stri+=st+"\n";
 		return stri ;
 	}
-	/*
-	public int save(Fct_email_data email_data) {
-		Dim_country country = countryService.findByReference(email_data.getCt_id().getReference());
-		Dim_email_state state = email_state.findByName(email_data.getState_id().getName());
-		Dim_categorie cat = categorieService.findByName(email_data.getCat_id().getName());
-		Dim_user user = userService.findByReference(email_data.getUser_id().getReference());
+	
+	/* ---------------------------------------*/
+	
+	public int CheckForTestSave(DataCheck email_data) {
+		System.out.println("etap 2");
 		int x=0;
 		List<String> list_email_data =  stringToArraylist(email_data.getEmail());
 		for (String email : list_email_data) {
 			System.out.println(" this mail ----- "+email);
-			Fct_email_data is_email_data = findByEmail(email);
+			DataCheck is_email_data = findByEmailTest(email);
 			if(is_email_data != null) {
 				x = -1;
-			}else if(country == null && state == null && cat == null && user == null ) {
-				return -2;
 			}else {
-				//SimpleDateFormat formater = new SimpleDateFormat("dd-MM-yy");
-			    //System.out.println(formater.format(email_data.getEmailDate()));
-				Fct_email_data  email_data2 = new Fct_email_data();
+				DataCheck  email_data2 = new DataCheck();
 				email_data2.setEmail(email);
-				email_data2.setCat_id(cat);
-				email_data2.setUser_id(user);
-				email_data2.setCt_id(country);
-				email_data2.setState_id(state);
-				email_dataDao.save(email_data2);
+				ckeckDao.save(email_data2);
 				x = 1;
 			}
 		}
 		return x;
 
-	}*/
+	}
+	
+	public DataCheck ckeckedTest(DataCheck data) {
+		List<String> listDebut =  stringToArraylist(data.getEmail());
+		data.setEmail(null);
+		int taillStart = listDebut.size();
+		
+		String stri="";
+		for (String email : listDebut) {
+			System.out.println(" this mail ----- " + email);
+			DataCheck is_email_data = findByEmailTest(email);
+			if(is_email_data == null) {
+				stri+=email+"\n";
+				System.out.println("this is ligghhhhh ---> "+stri);
+			}
+		}
+		
+		List<String> listFin =  stringToArraylist(stri);
+		int taillFin = listFin.size();
+		data.setVersandCounte(taillFin);
+		data.setPart(taillStart);
+		data.setEmail(stri);
+		return data;
+	}
+	
+	/* ---------------------------------------*/
 
 	public Fct_email_data ckecked(Fct_email_data data) {
 		List<String> listDebut =  stringToArraylist(data.getEmail());

@@ -5,12 +5,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import javax.persistence.ManyToOne;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import uninfz.ifrozet.ma.beans.Dim_country;
 import uninfz.ifrozet.ma.beans.User;
 
 public class UserDetailsImpl implements UserDetails {
@@ -24,6 +27,18 @@ public class UserDetailsImpl implements UserDetails {
 
 	@JsonIgnore
 	private String password;
+	
+
+	private String firstname;
+	private String lastname;
+	private String cin;
+	private String dateNess;
+	private String ville;
+	private String codePoste;
+	private String state;
+
+	@ManyToOne
+	private Dim_country ct_id;
 
 	private Collection<? extends GrantedAuthority> authorities;
 
