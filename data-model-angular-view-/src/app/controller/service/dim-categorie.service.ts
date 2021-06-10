@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import {DimCategorie} from '../model/dim-categorie.model';
 import {DimCountry} from '../model/dim-country.model';
 import {HttpClient} from '@angular/common/http';
-import {environment} from "../../../environments/environment";
 
+const baseUrlData = 'http://localhost:8095/news-lettre-app';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DimCategorieService {
 
   private _categorie: DimCategorie;
@@ -16,7 +17,7 @@ export class DimCategorieService {
   constructor(private http: HttpClient) { }
 
   public findAll() {
-    this.http.get<Array<DimCategorie>>(environment.baseUrlData + '/dim-categorie/').subscribe(
+    this.http.get<Array<DimCategorie>>(baseUrlData + '/dim-categorie/').subscribe(
       data => {
         this.categories = data;
       }, error => {

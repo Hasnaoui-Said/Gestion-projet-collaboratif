@@ -6,6 +6,8 @@ import {NgForm} from '@angular/forms';
 import {environment} from '../../../environments/environment';
 import {AuthService} from './auth.service';
 
+
+const baseUrlData = 'http://localhost:8095/news-lettre-app';
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +40,7 @@ export class DimUserService {
   }
 
   public findAll() {
-    this.http.get<Array<DimUser>>(environment.baseUrlData + '/dim-user/').subscribe(
+    this.http.get<Array<DimUser>>(baseUrlData + '/dim-user/').subscribe(
       data => {
         this.users = data;
       }, error => {
@@ -85,7 +87,7 @@ export class DimUserService {
     return un;
   }
   public findByUsername(userName: string) {
-    this.http.get<DimUser>(this.url + '/dim-user/username/' + this.username).subscribe(
+    this.http.get<DimUser>(baseUrlData + '/dim-user/username/' + this.username).subscribe(
       data => {
         if (data != null) {
           this.user = data;
@@ -97,7 +99,7 @@ export class DimUserService {
     );
   }
   public loginUser(user: DimUser) {
-    this.http.post<DimUser>(this.url + '/dim-user/login/' , user).subscribe(
+    this.http.post<DimUser>(baseUrlData + '/dim-user/login/' , user).subscribe(
     data => {
       if (data != null) {
         this.booleans = true;

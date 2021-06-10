@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {DimCountry} from '../model/dim-country.model';
 import {HttpClient} from '@angular/common/http';
-import {environment} from "../../../environments/environment";
 
+
+const baseUrlData = 'http://localhost:8095/news-lettre-app';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class DimCountryService {
   constructor(private http: HttpClient) { }
 
   public findAll() {
-    this.http.get<Array<DimCountry>>(environment.baseUrlData + '/dim-country/').subscribe(
+    this.http.get<Array<DimCountry>>(baseUrlData + '/dim-country/').subscribe(
       data => {
         this.countrys = data;
       }, error => {

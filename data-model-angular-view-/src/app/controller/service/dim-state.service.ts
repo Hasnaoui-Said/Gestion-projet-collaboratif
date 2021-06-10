@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {DimEmailState} from '../model/dim-email-state.model';
 import {HttpClient} from '@angular/common/http';
-import {DimUser} from '../model/dim-user.model';
-import {environment} from "../../../environments/environment";
 
+
+const baseUrlData = 'http://localhost:8095/news-lettre-app';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +17,7 @@ export class DimStateService {
   constructor(private http: HttpClient) { }
 
   public findAll() {
-    this.http.get<Array<DimEmailState>>(environment.baseUrlData + '/dim-email-state/').subscribe(
+    this.http.get<Array<DimEmailState>>(baseUrlData + '/dim-email-state/').subscribe(
       data => {
         this.states = data;
       }, error => {

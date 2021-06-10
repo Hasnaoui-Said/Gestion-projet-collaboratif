@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FctEmailData} from '../model/fct-email-data.model';
-import {DimUser} from '../model/dim-user.model';
-import {Observable} from 'rxjs';
-import {environment} from "../../../environments/environment";
 
+
+const baseUrlData = 'http://localhost:8095/news-lettre-app';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +19,7 @@ export class FctEmailDateService {
   constructor(private http: HttpClient) {
   }
   public findAll() {
-    this.http.get<Array<FctEmailData>>(environment.baseUrlData + '/fct-email-data/').subscribe(
+    this.http.get<Array<FctEmailData>>(baseUrlData + '/fct-email-data/').subscribe(
       data => {
         this.emailDatas = data;
         console.log('seccessful Data e-mail');
@@ -30,7 +29,7 @@ export class FctEmailDateService {
     );
   }
   public saveTest() {
-    this.http.post<number>(environment.baseUrlData + '/fct-email-data/checkfortestsave', this.emailData).subscribe(
+    this.http.post<number>(baseUrlData + '/fct-email-data/checkfortestsave', this.emailData).subscribe(
       data => {
         if (data > 0) {
           this.emailDatas.push(this.clone(this.emailData));
@@ -45,7 +44,7 @@ export class FctEmailDateService {
     );
   }
   public save() {
-    this.http.post<number>(environment.baseUrlData + '/fct-email-data/', this.emailData).subscribe(
+    this.http.post<number>(baseUrlData + '/fct-email-data/', this.emailData).subscribe(
       data => {
         if (data > 0) {
           this.emailDatas.push(this.clone(this.emailData));
