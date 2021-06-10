@@ -29,12 +29,27 @@ export class FctEmailDateService {
       }
     );
   }
+  public saveTest() {
+    this.http.post<number>(environment.baseUrlData + '/fct-email-data/checkfortestsave', this.emailData).subscribe(
+      data => {
+        if (data > 0) {
+          this.emailDatas.push(this.clone(this.emailData));
+          this.emailData = null;
+          this.isExist = 'passed';
+          console.log('passed');
+        }
+      }, error => {
+        console.log('error lors du loading users');
+        this.isExist = 'e_mail deja exist';
+      }
+    );
+  }
   public save() {
     this.http.post<number>(environment.baseUrlData + '/fct-email-data/', this.emailData).subscribe(
       data => {
         if (data > 0) {
           this.emailDatas.push(this.clone(this.emailData));
-          this.emailData = null;
+
         }
       }, error => {
         alert('error lors du loading users');
@@ -44,6 +59,20 @@ export class FctEmailDateService {
   }
   public checked(){
     this.http.post<FctEmailData>(this.url + '/fct-email-data/checked/', this.emailData).subscribe(
+      data => {
+        if (data != null){
+          this.emailDataReturn = data;
+          console.log('passed' + data.email);
+          console.log('passed' + data.versandCounte);
+        }
+      }, error => {
+        console.log('error');
+      }
+    );
+  }
+
+  public checkedtest(){
+    this.http.post<FctEmailData>(this.url + '/fct-email-data/checkedtest/', this.emailData).subscribe(
       data => {
         if (data != null){
           this.emailDataReturn = data;

@@ -31,6 +31,9 @@ export class FctEmailDataComponent implements OnInit {
     this.userService.findAll();
   }
 
+  public saveTest(){
+    return this.fctEmailDateService.saveTest();
+  }
   public save(){
     this.emailData.user_id.username = this.user.username;
     return this.fctEmailDateService.save();

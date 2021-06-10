@@ -25,6 +25,7 @@ import {NotFoundComponent} from './projet/not-found/not-found.component';
 import {ChekEmailComponent} from './projet/email/chek-email/chek-email.component';
 import {EmailModefyComponent} from './projet/email/email-modefy/email-modefy.component';
 import {AppComponent} from './app.component';
+import {CheckTestComponent} from './projet/email/check-test/check-test.component';
 
 export const  routingsComponents = [AppComponent , EmailModefyComponent , ChekEmailComponent, MenuComponent, CategoriesComponent, CountryComponent, CategorieListComponent, CategorieCreateComponent, CountryListComponent, CountryCreateComponent, PrioritiesComponent, PrioritieListComponent, PrioritieCreateComponent, EmailComponent, FctEmailDataComponent, LoginComponent, FctEmailDataDetailComponent, FctEmailDataSearchComponent, DashboardComponent, UniNfzComponent, HomeComponent, ProfilComponent, NotFoundComponent];
 
@@ -51,6 +52,7 @@ const routes: Routes = [
       {path: 'cat', component: CategoriesComponent},
       {path: 'chek-mail', component: ChekEmailComponent},
       {path: 'modify-mail', component: EmailModefyComponent},
+      {path: 'check-test', component: CheckTestComponent},
       {path: '**', component: NotFoundComponent},
 ]},
 ];
