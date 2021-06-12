@@ -1,71 +1,106 @@
 <!--*ngIf="booleans"-->
 <section *ngIf="isLoggedIn && !currentUser ; else loggedOut" class="section" >
 
-<input type="checkbox" id="sidebar-toggle" xmlns="http://www.w3.org/1999/html">
-<div class="sidebar">
-  <div class="sidebar-header">
-    <h3 class="brand">
-      <span class="ti-unlink"></span>
-      <span>Ifrozet Sarl</span>
-    </h3>
-    <label for="sidebar-toggle">
-      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
-           viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-      </svg>
-    </label>
+  <input type="checkbox" id="sidebar-toggle" xmlns="http://www.w3.org/1999/html">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <h3 class="brand">
+        <span class="ti-unlink"></span>
+        <span>Ifrozet Sarl</span>
+      </h3>
+      <label for="sidebar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+             viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </label>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <a routerLink="/menu/dashboard" routerLinkActive="active" title="dashboard">
+          <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pie-chart" viewBox="0 0 16 16"><path d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0V7.5h6.482A7.001 7.001 0 0 0 8.5 1.018zM14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+          </svg></span>
+            <span>dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/menu/UniNfz" routerLinkActive="active" title="UniNfz">
+            <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fas" data-icon="dolly-flatbed" class="svg-inline--fa fa-dolly-flatbed fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M208 320h384c8.8 0 16-7.2 16-16V48c0-8.8-7.2-16-16-16H448v128l-48-32-48 32V32H208c-8.8 0-16 7.2-16 16v256c0 8.8 7.2 16 16 16zm416 64H128V16c0-8.8-7.2-16-16-16H16C7.2 0 0 7.2 0 16v32c0 8.8 7.2 16 16 16h48v368c0 8.8 7.2 16 16 16h82.9c-1.8 5-2.9 10.4-2.9 16 0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1.2-11-2.9-16H451c-1.8 5-2.9 10.4-2.9 16 0 26.5 21.5 48 48 48s48-21.5 48-48c0-5.6-1.2-11-2.9-16H624c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16z">
+          </path></svg>
+            <span>UniNfz</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/notFounded" routerLinkActive="active" title="Agra-Tech ">
+            <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fab" data-icon="centercode" class="svg-inline--fa fa-centercode fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M329.2 268.6c-3.8 35.2-35.4 60.6-70.6 56.8-35.2-3.8-60.6-35.4-56.8-70.6 3.8-35.2 35.4-60.6 70.6-56.8 35.1 3.8 60.6 35.4 56.8 70.6zm-85.8 235.1C96.7 496-8.2 365.5 10.1 224.3c11.2-86.6 65.8-156.9 139.1-192 161-77.1 349.7 37.4 354.7 216.6 4.1 147-118.4 262.2-260.5 254.8zm179.9-180c27.9-118-160.5-205.9-237.2-234.2-57.5 56.3-69.1 188.6-33.8 344.4 68.8 15.8 169.1-26.4 271-110.2z">
+            </path></svg>
+            <span>Agra-Tech</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/notFounded" routerLinkActive="active" title="Ifrozet-IT">
+            <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fab" data-icon="sketch" class="svg-inline--fa fa-sketch fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M27.5 162.2L9 187.1h90.5l6.9-130.7-78.9 105.8zM396.3 45.7L267.7 32l135.7 147.2-7.1-133.5zM112.2 218.3l-11.2-22H9.9L234.8 458zm2-31.2h284l-81.5-88.5L256.3 33zm297.3 9.1L277.6 458l224.8-261.7h-90.9zM415.4 69L406 56.4l.9 17.3 6.1 113.4h90.3zM113.5 93.5l-4.6 85.6L244.7 32 116.1 45.7zm287.7 102.7h-290l42.4 82.9L256.3 480l144.9-283.8z">
+            </path></svg>
+            <span>Ifrozet-IT</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/notFounded" routerLinkActive="active" title="Calendrier">
+            <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="far" data-icon="calendar-alt" class="svg-inline--fa fa-calendar-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
+            </path></svg>
+            <span>Calendrier</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/menu/parametres" routerLinkActive="active" title="Paramètres">
+            <svg aria-hidden="true" width="30" height="30"  focusable="false" data-prefix="fas" data-icon="ellipsis-v" class="svg-inline--fa fa-ellipsis-v fa-w-6" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512"><path fill="currentColor" d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z">
+            </path></svg>
+            <span>Paramètres</span>
+          </a>
+        </li>
+        <li>
+          <a class="send-mail" routerLink="/notFounded" routerLinkActive="active" title="Envoy">
+            <svg aria-hidden="true"  width="30" height="30"  focusable="false" data-prefix="far" data-icon="paper-plane" class="svg-inline--fa fa-paper-plane fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z">
+            </path></svg>
+            <span>Envoyer des mails</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/" routerLinkActive="active" title="Déconnecter" (click)="logout()">
+            <svg aria-hidden="true"  width="30" height="30"  focusable="false" data-prefix="fas" data-icon="sign-out-alt" class="svg-inline--fa fa-sign-out-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z">
+            </path></svg>
+            <span>Déconnecter </span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="sidebar-menu">
-    <ul>
-      <li>
-        <a routerLink="/menu/dashboard" routerLinkActive="active">
-          <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                  class="bi bi-pie-chart" viewBox="0 0 16 16">
-  <path
-    d="M7.5 1.018a7 7 0 0 0-4.79 11.566L7.5 7.793V1.018zm1 0V7.5h6.482A7.001 7.001 0 0 0 8.5 1.018zM14.982 8.5H8.207l-4.79 4.79A7 7 0 0 0 14.982 8.5zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-</svg></span>
-          <span>dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/menu/UniNfz" routerLinkActive="active">
-          <span>UniNfz</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/notFounded" routerLinkActive="active">
-          <span>Agra-Tech </span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/notFounded" routerLinkActive="active">
-          <span>Ifrozet-IT </span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="main-content">
-  <header>
-    <div class="search-wrapper">
+  <div class="main-content">
+    <header class="header-navbar">
+      <div class="search-wrapper">
       <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                               class="bi bi-search" viewBox="0 0 16 16">
   <path
     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 </svg></span>
-      <input type="search" placeholder="Search">
-    </div>
-    <div class="out-p">
-      <a class="prf">
-        <!-- -->
-      <span  title="{{this.user.firstname}} {{this.user.lastname}}" routerLink="/profile" routerLinkActive="active"
-             class="profil" style="margin-right: 20px">
+        <input type="search" placeholder="Search">
+      </div>
+      <div class="out-p">
+        <a class="notificate" title="LogOut" style="margin-right: 10px">
+          <svg aria-hidden="true" width="50" height="45" focusable="false" data-prefix="far" data-icon="bell" class="svg-inline--fa fa-bell fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M439.39 362.29c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71zM67.53 368c21.22-27.97 44.42-74.33 44.53-159.42 0-.2-.06-.38-.06-.58 0-61.86 50.14-112 112-112s112 50.14 112 112c0 .2-.06.38-.06.58.11 85.1 23.31 131.46 44.53 159.42H67.53zM224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64z">
+          </path></svg>
+        </a>
+        <a class="prf">
+          <!-- -->
+          <span  title="{{this.user.firstname}} {{this.user.lastname}}" routerLink="/menu/users" routerLinkActive="active"
+                 class="profil" style="margin-right: 20px">
         <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             x="0px" y="0px"
-             width="45.532px" height="45.532px" viewBox="0 0 45.532 45.532"
-             style="enable-background:new 0 0 45.532 45.532;"
-             xml:space="preserve">
+              x="0px" y="0px"
+              width="45.532px" height="45.532px" viewBox="0 0 45.532 45.532"
+              style="enable-background:new 0 0 45.532 45.532;"
+              xml:space="preserve">
 
           <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765
 		        S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53
@@ -74,19 +109,19 @@
 		        c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"/>
         </svg>
       </span></a>
-      <a title="LogOut" (click)="logout()" routerLink="/" routerLinkActive="activate" style="margin-right: 10px">LogOut</a>
-    </div>
-  </header>
+      </div>
+    </header>
 
 
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-</div>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
 
 </section>
 <ng-template #loggedOut>
-   <h2 style="text-align: center; margin-top: 30px">Please login. <br>
-     <a routerLink="/login" routerLinkActive="active">LogIn</a>
-   </h2>
+  <h2 style="text-align: center; margin-top: 30px">Please login. <br>
+    <a routerLink="/login" routerLinkActive="active">LogIn</a>
+  </h2>
 </ng-template>

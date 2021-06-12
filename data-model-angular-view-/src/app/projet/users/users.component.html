@@ -1,0 +1,40 @@
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a href="" class="user" routerLink="/menu/users/users-list" routerLinkActive="active">
+      <span>users </span> <i class="fas fa-users"></i>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a href="" class="user" routerLink="/menu/users/profile" routerLinkActive="active">
+      <span>Bonjour, {{user.lastname}} </span><i class="fas fa-user"></i>
+    </a>
+  </li>
+</ul>
+
+<!--<nav class="">
+  <ul class="users-user nav-links">
+    <li class="nav-links">
+      <a href="" class="users" routerLink="/menu/users/users-list" routerLinkActive="active">
+        <i class="fas fa-users"></i> <span> users</span>
+      </a>
+    </li>
+    <li class="nav-links">
+      <a href="" class="user" routerLink="/menu/users/profile" routerLinkActive="active">
+        <i class="fas fa-user"></i> <span> user</span>
+      </a>
+    </li>
+  </ul>
+</nav>-->
+<!--<nav class="navbar">
+  <a class="users" routerLink="/menu/users/users-list" routerLinkActive="active">
+    <i class="fas fa-users"></i>
+    <span>Users</span>
+  </a>
+  <a class="user" routerLink="/menu/users/profile" routerLinkActive="active">
+    <span> Welcome {{this.user.lastname}}</span>
+    <i class="fas fa-user"></i>
+  </a>
+</nav>-->
+<main>
+  <router-outlet></router-outlet>
+</main>

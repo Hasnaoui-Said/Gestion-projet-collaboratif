@@ -9,6 +9,7 @@ export class DimUser {
   public ville: string;
   public cin: string;
   public dateNess: string;
+  public adresse: string;
   public email: string;
   public username: string;
   public state: string;
@@ -17,6 +18,7 @@ export class DimUser {
 
   constructor() {
     this.lastname = '';
+    this.adresse = '';
     this.firstname = '';
     this.username = '';
     this.state = '';

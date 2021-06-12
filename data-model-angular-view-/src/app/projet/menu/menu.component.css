@@ -227,7 +227,7 @@
   left: 0;
   top: 0;
   z-index: 100;
-  background: rgb(2, 2, 87);
+  background: #1D2231;
   color: #fff;
   overflow-y: auto;
   transition: width 500ms;
@@ -326,16 +326,39 @@ header {
   height: 38px;
 }
 
+.notificate{
+  color: #1D2231;
+  margin-right: 5px;
+}
+
+.send-mail{
+  cursor: revert;
+  color: #777777;
+}
+
+
+.search-wrapper span{
+  margin-right: 5px;
+}
+.search-wrapper input{
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 500px) {
+  .search-wrapper input{
+    width: 100px;
+  }
+}
 @media only screen and (max-width: 440px) {
   .main-content .search-wrapper {
-    width: 20px;
+    width: 100px;
   }.main-content .out-p .prf{
     display: none;
   }
 }
 @media only screen and (max-width: 300px) {
   .main-content .search-wrapper {
-    width: 10px;
+    width: 8px;
   }
 }
 
@@ -359,10 +382,10 @@ header {
 }
 
 main {
-  margin-top: 60px;
-  background: #f1f5f9;
+  margin-top: 50px;
+  background: #ffffff;
   min-height: 90vh;
-  padding: 1rem 3rem;
+  padding: 1.1rem 0.2rem;
 }
 
 .dash-title {
@@ -468,7 +491,7 @@ tbody tr:nth-child(even) {
   font-size: .7rem;
 }
 
-.badge.success {
+.badge .success {
   background: #DEF7EC;
   color: #027581;
 }
@@ -564,7 +587,9 @@ tbody tr:nth-child(even) {
   border-radius: 4px;
   padding: .4rem 1rem;
 }
-
+.header-navbar{
+  background-color: #00c5f7;
+}
 .table-responsive {
   overflow-x: auto;
 }
@@ -647,8 +672,14 @@ tbody tr:nth-child(even) {
 
 @media only screen and (max-width: 450px) {
   main {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  main {
+    margin: 20px 0px;
+    border: #ff253a solid 2px;
   }
 }
 
