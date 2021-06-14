@@ -14,6 +14,7 @@ const baseUrlData = 'http://localhost:8095/news-lettre-app';
 export class DimUserService {
 
   private _user: DimUser;
+  private _usersearsh: DimUser;
   private _msg: string;
   private _users: Array<DimUser>;
 
@@ -21,6 +22,7 @@ export class DimUserService {
   private _booleans: boolean;
   private _logoutUser: boolean;
   private _clic: boolean;
+  private _isExit: string;
 
   get clic(): boolean {
     if (this._clic == null){
@@ -58,6 +60,18 @@ export class DimUserService {
 
   set user(value: DimUser) {
     this._user = value;
+  }
+
+
+  get usersearsh(): DimUser {
+    if (this._usersearsh == null) {
+      this._usersearsh = new DimUser();
+    }
+    return this._usersearsh;
+  }
+
+  set usersearsh(value: DimUser) {
+    this._usersearsh = value;
   }
 
 
@@ -140,5 +154,31 @@ export class DimUserService {
 
   set logoutUser(value: boolean) {
     this._logoutUser = value;
+  }
+
+  public searshUser(searsh: string) {
+    this.http.get<Array<DimUser>>(baseUrlData + '/dim-user/searshUser/' + searsh).subscribe(
+      data => {
+        if (data != null) {
+          this.users = data;
+          console.log(this.users);
+        }
+      },
+      error => {
+        this.isExit = "n'existe pas ";
+        this.findAll();
+      }
+    );
+  }
+
+  get isExit(): string {
+    if (this._isExit == null){
+      this._isExit = '';
+    }
+    return this._isExit;
+  }
+
+  set isExit(value: string) {
+    this._isExit = value;
   }
 }

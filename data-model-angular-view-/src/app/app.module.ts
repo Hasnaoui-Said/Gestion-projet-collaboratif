@@ -8,6 +8,9 @@ import { CheckTestComponent } from './projet/email/check-test/check-test.compone
 import { UsersComponent } from './projet/users/users.component';
 import { UserListComponent } from './projet/users/user-list/user-list.component';
 import { ParametresComponent } from './projet/parametres/parametres.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from './projet/users/register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -17,6 +20,8 @@ import { ParametresComponent } from './projet/parametres/parametres.component';
     UsersComponent,
     UserListComponent,
     ParametresComponent,
+    RegisterComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +29,8 @@ import { ParametresComponent } from './projet/parametres/parametres.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

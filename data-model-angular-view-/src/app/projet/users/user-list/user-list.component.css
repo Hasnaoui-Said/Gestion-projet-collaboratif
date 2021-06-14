@@ -13,6 +13,10 @@
   border-radius: 3px;
 
 }
+.table-user ul li a:hover{
+  background-color: #ffffff;
+  color: blue;
+}
 
 .table-user ul{
   margin-bottom: 20px;
@@ -46,9 +50,10 @@ table {
 }
 
 .state{
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 2px;
   color: #ffffff;
+  text-align: center;
 }
 /*test scrolle*/
 
@@ -57,5 +62,53 @@ table {
   height: 375px;
   overflow-y: auto;
 }
+table tr th,table tr td{
+  text-align: center;
+}
 
 /*test scrolle*/
+.profil{
+  font-size: 30px;
+}
+.edit a i{
+  font-size: 30px;
+}
+.edit{
+  font-size: 0px;
+}
+.infos a i{
+  font-size: 30px;
+}
+.infos{
+  font-size: 0px;
+  margin: 2px;
+}
+.edit a{
+  background-color: #00c5f7;
+  color: blue;
+
+  border: 1px solid #777777;
+  border-radius: 5px;
+}
+
+.edit :hover{
+  background-color: blue;
+  color: red;
+}
+.infos a{
+  background-color: blueviolet;
+  color: black;
+
+  border: 1px solid #777777;
+  border-radius: 5px;
+}
+
+.infos :hover{
+  background-color: black;
+  color: #ffffff;
+}
+
+.card{
+  border: none;
+}
+

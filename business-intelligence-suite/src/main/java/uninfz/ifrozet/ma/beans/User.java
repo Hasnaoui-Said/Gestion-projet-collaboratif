@@ -37,6 +37,7 @@ public class User {
 	private String cin;
 	private String dateNess;
 	private String ville;
+	private String adresse;
 	private String codePoste;
 	private String phone;
 	private String state;
@@ -59,7 +60,14 @@ public class User {
 		this.password = password;
 	}
 
-	
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
 
 	public Dim_country getCt_id() {
 		return ct_id;

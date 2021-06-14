@@ -10,6 +10,10 @@ import uninfz.ifrozet.ma.beans.Fct_email_data;
 public interface Fct_email_dataDao extends JpaRepository<Fct_email_data, Long> {
 
 	public Fct_email_data findByEmail(String ref);
+	public Fct_email_data findByFirmaName(String ref);
+	public Fct_email_data findByStateIdName(String ref);
+	public Fct_email_data findByCatIdName(String ref);
+	public Fct_email_data findByCtIdReference(String ref);
 	//public Fct_email_data findByCat_idName(String ref);
 	public int deleteByEmail(String ref);
 	

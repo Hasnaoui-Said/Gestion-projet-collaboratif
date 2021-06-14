@@ -30,6 +30,11 @@ public class Fct_email_dataRest {
 		return email_dataService.findByEmail(email);
 	}
 
+	@GetMapping("/searshEmail/{email}")
+	public List<Fct_email_data> searshEmail(@PathVariable String email) {
+		return email_dataService.searshEmail(email);
+	}
+
 	@PostMapping("/checkedtest/")
 	public DataCheck ckeckedTest(@RequestBody DataCheck  data) {
 		return email_dataService.ckeckedTest(data);
@@ -46,7 +51,7 @@ public class Fct_email_dataRest {
 	}
 
 	@PostMapping("/checkfortestsave")
-	public int CheckForTestSave(@RequestBody DataCheck email_data) {
+	public int CheckForTestSave(@RequestBody Fct_email_data email_data) {
 		System.out.println("etap 1");
 		return email_dataService.CheckForTestSave(email_data);
 	}

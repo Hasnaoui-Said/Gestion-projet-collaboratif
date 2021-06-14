@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FctEmailData} from '../model/fct-email-data.model';
+import {DimUser} from '../model/dim-user.model';
 
 
 const baseUrlData = 'http://localhost:8095/news-lettre-app';
@@ -12,6 +13,7 @@ export class FctEmailDateService {
   private _emailDataReturn: FctEmailData;
   private _emailDataBack: FctEmailData;
   private _isExist: string;
+  private _isExit: string;
   private _emailDatas: Array<FctEmailData>;
 
   private url = 'http://localhost:8095/news-lettre-app';
@@ -28,6 +30,23 @@ export class FctEmailDateService {
       }
     );
   }
+
+
+  public searshEmail(searsh: string) {
+    this.http.get<Array<FctEmailData>>(baseUrlData + '/fct-email-data/searshEmail/' + searsh).subscribe(
+      data => {
+        if (data != null) {
+          this.emailDatas = data;
+          console.log(this.emailDatas);
+        }
+      },
+      error => {
+        this.isExit = "n'existe pas";
+        this.findAll();
+      }
+    );
+  }
+
   public saveTest() {
     this.http.post<number>(baseUrlData + '/fct-email-data/checkfortestsave', this.emailData).subscribe(
       data => {
@@ -158,5 +177,17 @@ export class FctEmailDateService {
 
   set isExist(value: string) {
     this._isExist = value;
+  }
+
+
+  get isExit(): string {
+    if (this._isExit == null){
+      this._isExit = '';
+    }
+    return this._isExit;
+  }
+
+  set isExit(value: string) {
+    this._isExit = value;
   }
 }

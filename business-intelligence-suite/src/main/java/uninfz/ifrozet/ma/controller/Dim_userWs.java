@@ -48,6 +48,12 @@ public class Dim_userWs {
 	public User findByUsername(@PathVariable String username) {
 		return dim_userService.findByUsername(username);
 	}
+	
+	@GetMapping("/searshUser/{string}")
+	//@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR') or hasRole('ROLE_ADMIN')")
+	public List<User> searshUser(@PathVariable String string) {
+		return dim_userService.searshUser(string);
+	}
 
 	@DeleteMapping("/email/{email}")
 	public int deleteByEmail(@PathVariable String email) {

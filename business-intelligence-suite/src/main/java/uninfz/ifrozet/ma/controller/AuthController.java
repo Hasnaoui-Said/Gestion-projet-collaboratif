@@ -9,7 +9,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -40,6 +39,9 @@ public class AuthController {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	UserRepoVo userRepositoryVo;
 
 	@Autowired
 	RoleRepository roleRepository;
@@ -59,31 +61,40 @@ public class AuthController {
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		String jwt = jwtUtils.generateJwtToken(authentication);
 		
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
+		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+		System.out.println();
 		List<String> roles = userDetails.getAuthorities().stream()
 				.map(item -> item.getAuthority())
 				.collect(Collectors.toList());
 
+		User user = userRepositoryVo.findByUsername(loginRequest.getUsername());
+		if (user.getState().equals("inactive")) {
+			return ResponseEntity
+					.badRequest()
+					.body(new MessageResponse("Erreur: non authorisé"));
+		}else {
+			
 		return ResponseEntity.ok(new JwtResponse(jwt, 
 												 userDetails.getId(), 
 												 userDetails.getUsername(), 
 												 userDetails.getEmail(), 
 												 roles));
+		}
 	}
 
 	@PostMapping("/signup")
-	@PreAuthorize("hasRole('MODERATOR')")
+	//@PreAuthorize("hasRole('MODERATOR')")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity
 					.badRequest()
-					.body(new MessageResponse("Error: Username is already taken!"));
+					.body(new MessageResponse("Erreur: nom d'utilisateur est déjà pris !"));
 		}
 
 		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
 			return ResponseEntity
 					.badRequest()
-					.body(new MessageResponse("Error: Email is already in use!"));
+					.body(new MessageResponse("Erreur: cette adresse email est déjà utilisée !"));
 		}
 
 		// Create new user's account
@@ -96,34 +107,35 @@ public class AuthController {
 
 		if (strRoles == null) {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+					.orElseThrow(() -> new RuntimeException("Erreur: Role non trouvé."));
 			roles.add(userRole);
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
 				case "admin":
 					Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+							.orElseThrow(() -> new RuntimeException("Erreur: Role non trouvé."));
 					roles.add(adminRole);
 
 					break;
 				case "mod":
-					Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+					Role modRole = roleRepository.findByName(ERole.ROLE_SUPER_ADMIN)
+							.orElseThrow(() -> new RuntimeException("Erreur: Role non trouvé."));
 					roles.add(modRole);
 
 					break;
 				default:
 					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+							.orElseThrow(() -> new RuntimeException("Erreur: Role non trouvé."));
 					roles.add(userRole);
 				}
 			});
 		}
 
 		user.setRoles(roles);
+		user.setState("inactive");
 		userRepository.save(user);
 
-		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+		return ResponseEntity.ok(new MessageResponse("Votre inscription a bien été pris en coupte!"));
 	}
 }

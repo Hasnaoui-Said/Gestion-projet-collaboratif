@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import {environment} from '../../../environments/environment';
 import {DimUser} from '../model/dim-user.model';
 
-const AUTH_API = 'http://localhost:8095/news-lettre-app/auth';
 const baseUrlData = 'http://localhost:8095/news-lettre-app';
 const baseUrlDataAuth = 'http://localhost:8095/news-lettre-app/auth-controller';
 const httpOptions = {
@@ -59,7 +58,7 @@ export class AuthService {
     this._username = value;
   }
   register(user): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
+    return this.http.post(baseUrlDataAuth + '/signup', {
       username: user.username,
       email: user.email,
       password: user.password

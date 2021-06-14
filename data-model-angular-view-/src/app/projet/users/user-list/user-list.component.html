@@ -1,51 +1,88 @@
 
 <div class="table-user container">
-  <ul class="nav justify-content-end">
+  <ul class="nav justify-content-center">
     <li class="nav-item">
-        <input class="form-control mr-sm-2" type="search" placeholder="recherche un users.." aria-label="Search">
+        <input [(ngModel)]="searsh" class="form-control mr-sm-2" type="search" placeholder="recherche un users.." aria-label="Search">
     </li>
     <li class="nav-item">
-      <a>
+      <a (click)="searshUser()">
         <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fas" data-icon="sync" class="svg-inline--fa fa-sync fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M440.65 12.57l4 82.77A247.16 247.16 0 0 0 255.83 8C134.73 8 33.91 94.92 12.29 209.82A12 12 0 0 0 24.09 224h49.05a12 12 0 0 0 11.67-9.26 175.91 175.91 0 0 1 317-56.94l-101.46-4.86a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12H500a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12h-47.37a12 12 0 0 0-11.98 12.57zM255.83 432a175.61 175.61 0 0 1-146-77.8l101.8 4.87a12 12 0 0 0 12.57-12v-47.4a12 12 0 0 0-12-12H12a12 12 0 0 0-12 12V500a12 12 0 0 0 12 12h47.35a12 12 0 0 0 12-12.6l-4.15-82.57A247.17 247.17 0 0 0 255.83 504c121.11 0 221.93-86.92 243.55-201.82a12 12 0 0 0-11.8-14.18h-49.05a12 12 0 0 0-11.67 9.26A175.86 175.86 0 0 1 255.83 432z">
       </path></svg>
       </a>
     </li>
   </ul>
 
+  <!--<div class="row gutters-sm">
+    <div class="col-md-6 mb-3"></div>
+    <div class="col-md-12">
+      <div class="card mb-12">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 text-secondary">
+              <input [(ngModel)]="searsh" class="form-control mr-sm-2" type="search" placeholder="recherche un users.." aria-label="Search">
+            </div>
+            <div class="col-md-3 text-secondary">
+              <a (click)="searshUser()">
+                <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fas" data-icon="sync" class="svg-inline&#45;&#45;fa fa-sync fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M440.65 12.57l4 82.77A247.16 247.16 0 0 0 255.83 8C134.73 8 33.91 94.92 12.29 209.82A12 12 0 0 0 24.09 224h49.05a12 12 0 0 0 11.67-9.26 175.91 175.91 0 0 1 317-56.94l-101.46-4.86a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12H500a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12h-47.37a12 12 0 0 0-11.98 12.57zM255.83 432a175.61 175.61 0 0 1-146-77.8l101.8 4.87a12 12 0 0 0 12.57-12v-47.4a12 12 0 0 0-12-12H12a12 12 0 0 0-12 12V500a12 12 0 0 0 12 12h47.35a12 12 0 0 0 12-12.6l-4.15-82.57A247.17 247.17 0 0 0 255.83 504c121.11 0 221.93-86.92 243.55-201.82a12 12 0 0 0-11.8-14.18h-49.05a12 12 0 0 0-11.67 9.26A175.86 175.86 0 0 1 255.83 432z">
+                </path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+
+
   <div class="table-responsive">
     <table class="table">
-      <thead class="thead ">
+      <thead class="thead">
       <tr class="border-ligne-buttom">
-        <th>User-uame</th>
+        <th>Photo</th>
+        <th>Username</th>
+        <th>Sexe</th>
         <th>Nom</th>
         <th>Prénom</th>
-        <th>Sexe</th>
-        <th>Mail</th>
         <th>State</th>
-        <th>Ville</th>
-        <th>Code postal</th>
-        <th>date de naissance</th>
-        <th>adresse</th>
-        <th>Pays</th>
+        <th>Mail</th>
+        <th colspan="2">Action</th>
       </tr>
       </thead>
       <tbody class="tbody">
       <tr class="border-ligne-top" *ngFor="let u of users; index as i">
+        <td><div class="profil"><i class="far fa-user-circle"></i></div></td>
         <td type="username">{{u.username}}</td>
+        <td>Homme</td>
         <td type="name">{{u.firstname}}</td>
         <td type="name">{{u.lastname}}</td>
-        <td>Homme</td>
-        <td type="email">{{u.email}}</td>
         <td><div class="state {{u.state}}">{{u.state}}</div></td>
-        <td>{{u.ville}}</td>
-        <td>{{u.codePoste}}</td>
-        <td type="date">{{u.dateNess}}</td>
-        <td>.........</td>
-        <td>{{u.ct_id.name}}</td>
+        <td type="email">{{u.email}}</td>
+        <td class="edit" ><a href="#" class="nav-link"><i class="fas fa-edit"></i></a></td>
+        <td class="infos" ><a href="#" class="nav-link"><i class="fas fa-info"></i></a></td>
       </tr>
       </tbody>
     </table>
   </div>
+
+  <div class="row gutters-sm">
+    <div class="col-sm-9 mb-3"></div>
+    <div class="col-sm-6 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div routerLink="/menu/register" routerLinkActive="active" role="button" class="btn btn-outline-success btn-lg btn-block text-center">
+                <i class="fa fa-plus-square"></i> Ajouter un utilisateur
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 

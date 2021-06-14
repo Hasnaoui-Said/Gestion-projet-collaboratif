@@ -19,9 +19,13 @@
 }
 
 table {
-  display: block;
-  height: 420px;
+  display: block;/*
+  height: 420px;*/
   overflow-y: auto;
+}
+
+table tr th,table tr td{
+  text-align: center;
 }
 
 .table-email{
@@ -66,13 +70,12 @@ table {
 }
 
 .state{
-  border-radius: 2px;
-  padding: 4px;
+  border-radius: 4px;
+  padding: 2px;
   color: #ffffff;
+  text-align: center;
 }
-.table-scroll tbody th {
 
-}
 
 /*debut search mail*/
 

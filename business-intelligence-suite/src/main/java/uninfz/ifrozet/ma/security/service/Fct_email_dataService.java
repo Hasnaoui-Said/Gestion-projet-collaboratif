@@ -68,19 +68,19 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 	
 	/* ---------------------------------------*/
 	
-	public int CheckForTestSave(DataCheck email_data) {
+	public int CheckForTestSave(Fct_email_data email_data) {
 		System.out.println("etap 2");
 		int x=0;
 		List<String> list_email_data =  stringToArraylist(email_data.getEmail());
 		for (String email : list_email_data) {
 			System.out.println(" this mail ----- "+email);
-			DataCheck is_email_data = findByEmailTest(email);
+			Fct_email_data is_email_data = findByEmail(email);
 			if(is_email_data != null) {
 				x = -1;
 			}else {
-				DataCheck  email_data2 = new DataCheck();
+				Fct_email_data  email_data2 = new Fct_email_data();
 				email_data2.setEmail(email);
-				ckeckDao.save(email_data2);
+				email_dataDao.save(email_data2);
 				x = 1;
 			}
 		}
@@ -178,6 +178,34 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 	public int save(List<String> lis_email_data, Dim_country country, Dim_email_state state, Dim_categorie cat, User user) {
 
 		return 1;
+	}
+	public List<Fct_email_data> searshEmail(String ref) {
+		List<Fct_email_data> emails = new ArrayList<Fct_email_data>();
+		if(findByEmail(ref) != null) {
+			emails.add(findByEmail(ref));
+		}else if(findByStateIdName(ref) != null) {
+			emails.add(findByStateIdName(ref));
+		}else if(findByCatIdName(ref) != null) {
+			emails.add(findByCatIdName(ref));
+		}else if(findByFirmaName(ref) != null) {
+			emails.add(findByFirmaName(ref));
+		}else if(findByCtIdReference(ref) != null) {
+			emails.add(findByCtIdReference(ref));
+		}
+		return emails;
+	}
+	
+	public Fct_email_data findByFirmaName(String ref) {
+		return email_dataDao.findByFirmaName(ref);
+	}
+	public Fct_email_data findByStateIdName(String ref) {
+		return email_dataDao.findByStateIdName(ref);
+	}
+	public Fct_email_data findByCatIdName(String ref) {
+		return email_dataDao.findByCatIdName(ref);
+	}
+	public Fct_email_data findByCtIdReference(String ref) {
+		return email_dataDao.findByCtIdReference(ref);
 	}
 
 }

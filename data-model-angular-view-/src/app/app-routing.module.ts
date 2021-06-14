@@ -29,6 +29,7 @@ import {CheckTestComponent} from './projet/email/check-test/check-test.component
 import {UsersComponent} from './projet/users/users.component';
 import {UserListComponent} from './projet/users/user-list/user-list.component';
 import {ParametresComponent} from './projet/parametres/parametres.component';
+import {RegisterComponent} from './projet/users/register/register.component';
 
 export const  routingsComponents = [AppComponent , EmailModefyComponent , ChekEmailComponent, MenuComponent, CategoriesComponent, CountryComponent, CategorieListComponent, CategorieCreateComponent, CountryListComponent, CountryCreateComponent, PrioritiesComponent, PrioritieListComponent, PrioritieCreateComponent, EmailComponent, FctEmailDataComponent, LoginComponent, FctEmailDataDetailComponent, FctEmailDataSearchComponent, DashboardComponent, UniNfzComponent, HomeComponent, ProfilComponent, NotFoundComponent];
 
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent,
     children: [
       {path: 'dashboard', component: DashboardComponent},
+      {path: 'register', component: RegisterComponent},
       {path: 'cat', component: CategoriesComponent},
       {path: 'UniNfz', component: UniNfzComponent},
       {path: '', component: DashboardComponent},

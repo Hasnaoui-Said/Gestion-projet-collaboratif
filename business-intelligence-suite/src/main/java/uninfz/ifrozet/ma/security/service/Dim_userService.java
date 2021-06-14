@@ -1,5 +1,6 @@
 package uninfz.ifrozet.ma.security.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,21 @@ public class Dim_userService {
 	}
 	public User findByUsername(String ref) {
 		return userVo.findByUsername(ref);
+	}
+
+	public  List<User> searshUser(String ref) {
+		List<User> users = new ArrayList<User>();
+		if(findByUsername(ref) != null) {
+			users.add(findByUsername(ref));
+		}else if(findByEmail(ref) != null) {
+			users.add(findByEmail(ref));
+		}else if(dim_userDao.findByFirstname(ref) != null) {
+			User user = dim_userDao.findByFirstname(ref);
+			users.add(user);
+		}else if(dim_userDao.findByLastname(ref) != null) {
+			users.add(dim_userDao.findByLastname(ref));
+		}
+		return users;
 	}
 	
 	public User findByEmailAndPassword(String email,String password) {

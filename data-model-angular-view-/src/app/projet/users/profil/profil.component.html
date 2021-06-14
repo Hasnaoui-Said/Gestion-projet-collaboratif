@@ -1,3 +1,248 @@
+<div class="container">
+  <div class="main-body">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/menu" routerLinkActive="active">Dashboard</a></li>
+        <li class="breadcrumb-item"><a >Users</a></li>
+        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+      </ol>
+    </nav>
+    <!-- /Breadcrumb -->
+
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Admin" class="rounded-circle" width="150">
+              <div class="mt-3">
+                <h4>{{user.lastname}} {{user.firstname}} </h4>
+                <p class="text-secondary mb-1">Profession!!</p>
+                <p class="text-muted font-size-sm">{{user.ville}}, {{user.codePoste}}, {{user.ct_id.reference}}</p>
+                <button class="btn btn-primary">Changer le profile</button>
+                <button class="btn btn-outline-primary">Accomplir mes taches</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <ul class="list-group list-group-flush text-secondary">
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <div class="text-secondary">Vous êtes actuellement connecté en tant que :</div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <div class="text-secondary">Moderator</div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <div class="text-secondary">Admin</div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+              <div class="text-secondary">User</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">User name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.username}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Nom</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.lastname}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Prenom</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.firstname}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">E-mail</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Date de naissance</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.dateNess}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">N° de CIN</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.cin}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Telephone</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.phone}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.adresse}}....
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Status</h6>
+              </div>
+              <div class="stater {{user.state}}r col-sm-3">
+                {{user.state}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12 text-secondary">
+                <a class="btn btn-info " target="__blank" href="#">Modifier</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="row gutters-sm">
+          <div class="col-sm-4 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Travial </i>A faire</h2>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <small
+                       role="button"
+                       class="btn btn-outline-primary btn-lg btn-block ">
+                      <div><i class="fa fa-plus-square"></i> Ajouter une autre carte</div>
+                    </small>
+                  </div>
+                </div>
+                <div class=" mb-3">
+                  <div class="form-group">
+                    <label>titre</label>
+                    <textarea class="form-control" rows="3" placeholder="example cherchez 500 emails, .De qui commence par office"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="d-flex align-items-center mb-3"><i class="text-info mr-2">Travial </i>A verfier</h2>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <small
+                      role="button"
+                      class="btn btn-outline-primary btn-lg btn-block text-center">
+                      <div><i class="fa fa-plus-square"></i> Ajouter une autre carte</div>
+                    </small>
+                  </div>
+                </div>
+                <div class=" mb-3">
+                  <div class="form-group">
+                    <label>titre</label>
+                    <textarea class="form-control" rows="3" placeholder="example verifier 300 reste 200 mails, .De qui commence par office"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Travial </i>Terminir</h2>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <small
+                      role="button"
+                      class="btn btn-outline-primary btn-lg btn-block text-center">
+                      <div><i class="fa fa-plus-square"></i> Ajouter une autre carte</div>
+                    </small>
+                  </div>
+                </div>
+                <div class=" mb-3">
+                  <div class="form-group">
+                    <label>titre</label>
+                    <textarea class="form-control" rows="3" placeholder="example cherchez 500 emails, .De qui commence par office"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row gutters-sm">
+          <div class="col-sm-3 mb-3"></div>
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h2 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Travial </i><strong class="btn-danger">Bloquer</strong></h2>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <small
+                      role="button"
+                      class="btn btn-outline-danger btn-lg btn-block text-center">
+                      <div><i class="fa fa-plus-square"></i> Ajouter une autre carte</div>
+                    </small>
+                  </div>
+                </div>
+                <div class=" mb-3">
+                  <div class="form-group">
+                    <label>Ou?</label>
+                    <textarea class="form-control" rows="3" placeholder="c'est qoi le problem..."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 mb-3"></div>
+
+        </div>
+
+  </div>
+</div>
+
+
+<!--
 <section>
 
 <div class="card">
@@ -13,7 +258,7 @@
           <i class=" fas fa-camera"> change profile</i>
         </a>
       </div>
-    </div>
+    </div>&lt;!&ndash;&ndash;&gt;
 
     <div class="card user-name">
       <div class="row">
@@ -21,7 +266,7 @@
           <label>user-name</label>
         </div>
         <div class="col-md-9">
-           <!--<input type="text" disabled placeholder="{{user.username}}">-->
+           &lt;!&ndash;<input type="text" disabled placeholder="{{user.username}}">&ndash;&gt;
          </div>
       </div>
     </div>
@@ -31,7 +276,7 @@
 
 
 
-<!--
+&lt;!&ndash;
 <nav class="navbar menu navbar-inverse col-sm col-md col-lg col-xl col-" style="border-radius: 0px;">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -151,4 +396,5 @@
 </div>
 
 
+&ndash;&gt;
 -->

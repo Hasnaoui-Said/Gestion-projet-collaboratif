@@ -8,6 +8,7 @@ public class LoginRequest {
 
 	@NotBlank
 	private String password;
+	private String satete;
 
 	public String getUsername() {
 		return username;
@@ -24,4 +25,13 @@ public class LoginRequest {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getSatete() {
+		return satete;
+	}
+
+	public void setSatete(String satete) {
+		this.satete = satete;
+	}
+	
 }

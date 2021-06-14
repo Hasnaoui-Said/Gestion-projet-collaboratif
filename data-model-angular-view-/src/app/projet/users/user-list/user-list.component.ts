@@ -10,26 +10,25 @@ import {DimUserService} from '../../../controller/service/dim-user.service';
 export class UserListComponent implements OnInit {
   private _stateUser: string;
   private _stateuser: Array<DimUser>;
+  private _searsh: string;
 
   constructor(private userService: DimUserService) { }
 
   ngOnInit(): void {
-    this.userService.findAll();
-    this.stateUser = 'inactive';
-    /*for (const user of this.users){
-      if (user.state === 'active'){
-        this.stateUser = 'active';
-      }else if (user.state === 'inactive') {
-        this.stateUser = 'inactive';
-      }else {
-        this.stateUser = '';
-      }
-    }*/
+      this.userService.searshUser(this.searsh);
   }
   get users(): Array<DimUser> {
     return this.userService.users;
   }
 
+  public searshUser(): void{
+    if (this.searsh === ''){
+      this.isExit = 'ce champs est null';
+      this.userService.findAll();
+    }else {
+      this.userService.searshUser(this.searsh);
+    }
+  }
   get stateUser(): string {
     if (this._stateUser == null){
       this._stateUser = '';
@@ -51,5 +50,29 @@ export class UserListComponent implements OnInit {
 
   set stateuser(value: Array<DimUser>) {
     this._stateuser = value;
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
+
+  get searsh(): string {
+    if (this._searsh == null){
+      this._searsh = '';
+    }
+    return this._searsh;
+  }
+
+  set searsh(value: string) {
+    this._searsh = value;
+  }
+
+
+  get isExit(): string {
+    return this.userService.isExit;
+  }
+
+  set isExit(value: string) {
+    this.userService.isExit = value;
   }
 }

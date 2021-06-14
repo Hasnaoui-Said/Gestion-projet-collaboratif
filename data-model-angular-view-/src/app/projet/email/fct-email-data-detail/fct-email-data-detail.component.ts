@@ -17,6 +17,8 @@ import {FctEmailData} from '../../../controller/model/fct-email-data.model';
 })
 export class FctEmailDataDetailComponent implements OnInit {
 
+  private _searsh: string;
+
   constructor(private countryService: DimCountryService,
               private categoriesService: DimCategorieService,
               private userService: DimUserService ,
@@ -53,6 +55,36 @@ export class FctEmailDataDetailComponent implements OnInit {
 
   get emailDatas(): Array<FctEmailData> {
     return this.fctEmailDateService.emailDatas;
+  }
+
+
+  public searshEmail(): void{
+    if (this.searsh === ''){
+      this.isExit = 'ce champs est null';
+      this.fctEmailDateService.findAll();
+    }else {
+      this.fctEmailDateService.searshEmail(this.searsh);
+    }
+  }
+
+  get searsh(): string {
+    if (this._searsh == null){
+      this._searsh = '';
+    }
+    return this._searsh;
+  }
+
+  set searsh(value: string) {
+    this._searsh = value;
+  }
+
+
+  get isExit(): string {
+    return this.fctEmailDateService.isExit;
+  }
+
+  set isExit(value: string) {
+    this.fctEmailDateService.isExit = value;
   }
 
 }

@@ -1,0 +1,13 @@
+.fa, .fas , .fal, .far{
+  font-size: 50px;
+}
+
+section{
+  margin-left:2%;
+  margin-top:5%;
+}
+
+section .row div{
+  margin:2px;
+}
+

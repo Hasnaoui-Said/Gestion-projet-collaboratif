@@ -29,14 +29,6 @@ public class UserDetailsImpl implements UserDetails {
 	private String password;
 	
 
-	private String firstname;
-	private String lastname;
-	private String cin;
-	private String dateNess;
-	private String ville;
-	private String codePoste;
-	private String state;
-
 	@ManyToOne
 	private Dim_country ct_id;
 

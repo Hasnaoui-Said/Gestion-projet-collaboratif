@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 public class Fct_email_data  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private long email_id;
 
 	private String email;
