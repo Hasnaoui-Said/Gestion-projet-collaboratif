@@ -1,11 +1,11 @@
 import {DimCatPrioritie} from './dim-cat-prioritie.model';
 
 export class DimCategorie {
-  public catid: number;
+  public cat_id: number;
   public name: string;
-  public priorityId: DimCatPrioritie;
+  public priority_id: DimCatPrioritie;
   constructor() {
     this.name = '';
-    this.priorityId = new DimCatPrioritie();
+    this.priority_id = new DimCatPrioritie();
   }
 }

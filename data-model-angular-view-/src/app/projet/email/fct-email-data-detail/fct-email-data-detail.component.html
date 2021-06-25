@@ -15,7 +15,7 @@
   </ul>
 
   <div class="table-responsive">
-    <table class="table">
+    <table class="table border-ligne-buttom">
       <thead class="thead">
       <tr class="border-ligne-buttom">
         <th class="centry">email_id</th>
@@ -30,7 +30,7 @@
       </tr>
       </thead>
       <tbody class="tbody">
-      <tr  class="border-ligne-top" *ngFor="let e of emailDatas; index as j ">
+      <tr  class="border-ligne-top" *ngFor="let e of emailDatas | slice: (page-1) * pageSize : page * pageSize">
         <td>{{e.email_id}}</td>
         <td class="">{{e.email}}</td>
         <td>{{e.cat_id.name}}</td>
@@ -43,8 +43,15 @@
       </tr>
       </tbody>
     </table>
+    <ngb-pagination class="d-flex justify-content-center"
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="emailDatas.length">
+    </ngb-pagination>
   </div>
 </div>
+
+
 
 
 

@@ -1,0 +1,24 @@
+.De{
+  background-color: coral;
+}
+.Fr{
+  background-color: blue;
+}
+.Mar{
+  background-color: red;
+}
+.Ch{
+  background-color: #00c5f7;
+}
+.At{
+  background-color: green;
+}
+
+.Ch, .At, .Mar, .De, .Fr{
+  text-align: center;
+  padding: 3px;
+  border-radius: 3px;
+}
+.fa-info{
+  color: #1D2231;
+}

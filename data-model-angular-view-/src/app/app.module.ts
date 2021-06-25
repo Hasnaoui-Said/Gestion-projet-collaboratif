@@ -8,10 +8,23 @@ import { CheckTestComponent } from './projet/email/check-test/check-test.compone
 import { UsersComponent } from './projet/users/users.component';
 import { UserListComponent } from './projet/users/user-list/user-list.component';
 import { ParametresComponent } from './projet/parametres/parametres.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './projet/users/register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { AllTableComponent } from './projet/all-table/all-table.component';
+import { CalendarComponent } from './projet/calendar/calendar.component';
+import {CalendarModule, DateAdapter} from 'angular-calendar';
+import {adapterFactory} from 'angular-calendar/date-adapters/moment';
+import {CommonModule} from '@angular/common';
+import {FlatpickrModule} from 'angularx-flatpickr';
+import {NativeDateModule} from '@angular/material/core';
+import { AproposComponent } from './apropos/apropos.component';
+import { UsersModifyComponent } from './projet/users/users-modify/users-modify.component';
+import { DimProrityComponent } from './projet/categories/dim-prority/dim-prority.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +35,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     ParametresComponent,
     RegisterComponent,
     NavbarComponent,
+    AllTableComponent,
+    CalendarComponent,
+    AproposComponent,
+    UsersModifyComponent,
+    DimProrityComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +49,19 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    BrowserModule,
+    NgbModule,
     MatIconModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    CommonModule,
+    NgbModalModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    FlatpickrModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

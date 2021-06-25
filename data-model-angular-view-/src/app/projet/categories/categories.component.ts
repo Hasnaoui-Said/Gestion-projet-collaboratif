@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DimCategorie} from '../../controller/model/dim-categorie.model';
+import {DimCategorieService} from '../../controller/service/dim-categorie.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private categoriesService: DimCategorieService) { }
 
   ngOnInit(): void {
   }
-
+  get categories(): Array<DimCategorie> {
+    return this.categoriesService.categories;
+  }
 }

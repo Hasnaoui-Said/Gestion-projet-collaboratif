@@ -20,7 +20,7 @@ import {PrioritieListComponent} from './projet/priorities/prioritie-list/priorit
 import {PrioritieCreateComponent} from './projet/priorities/prioritie-create/prioritie-create.component';
 import {EmailComponent} from './projet/email/email.component';
 import {FctEmailDataSearchComponent} from './projet/email/fct-email-data-search/fct-email-data-search.component';
-import {HomeComponent} from './projet/home/home.component';
+import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './projet/not-found/not-found.component';
 import {ChekEmailComponent} from './projet/email/chek-email/chek-email.component';
 import {EmailModefyComponent} from './projet/email/email-modefy/email-modefy.component';
@@ -30,25 +30,28 @@ import {UsersComponent} from './projet/users/users.component';
 import {UserListComponent} from './projet/users/user-list/user-list.component';
 import {ParametresComponent} from './projet/parametres/parametres.component';
 import {RegisterComponent} from './projet/users/register/register.component';
+import {AllTableComponent} from './projet/all-table/all-table.component';
+import {CalendarComponent} from './projet/calendar/calendar.component';
+import {AproposComponent} from './apropos/apropos.component';
+import {UsersModifyComponent} from './projet/users/users-modify/users-modify.component';
 
 export const  routingsComponents = [AppComponent , EmailModefyComponent , ChekEmailComponent, MenuComponent, CategoriesComponent, CountryComponent, CategorieListComponent, CategorieCreateComponent, CountryListComponent, CountryCreateComponent, PrioritiesComponent, PrioritieListComponent, PrioritieCreateComponent, EmailComponent, FctEmailDataComponent, LoginComponent, FctEmailDataDetailComponent, FctEmailDataSearchComponent, DashboardComponent, UniNfzComponent, HomeComponent, ProfilComponent, NotFoundComponent];
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'notFounded', component: NotFoundComponent},
-  {path: '', component: HomeComponent,
-   /* children: [
-      {path: '', component: HomeComponent},
-    ]*/
-  },
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'apropos', component: AproposComponent},
+
   {path: 'menu', component: MenuComponent,
     children: [
       {path: 'dashboard', component: DashboardComponent},
+      {path: 'modifier-profil', component: UsersModifyComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'cat', component: CategoriesComponent},
       {path: 'UniNfz', component: UniNfzComponent},
-      {path: '', component: DashboardComponent},
       {path: 'users', component: UsersComponent,
           children: [
             {path: '', component: ProfilComponent},
@@ -57,11 +60,14 @@ const routes: Routes = [
           ]
       },
       {path: 'country', component: CountryComponent},
+      {path: 'alltable', component: AllTableComponent},
       {path: 'prio', component: PrioritiesComponent},
       {path: 'detail', component: FctEmailDataDetailComponent},
       {path: 'migration', component: FctEmailDataComponent},
-      {path: 'cat', component: CategoriesComponent},
+      {path: 'category', component: CategoriesComponent},
       {path: 'chek-mail', component: ChekEmailComponent},
+      {path: 'calendar', component: CalendarComponent},
+      {path: '', component: CalendarComponent},
       {path: 'modify-mail', component: EmailModefyComponent},
       {path: 'check-test', component: CheckTestComponent},
       {path: 'parametres', component: ParametresComponent},

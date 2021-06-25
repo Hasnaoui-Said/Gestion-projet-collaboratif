@@ -1,1 +1,21 @@
-<p>country-list works!</p>
+<h2>Liste des pays</h2>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead">
+    <tr class="border-ligne-buttom">
+      <th class="centry">Reference</th>
+      <th class="centry">Nome</th>
+      <th  class="centry" colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+    <tr class="border-ligne-top border-ligne-buttom" *ngFor="let c of countrys">
+      <td  class="centry" type="reference"><div type="username" class="{{c.reference}}">{{c.reference}}</div></td>
+      <td  class="centry" type="name">{{c.name}}</td>
+      <td  class="centry edit" ><a href="#" class="nav-link"><i class="fas fa-edit"></i></a></td>
+      <td  class="centry infos" ><a href="#" class="nav-link"><i class="fas fa-info"></i></a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

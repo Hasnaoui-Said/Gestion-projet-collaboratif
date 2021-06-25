@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="register col-md-12">
   <div class="card card-container">
     <img
       id="profile-img"
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary btn-block">S'inscrire</button>
+        <button class="btn btn-primary btn-block"><i *ngIf="!isLogged">S'inscrire</i><i *ngIf="isLogged">Ajouter</i></button>
       </div>
 
       <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
@@ -80,7 +80,8 @@
     </form>
 
     <div class="alert alert-success" *ngIf="isSuccessful">
-      Votre inscription est réussie!
+      <p>Votre inscription est réussie!</p><br>
+       <div>contacter l'admine pour activer votre compte.</div>
     </div>
   </div>
 </div>

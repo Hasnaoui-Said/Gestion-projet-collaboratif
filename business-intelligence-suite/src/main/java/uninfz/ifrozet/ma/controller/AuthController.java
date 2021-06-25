@@ -71,7 +71,7 @@ public class AuthController {
 		if (user.getState().equals("inactive")) {
 			return ResponseEntity
 					.badRequest()
-					.body(new MessageResponse("Erreur: non authorisé"));
+					.body(new MessageResponse("Erreur : non authorisé"));
 		}else {
 			
 		return ResponseEntity.ok(new JwtResponse(jwt, 

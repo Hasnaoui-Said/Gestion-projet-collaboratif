@@ -1,0 +1,113 @@
+
+.media-fa a{
+  padding: 3px;
+  text-decoration: none;
+}
+.media-fa{
+  font-size: 50px;
+  padding: 20px 20px;
+  border: none;
+}
+
+.home{
+  margin-top: 150px;
+  margin-bottom: 190px;
+}
+.top-container{
+  font-size: 15px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+}
+.Bienvenue{
+  margin-top: 45px;
+}
+
+.diaporama{
+  margin: 0 auto;
+  border-radius: 3px;
+  width: 540px;
+  height: 380px;
+  background-image: url("../../assets/image/logoIfrozet.png");
+
+  -webkit-animation-name: diapo1;
+  -webkit-animation-duration: 16s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+
+  -moz-animation-name: diapo1;
+  -moz-animation-duration: 16s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: normal;
+
+  animation-name: diapo1;
+  animation-duration: 16s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@-webkit-keyframes diapo1{
+  0%{background-image: url("../../assets/image/logoIfrozet.png");}
+  50%{background-image: url("../../assets/image/disponibilite.png");}
+  25%{background-image: url("../../assets/image/reduction.png");}
+  75%{background-image: url("../../assets/image/rendre.png");}
+}
+
+@-moz-keyframes diapo1{
+  0%{background-image: url("../../assets/image/logoIfrozet.png");}
+  50%{background-image: url("../../assets/image/disponibilite.png");}
+  25%{background-image: url("../../assets/image/reduction.png");}
+  75%{background-image: url("../../assets/image/rendre.png");}
+}
+@keyframes diapo1{
+  0%{background-image: url("../../assets/image/logoIfrozet.png");}
+  50%{background-image: url("../../assets/image/disponibilite.png");}
+  25%{background-image: url("../../assets/image/reduction.png");}
+  75%{background-image: url("../../assets/image/rendre.png");}
+}
+
+
+.button-nav{
+  margin-top: 145px;
+  border: none;
+  background-color: #1D2231;
+  color: #ffffff;
+  border-radius: 0px;
+}
+
+.media-fab{
+  font-size: 30px;
+  margin: 100px 0px 0px 0px;
+  width: 45px;
+  text-align: center;
+}
+
+.media-fab a{
+  padding: 3px;
+  text-decoration: none;
+  width: 100%;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 2;
+}
+.media-fab .fa-envelope{
+  background-color: #1D2231;
+}
+.media-fab .fa-whatsapp{
+  background-color: green;
+}
+.media-fab .fa-facebook{
+  background-color: blue;
+}
+.media-fab .fa-youtube{
+  background-color: red;
+}
+
+
+/*slider*/
+/*slider*/
+
+
+

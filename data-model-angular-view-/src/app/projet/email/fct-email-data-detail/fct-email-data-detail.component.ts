@@ -18,6 +18,8 @@ import {FctEmailData} from '../../../controller/model/fct-email-data.model';
 export class FctEmailDataDetailComponent implements OnInit {
 
   private _searsh: string;
+  public page = 1;
+  public pageSize = 5;
 
   constructor(private countryService: DimCountryService,
               private categoriesService: DimCategorieService,

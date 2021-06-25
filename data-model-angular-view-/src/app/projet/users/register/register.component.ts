@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../../controller/service/auth.service';
+import {AppComponent} from '../../../app.component';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,10 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private appComponent: AppComponent,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +35,8 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
-
+  get isLogged(): boolean {
+    return this.appComponent.isLogged;
+  }
 
 }

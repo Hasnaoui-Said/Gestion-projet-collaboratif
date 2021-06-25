@@ -1,0 +1,15 @@
+.add-cat{
+  text-align: center;
+  font-size: 20px;
+}
+.add-cat .btn{
+  text-align: center;
+  font-size: 20px;
+}
+input ,select{
+  height: 35px;
+  font-size: 15px;
+  margin: 10px;
+}
+
+

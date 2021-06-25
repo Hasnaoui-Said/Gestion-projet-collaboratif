@@ -1,0 +1,10 @@
+.container{
+  margin-top: 145px;
+  padding-top: 20px;
+}
+.button-nav{
+  border: none;
+  background-color: #1D2231;
+  color: #ffffff;
+  border-radius: 0px;
+}

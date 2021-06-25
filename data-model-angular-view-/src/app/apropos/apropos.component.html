@@ -1,6 +1,5 @@
-<!-- Page Content -->
-<section class="home">
-  <div  *ngIf="!isLogged" class="container">
+<div class="container">
+
     <div class="row">
 
       <div class="row">
@@ -57,64 +56,22 @@
       <div class="col-md-3"></div>
     </div>
   </div>
-  <!-- /.container -->
-  <nav   *ngIf="!isLogged"  class="navbar navbar-inverse col-sm col-md col-lg col-xl col-"
-         style="color: #ffffff;background-color: hsla(70, 6%, 25%, .75);
-     ;border: none;border-radius: 0px;"
-  >
-    <div class="container-fluid">
-      <div class="navbar-footer">
-      </div>
-      <div class="navbar-footer">
-        <h4><a class="contacts"  routerLink="/home" routerLinkActive="active">Home</a></h4>
-        <h4><a class="contacts" href="#">A Propos De Nous</a></h4>
-        <h4><a class="contacts" href="#">Nos Services</a></h4>
-        <h4><a class="contacts" href="#">Nous Contacter</a></h4>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="login">
-          <a  routerLink="" routerLinkActive="active">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="login">
-          <a  routerLink="" routerLinkActive="active">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </li>
-        <li class="login">
-          <a  routerLink="" routerLinkActive="active">
-            <i class="fab fa-facebook-messenger"></i>
-          </a>
-        </li>
-        <li class="login">
-          <a  routerLink="" routerLinkActive="active">
-            <i class="fab fa-facebook"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
 
-  <nav   *ngIf="!isLogged"  class="navbar navbar-inverse col-sm col-md col-lg col-xl "
-         style="color: #ffffff;background-color: hsla(40, 3%, 10%, .75);
-     ;border: none;margin-top: -20px;border-radius: 0px;">
-    <div class="container-fluid">
-      <div class="navbar-header nav-bar-left">
+
+<!--<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="" style="color: #ffffff; font-size: 10px">
+      <div class="">
         Copyright: Ifrozet Sarl  Business-Intelligence-Service
       </div>
-      <ul class="nav navbar-nav navbar-right">
+      <div class=" ">
         Software Development
-      </ul>
-    </div>
-  </nav>
-  <nav *ngIf="isLogged" >
-    <div class="alert alert-success">
-      <div>
-        <a routerLink="/menu" routerLinkActive="active">Go to menu</a>
       </div>
-      Logged in as {{ roles }}.
     </div>
-  </nav>
-</section>
+  </div>
+</nav>-->
 
+<nav class="navbar justify-content-between button-nav">
+  <div class="navbar-brand">Copyright: Ifrozet Sarl  Business-Intelligence-Service</div>
+  <div class="navbar-brand">Software Development</div>
+</nav>

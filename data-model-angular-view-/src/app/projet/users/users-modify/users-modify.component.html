@@ -1,0 +1,116 @@
+
+<div class="container rounded mb-5">
+  <div class="row">
+    <div class="col-md-9 border-right">
+      <div class="p-3 py-5">
+        <div class="d-flex align-items-center mb-0">
+          <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/menu" routerLinkActive="active">Dashboard</a></li>
+              <li class="breadcrumb-item"><a >Users</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Paramètre de profile</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-12"><label class="labels">Nom d'utilisateur :</label>
+            <input disabled type="text" class="form-control" value="" placeholder="{{user.username}}">
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-6"><label class="labels">Non :</label>
+            <input type="text" class="form-control" placeholder="{{user.firstname}}" value="">
+          </div>
+          <div class="col-md-6"><label class="labels">Prénom :</label>
+            <input type="text" class="form-control" value="" placeholder="{{user.lastname}}">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12"><label class="labels">N° CIN :</label>
+            <input type="text" class="form-control" placeholder="{{user.cin}}" value="">
+          </div>
+          <div class="col-md-12"><label class="labels">Telephone :</label>
+            <input type="text" class="form-control" placeholder="{{user.phone}}" value="">
+          </div>
+          <div class="col-md-12"><label class="labels">Email</label>
+            <input disabled type="text" class="form-control" placeholder="{{user.email}}" value="">
+          </div>
+          <div class="col-md-12"><label class="labels">Date de naissance :</label>
+            <input type="date" class="form-control" placeholder="{{user.dateNess}}" value="">
+          </div>
+          <div class="col-md-12"><label class="labels">Address</label>
+            <textarea class="form-control" rows="2" placeholder="Votre address"></textarea>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6"><label class="labels">Code Postale</label>
+            <input type="text" class="form-control" value="" placeholder="{{user.codePoste}}">
+          </div>
+          <div class="col-md-6"><label class="labels">Ville :</label>
+            <input type="text" class="form-control" value="" placeholder="{{user.ville}}">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-6"><label class="labels">Pays :</label>
+            <select class="selectpicker form-select form-select-lg mb-3 form-control multiple-task" aria-label=".form-select-lg example">
+            <option selected value="{{user.ct_id.name}}">{{user.ct_id.name}}</option>
+            <optgroup *ngFor="let c of countrys;index as i ">
+              <option value="{{c.reference}}">{{c.name}}</option>
+            </optgroup>
+            </select>
+          </div>
+          <div class="col-md-6"><label class="labels">genre :</label>
+            <select disabled class="selectpicker form-select form-select-lg mb-3 form-control multiple-task" aria-label=".form-select-lg example">
+            <option  value="femme">femme</option>
+            <option  selected value="homme">homme</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="p-3 py-5">
+          <div class="text-center">
+            <img src="https://bootdey.com/img/Content/avatar/avatar{{user.id}}.png" alt="user" class="rounded-circle" width="70">
+            <h6>Upload a different photo...</h6>
+            <input type="file" class="form-control">
+          </div><br>
+      </div>
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center experience"><span>Votre satatus</span></div><br>
+        <div class="col-md-12"><label class="labels">State</label>
+          <select class="selectpicker form-select form-select-lg mb-3 form-control multiple-task" aria-label=".form-select-lg example">
+            <option selected value="{{user.state}}">{{user.state}}</option>
+            <optgroup>
+             <option  value="active">active</option>
+             <option  value="inactive">inactive</option>
+           </optgroup>
+          </select>
+        </div> <br>
+      </div>
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center experience"><span>liste des roles</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>Ajoute role</span></div><br>
+        <div class="col-md-12">
+          <label class="labels">role</label>
+          <select class="selectpicker form-select form-select-lg mb-3 form-control multiple-task" aria-label=".form-select-lg example">
+             <option selected value="">select a role</option>
+              <option value="">Super_Admin</option>
+              <option value="">Admin</option>
+              <option value="">user</option>
+          </select>
+        </div>
+        <br>
+      </div>
+      <div class="p-3 py-5">
+        <div class="mt-5 text-center">
+          <button class="btn btn-outline-info profile-button" type="button" (click)="putUser()">Sauvegarder </button>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

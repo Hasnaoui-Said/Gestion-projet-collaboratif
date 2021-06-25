@@ -1,22 +1,43 @@
 import { Component, OnInit } from '@angular/core';
 import {DimUser} from '../../../controller/model/dim-user.model';
 import {DimUserService} from '../../../controller/service/dim-user.service';
+import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
+  // add NgbModalConfig and NgbModal to the component providers
+  providers: [NgbModalConfig, NgbModal]
 })
 export class UserListComponent implements OnInit {
   private _stateUser: string;
   private _stateuser: Array<DimUser>;
   private _searsh: string;
+  public page = 1;
+  public pageSize = 5;
 
-  constructor(private userService: DimUserService) { }
+  constructor(private userService: DimUserService,
+              config: NgbModalConfig, private modalService: NgbModal) {
+    // customize default values of modals used by this component tree
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
   ngOnInit(): void {
-      this.userService.searshUser(this.searsh);
+      this.userService.findAll();
   }
+
+
+  open(content) {
+    this.modalService.open(content);
+  }
+
+
+
+
+
+
   get users(): Array<DimUser> {
     return this.userService.users;
   }

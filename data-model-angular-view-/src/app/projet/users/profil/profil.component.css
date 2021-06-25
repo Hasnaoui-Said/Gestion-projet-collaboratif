@@ -66,6 +66,23 @@ body{
   text-align: center;
 }
 
+
+.profile-button {
+  box-shadow: none;
+  border: none;
+  background: blue;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.profile-button:hover {
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none
+}
+
 /*
 section{
   width: 100%;

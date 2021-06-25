@@ -1,21 +1,9 @@
-
-
-<section *ngIf="!isLogged" class="app-home">
-  <!--<nav class="first-title card navbar navbar-inverse color col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
-    <div class="container-fluid">
-      <div class="navbar-header ">
-        <h1 class="ifrozet">IFROZET SARL ADAROUCHE</h1>
-      </div>
-    </div>
-  </nav>-->
-
-  <app-navbar></app-navbar>
-
+<!--
   <nav class="first-title">
 
     <div class="navbar-header accueil">
-      <dev class="line"><span class="ti-unlink"></span></dev>
-      <label for="sidebar-toggle">
+      <div class="line"><span class="ti-unlink"></span></div>
+      <label>
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
              viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -25,8 +13,6 @@
     </div>
     <h1 class="ifrozet">IFROZET SARL ADAROUCHE</h1>
   </nav>
-
-<!--  <hr *ngIf="!isLogged" class="hr-1" >  -->
   <input type="checkbox" id="sidebar-toggle" xmlns="http://www.w3.org/1999/html">
   <nav class="seconde-title card navbar navbar-expand-md navbar-inverse color col-sm col-md col-lg col-xl col-"  style="border-radius: 0px;">
     <div class="container-fluid">
@@ -46,14 +32,45 @@
         </h3>
       </div>
     </div>
-  </nav>
+  </nav>-->
 
-<!--  <hr *ngIf="!isLogged" class="hr-2" >-->
-  <!--<ng-template #loggedOut>
-  </ng-template>-->
+    <div *ngIf="!isLogged" class="navbar ifrozet">
+      <h1 class="">IFROZET SARL</h1>
+    </div>
 
-</section>
+
+    <nav *ngIf="!isLogged" class="">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <div class="logo">
+         <h1 class="">IFROZET SARL</h1>
+      </div>
+      <ul class="">
+        <li><a class="" routerLink="/home" routerLinkActive="active">ACCUEIL</a></li>
+        <li><a class="" routerLink="/apropos" routerLinkActive="active">A PROPOS DE NOUS</a></li>
+        <li><a class="" routerLink="/home" routerLinkActive="active">CONTACT</a></li>
+        <li><a class="" routerLink="/login" routerLinkActive="active">CONNEXION</a></li>
+        <li><a class="" routerLink="/register" routerLinkActive="active" >INSCRIPTION</a></li>
+      </ul>
+
+    </nav>
+
+
 
 <main class="app-main">
   <router-outlet></router-outlet>
 </main>
+
+
+<!--<app-user-list></app-user-list>-->
+
+
+
+
+
+
+
+
+

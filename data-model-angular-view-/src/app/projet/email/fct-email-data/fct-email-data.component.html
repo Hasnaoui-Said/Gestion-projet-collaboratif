@@ -1,12 +1,11 @@
 
 
 
-<!--
 <div class="container">
   <div class="card">
     <div class="card-header" style="text-align: center">Test: data-Megration</div>
     <div class="card-body">
-      &lt;!&ndash;<div class="row">
+      <!--<div class="row">
          <div class="col-md-1 form-group"></div>
          <div class="col-md-8 col-sm-8 form-group">
            <label>E-mail*:</label>
@@ -25,7 +24,7 @@
            </textarea>
          </div>
          <div class="col-md-3 form-group"></div>
-       </div>&ndash;&gt;
+       </div>-->
       <small class="text-danger">{{this.isExist}}</small>
       <div class="row">
         <div class="col-md-2 form-group"></div>
@@ -50,7 +49,7 @@
             <div class="col-md-9">
               <select class="form-select form-select-lg mb-3 form-control"
                       aria-label="form-select-lg example" [(ngModel)]="emailData.cat_id.name">
-                <option selected  data-live-search="true" value="">&#45;&#45;select a Kategory&#45;&#45;</option>
+                <option selected  data-live-search="true" value="">--select a Kategory--</option>
                 <optgroup *ngFor="let c of categories;">
                   <option value="{{c.name}}">{{c.name}}</option>
                 </optgroup>
@@ -70,7 +69,7 @@
             <div class="col-md-9">
               <select class="form-select form-select-lg mb-3 form-control"
                       aria-label=".form-select-lg example" [(ngModel)]="emailData.state_id.name">
-                <option selected data-live-search="true" value="">&#45;&#45;select a state&#45;&#45;</option>
+                <option selected data-live-search="true" value="">--select a state--</option>
                 <optgroup *ngFor="let c of states;">
                   <option value="{{c.name}}">{{c.name}}</option>
                 </optgroup>
@@ -90,7 +89,7 @@
             <div class="col-md-9">
               <select class="form-select form-select-lg mb-3 form-control"
                       aria-label=".form-select-lg example" [(ngModel)]="emailData.state_id.name">
-                <option selected data-live-search="true" value="">&#45;&#45;select a state&#45;&#45;</option>
+                <option selected data-live-search="true" value="">--select a state--</option>
                 <optgroup *ngFor="let c of users;">
                   <option value="{{c.username}}">{{c.username}}</option>
                 </optgroup>
@@ -125,7 +124,7 @@
             <div class="col-md-9">
               <select class="selectpicker form-select form-select-lg mb-3 form-control multiple-task"
                       aria-label=".form-select-lg example" [(ngModel)]="emailData.ct_id.reference">
-                <option selected value="">&#45;&#45;select a country&#45;&#45;</option>
+                <option selected value="">--select a country--</option>
                 <optgroup *ngFor="let c of countrys;index as i ">
                   <option value="{{c.reference}}">{{c.reference}}</option>
                 </optgroup>
@@ -190,61 +189,99 @@
   </div>
 </div>
 
--->
+
+
+
 
 
 
 <div class="container">
-  <div class="card">
-    <div class="card-header" style="text-align: center">Test: data-Megration</div>
-    <div class="card-body">
-      <!--<div class="row">
-         <div class="col-md-1 form-group"></div>
-         <div class="col-md-8 col-sm-8 form-group">
-           <label>E-mail*:</label>
-           <imput type="email" name="textarea" class="form-control"
-                     style="width:560px;height:75px;"[(ngModel)]="emailData.email">
-           </imput>
-         </div>
-         <div class="col-md-3 form-group"></div>
-       </div>
-       <div class="row">
-         <div class="col-md-1 form-group"></div>
-         <div class="col-md-8 col-sm-8 form-group">
-           <label>Phone:</label>
-           <textarea type="email" name="textarea" class="form-control"
-                     style="width:560px;height:75px;">
-           </textarea>
-         </div>
-         <div class="col-md-3 form-group"></div>
-       </div>-->
-      <small class="text-danger">{{this.isExist}}</small>
-      <div class="row">
-        <div class="col-md-2 form-group"></div>
-        <div class="col-8 form-group">
-          <div class="row">
-            <div class="col-md-3">
-              <label>Email *:</label>
+  <h1>Edit Profile</h1>
+  <hr>
+  <div class="row">
+    <!-- left column -->
+
+    <!-- edit form column -->
+    <div class="col-md-9 personal-info">
+      <div class="alert alert-info alert-dismissable">
+        <a class="panel-close close" data-dismiss="alert">×</a>
+        <i class="fa fa-coffee"></i>
+        This is an <strong>.alert</strong>. Use this to show important messages to the user.
+      </div>
+      <h3>Personal info</h3>
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-lg-3 control-label">First name:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" value="Jane">
           </div>
-            <div class="col-md-9">
-              <textarea type="text" class="form-control" [(ngModel)]="emailData.email"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Last name:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" value="Bishop">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Company:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" value="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" value="janesemail@gmail.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Time Zone:</label>
+          <div class="col-lg-8">
+            <div class="ui-select">
+              <select id="user_time_zone" class="form-control">
+                <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                <option value="Alaska">(GMT-09:00) Alaska</option>
+                <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                <option value="Arizona">(GMT-07:00) Arizona</option>
+                <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+              </select>
             </div>
           </div>
         </div>
-        <div class="col-md-2 form-group"></div>
-      </div>
-
-
-    </div>
-    <div class="card-header">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <button class="btn btn-outline-info btn-block" (click)="saveTest()">SAVE</button>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Username:</label>
+          <div class="col-md-8">
+            <input class="form-control" type="text" value="janeuser">
+          </div>
         </div>
-        <div class="col-md-3"></div>
-      </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Password:</label>
+          <div class="col-md-8">
+            <input class="form-control" type="password" value="11111122333">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Confirm password:</label>
+          <div class="col-md-8">
+            <input class="form-control" type="password" value="11111122333">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input type="button" class="btn btn-primary" value="Save Changes">
+            <span></span>
+            <input type="reset" class="btn btn-default" value="Cancel">
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
+<hr>
+
 

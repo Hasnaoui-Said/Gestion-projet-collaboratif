@@ -1,5 +1,5 @@
 export class DimCatPrioritie {
-  public priorityid: number;
+  public priority_id: number;
   public name: string;
   public description: string;
 

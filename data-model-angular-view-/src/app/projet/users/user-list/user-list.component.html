@@ -1,4 +1,4 @@
-
+<!--
 <div class="table-user container">
   <ul class="nav justify-content-center">
     <li class="nav-item">
@@ -6,13 +6,13 @@
     </li>
     <li class="nav-item">
       <a (click)="searshUser()">
-        <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fas" data-icon="sync" class="svg-inline--fa fa-sync fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M440.65 12.57l4 82.77A247.16 247.16 0 0 0 255.83 8C134.73 8 33.91 94.92 12.29 209.82A12 12 0 0 0 24.09 224h49.05a12 12 0 0 0 11.67-9.26 175.91 175.91 0 0 1 317-56.94l-101.46-4.86a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12H500a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12h-47.37a12 12 0 0 0-11.98 12.57zM255.83 432a175.61 175.61 0 0 1-146-77.8l101.8 4.87a12 12 0 0 0 12.57-12v-47.4a12 12 0 0 0-12-12H12a12 12 0 0 0-12 12V500a12 12 0 0 0 12 12h47.35a12 12 0 0 0 12-12.6l-4.15-82.57A247.17 247.17 0 0 0 255.83 504c121.11 0 221.93-86.92 243.55-201.82a12 12 0 0 0-11.8-14.18h-49.05a12 12 0 0 0-11.67 9.26A175.86 175.86 0 0 1 255.83 432z">
+        <svg aria-hidden="true" width="30" height="30" focusable="false" data-prefix="fas" data-icon="sync" class="svg-inline&#45;&#45;fa fa-sync fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M440.65 12.57l4 82.77A247.16 247.16 0 0 0 255.83 8C134.73 8 33.91 94.92 12.29 209.82A12 12 0 0 0 24.09 224h49.05a12 12 0 0 0 11.67-9.26 175.91 175.91 0 0 1 317-56.94l-101.46-4.86a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12H500a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12h-47.37a12 12 0 0 0-11.98 12.57zM255.83 432a175.61 175.61 0 0 1-146-77.8l101.8 4.87a12 12 0 0 0 12.57-12v-47.4a12 12 0 0 0-12-12H12a12 12 0 0 0-12 12V500a12 12 0 0 0 12 12h47.35a12 12 0 0 0 12-12.6l-4.15-82.57A247.17 247.17 0 0 0 255.83 504c121.11 0 221.93-86.92 243.55-201.82a12 12 0 0 0-11.8-14.18h-49.05a12 12 0 0 0-11.67 9.26A175.86 175.86 0 0 1 255.83 432z">
       </path></svg>
       </a>
     </li>
   </ul>
 
-  <!--<div class="row gutters-sm">
+  &lt;!&ndash;<div class="row gutters-sm">
     <div class="col-md-6 mb-3"></div>
     <div class="col-md-12">
       <div class="card mb-12">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-  </div>-->
+  </div>&ndash;&gt;
 
 
 
@@ -50,8 +50,12 @@
       </tr>
       </thead>
       <tbody class="tbody">
-      <tr class="border-ligne-top" *ngFor="let u of users; index as i">
-        <td><div class="profil"><i class="far fa-user-circle"></i></div></td>
+      <tr class="border-ligne-top border-ligne-buttom" *ngFor="let u of users | slice: (page-1) * pageSize : page * pageSize">
+        <td>
+          <div class="profil">
+          <img src="https://bootdey.com/img/Content/avatar/avatar{{u.id}}.png" alt="user" class="rounded-circle" width="40">
+          </div>
+        </td>
         <td type="username">{{u.username}}</td>
         <td>Homme</td>
         <td type="name">{{u.firstname}}</td>
@@ -63,6 +67,11 @@
       </tr>
       </tbody>
     </table>
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="pageSize"
+      [collectionSize]="users.length" class="d-flex justify-content-center">
+    </ngb-pagination>
   </div>
 
   <div class="row gutters-sm">
@@ -81,8 +90,26 @@
       </div>
     </div>
   </div>
-</div>
 
+</div>-->
+<!--test1-->
+<ng-template #content let-c="close" let-d="dismiss" class="contentng">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Hello, World!</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+<!--test1-->
 
 
 

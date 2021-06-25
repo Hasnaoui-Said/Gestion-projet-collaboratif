@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DimCategorieService} from '../../../controller/service/dim-categorie.service';
+import {DimCategorie} from '../../../controller/model/dim-categorie.model';
 
 @Component({
   selector: 'app-categorie-list',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorieListComponent implements OnInit {
 
-  constructor() { }
+  public page = 1;
+  public pageSize = 4;
+
+  constructor(private categoriesService: DimCategorieService) { }
 
   ngOnInit(): void {
+    this.categoriesService.findAll();
+  }
+  get categories(): Array<DimCategorie> {
+    return this.categoriesService.categories;
   }
 
 }

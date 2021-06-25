@@ -1,1 +1,26 @@
-<p>categorie-list works!</p>
+<h2>Liste des categories</h2>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead">
+    <tr class="border-ligne-buttom">
+      <th class="centry">Nom</th>
+      <th class="centry">Priority</th>
+      <th  class="centry" colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody class="tbody">
+    <tr class="border-ligne-top border-ligne-buttom" *ngFor="let c of categories | slice: (page-1) * pageSize : page * pageSize">
+      <td  class="centry" type="reference"><div type="username" class="{{c.name}}">{{c.name}}</div></td>
+      <td  class="centry" type="name">{{c.priority_id.name}}</td>
+      <td  class="centry edit" ><a href="#" class="nav-link"><i class="fas fa-edit"></i></a></td>
+      <td  class="centry infos" ><a href="#" class="nav-link"><i class="fas fa-info"></i></a></td>
+    </tr>
+    </tbody>
+  </table>
+  <ngb-pagination
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="categories.length" class="d-flex justify-content-center">
+  </ngb-pagination>
+</div>

@@ -19,7 +19,6 @@ uninfz\ifrozet\ma\util\request\Fct_email_dataVo.class
 uninfz\ifrozet\ma\controller\Fct_email_dataRest.class
 uninfz\ifrozet\ma\config\security\WebSecurityConfig.class
 uninfz\ifrozet\ma\controller\Dim_email_stateRest.class
-uninfz\ifrozet\ma\beans\Data.class
 uninfz\ifrozet\ma\beans\Role.class
 uninfz\ifrozet\ma\beans\Dim_categorie.class
 uninfz\ifrozet\ma\security\service\Dim_cat_prioritieService.class

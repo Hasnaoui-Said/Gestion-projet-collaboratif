@@ -1,3 +1,4 @@
+/*
 
 
 .color{
@@ -46,7 +47,7 @@ hr{
   cursor: pointer;
   text-decoration: none;
 }
-/*
+!*
 
 .app-home{
   position: fixed;
@@ -78,7 +79,7 @@ hr{
   position: absolute;
   width: 100%;
 }
-*/
+*!
 .first-title{
   border-bottom: 2px solid #00c5f7;
   background-color: #ffffff;
@@ -158,4 +159,161 @@ label svg{
     padding-top: 30px;
   }
 }
+
+.navbarapp *{
+  z-index: 2;
+}
+*/
+
+
+/*
+.mynavbar{
+  height:60px;
+  width: 100%;
+}
+.mynavbar a{
+  margin: 10px 30px;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+nav{
+  width: 100%;
+  top: 0px;
+  margin-top: 60px;
+  border-bottom: 2px #00c5f7 solid;
+  height: 75px;
+  background-color: rgba(247, 247, 247);
+  line-height: 75px;
+  color: #00c5f7;
+  padding: 0px 80px;
+  position: fixed;
+  z-index: 2;
+}
+nav *{
+  position: relative;
+}
+
+nav .logo{
+  float: left;
+  display: none;
+}
+nav .logo p{
+  /*font-size: 34px;
+  font-weight: 1.5 px;
+  color: #00c5f7;*/
+  text-transform: uppercase;
+}
+.logo img{
+  width: 75px;
+  height: 74px;
+  margin-top: -2px;
+}
+nav ul {
+  float: right;
+  right: 15%;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #00c5f7;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0px 20px;
+
+}
+nav ul li a:hover{
+  color: #000000;
+}
+
+nav ul .active{
+  color: #000000;
+}
+.checkbtn{
+  color: #00c5f7;
+  font-size: 25px;
+  cursor: pointer;
+  float: right;
+  display: none;
+}
+#check{
+  display: none;
+}
+.ifrozet{
+  border-bottom: 2px #00c5f7 solid;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(247, 247, 247);
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+}
+.ifrozet h1{
+  position: relative;
+  font-size: 35px;
+  font-weight: 1200;
+  color: green;
+}
+
+@media screen and (max-width: 460px){
+  .ifrozet h1{
+    font-size: 20px;
+  }
+}
+
+section{
+  z-index: 2;
+}
+@media screen and (max-width: 940px){
+  nav{
+    padding: 0px 50px;
+
+  }
+  .checkbtn{
+    display: block;
+  }
+  nav .logo p{
+    font-size: 30px;
+  }
+  nav ul{
+    width: 100%;
+    height: 100vh;
+    background-color: #777777;
+    position: fixed;
+    top: 135px;
+    left: -100%;
+    text-align: center;
+    transition: 0.4s ease;
+    z-index: 2;
+  }
+  nav ul li {
+    display: block;
+    margin: 60px 0px;
+    line-height: 20px;
+  }
+  #check:checked ~ ul{
+    left: 0px;
+  }
+}
+
+.app-main{
+}
+
+
+
+
+
+
+
 

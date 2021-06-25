@@ -81,6 +81,22 @@ public class Dim_userService {
 		return dim_userDao.findAll();
 	}
 
+	public int putUser(User user) {
+		User userback = findByEmail(user.getUsername());
+		//Dim_country country = 
+		userback.setAdresse(user.getAdresse());
+		userback.setDateNess(user.getDateNess());
+		userback.setLastname(user.getLastname());
+		userback.setFirstname(user.getFirstname());
+		userback.setCodePoste(user.getCodePoste());
+		userback.setCin(user.getCin());
+		//userback.setCt_id();;
+		userback.setPhone(user.getPhone());
+		userback.setVille(user.getVille());
+		userback.setGenre(user.getGenre());
+		return 1;
+	}
+
 
 	
 

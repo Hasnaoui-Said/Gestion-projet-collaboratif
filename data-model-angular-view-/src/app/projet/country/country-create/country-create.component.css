@@ -1,0 +1,14 @@
+.add-country{
+  text-align: center;
+  font-size: 20px;
+}
+.add-country .btn{
+  text-align: center;
+  font-size: 20px;
+}
+input{
+  height: 35px;
+  font-size: 15px;
+  margin: 10px;
+}
+

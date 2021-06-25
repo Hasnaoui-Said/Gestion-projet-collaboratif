@@ -36,6 +36,7 @@ public class User {
 	private String lastname;
 	private String cin;
 	private String dateNess;
+	private String genre;
 	private String ville;
 	private String adresse;
 	private String codePoste;
@@ -60,6 +61,14 @@ public class User {
 		this.password = password;
 	}
 
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 
 	public String getAdresse() {
 		return adresse;

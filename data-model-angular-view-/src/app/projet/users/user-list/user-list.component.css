@@ -24,12 +24,11 @@
 
 table {
   display: block;
-  height: 420px;
   overflow-y: auto;
 }
 
 .table-user{
-  padding: 0rem 3.5rem;
+  padding: 0rem 3rem;
   border: none;
 }
 
@@ -110,5 +109,11 @@ table tr th,table tr td{
 
 .card{
   border: none;
+}
+
+.contentng{
+  z-index: 2;
+  width: 300px;
+  height: 300px;
 }
 
