@@ -68,7 +68,7 @@ public class AuthController {
 				.collect(Collectors.toList());
 
 		User user = userRepositoryVo.findByUsername(loginRequest.getUsername());
-		if (user.getState().equals("inactive")) {
+		if (user.getState() == false || user.getState() == null) {
 			return ResponseEntity
 					.badRequest()
 					.body(new MessageResponse("Erreur : non authorisé"));
@@ -133,7 +133,7 @@ public class AuthController {
 		}
 
 		user.setRoles(roles);
-		user.setState("inactive");
+		user.setState(false);
 		userRepository.save(user);
 
 		return ResponseEntity.ok(new MessageResponse("Votre inscription a bien été pris en coupte!"));

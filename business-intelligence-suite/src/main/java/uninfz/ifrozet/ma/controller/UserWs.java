@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,15 @@ public class UserWs {
 		return dim_userService.loginUser(dim_user);
 	}
 
+
+	@PutMapping("/putuser")
+	public int putuser(@PathVariable Long id,@RequestBody User user){
+		return dim_userService.putuser(id,user);
+	}
+	@PostMapping("update-user/{state}")  
+    public boolean updateUser(@RequestBody User user,@PathVariable Boolean state) {   
+        return dim_userService.updateUser(user, state);  
+    }  
 
 	@GetMapping("/email/{email}/password/{password}")
 	public User findByEmailAndPassword(@PathVariable String email,@PathVariable String password) {

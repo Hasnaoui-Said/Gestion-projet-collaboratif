@@ -97,6 +97,17 @@ public class Dim_userService {
 		return 1;
 	}
 
+	public int putuser(Long id, User user) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public boolean updateUser(User user, Boolean state) {
+		User user2 = findByEmail(user.getEmail());
+		user2.setState(state);
+		return true;
+	}
+
 
 	
 

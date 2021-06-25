@@ -41,7 +41,7 @@ public class User {
 	private String adresse;
 	private String codePoste;
 	private String phone;
-	private String state;
+	private Boolean state;
 
 	@ManyToOne
 	private Dim_country ct_id;
@@ -86,11 +86,11 @@ public class User {
 		this.ct_id = ct_id;
 	}
 
-	public String getState() {
+	public Boolean getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(Boolean state) {
 		this.state = state;
 	}
 
