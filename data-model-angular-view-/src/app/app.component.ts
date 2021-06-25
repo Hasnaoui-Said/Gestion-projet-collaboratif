@@ -15,16 +15,12 @@ import {Router} from '@angular/router';
 export class AppComponent {
   title = 'data-model-angular-view';
 
-  private _userName: string;
-  private _user: DimUser;
   form: any = {};
   isLoggedIn = false;
   private _isLoggedInTest = false;
-  isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
   signupForm: any;
-  private _clicLogin: boolean;
 
   currentUser: any;
   constructor(private dimuserService: DimUserService,
@@ -35,21 +31,15 @@ export class AppComponent {
               private router: Router,
   ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
       this.isLoggedIns = true;
-      /*console.log('app is logs if ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
-      console.log('app is log ' + this.isLoggedIn);*/
     } else if (!this.tokenStorage.getToken()) {
-      /*console.log('app is logs else ss1324 ' + this.isLoggedIns + ' + ' + this.tokenStorage.getToken());
-      console.log('app is log isLoggedIn ' + this.isLoggedIn);*/
       this.isLoggedIns = true;
     }
     this.currentUser = this.token.getUser();
-
-
   }
 
   get isLogged(): boolean {
@@ -64,14 +54,6 @@ export class AppComponent {
     return this._isLoggedInTest;
   }
 
-  set isLoggedInTest(value: boolean) {
-    this._isLoggedInTest = value;
-  }
-
-
-  get isLoggedIns(): boolean {
-    return this.userService.isLoggedIns;
-  }
   get userRoles(): string[] {
     return this.roles;
   }
@@ -82,37 +64,6 @@ export class AppComponent {
   set isLoggedIns(value: boolean) {
     this.userService.isLoggedIns = value;
   }
-
-  private goToLogin(){
-    this.router.navigate(['/login']);
-  }
-
-  /*get clicLogin(): boolean {
-    return this._clicLogin;
-  }
-
-  set clicLogin(value: boolean) {
-    this._clicLogin = value;
-  }*/
-
-  /*test debut*/
-
-  /*onSubmit(): void {
-    this.authService.login(this.form).subscribe(
-      data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
-
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    );
-  }*/
 
   reloadPage(): void {
     window.location.reload();
