@@ -32,7 +32,7 @@ export class UsersModifyComponent implements OnInit {
     this.stateService.findAll();
     this.userService.findAll();
 
-    if (this.user.state === 'active'){
+    if (this.user.state = true){
       this.isActive = true;
     }else{
       this.isActive = false;

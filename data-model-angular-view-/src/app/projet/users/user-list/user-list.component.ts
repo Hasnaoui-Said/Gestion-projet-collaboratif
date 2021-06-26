@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DimUser} from '../../../controller/model/dim-user.model';
 import {DimUserService} from '../../../controller/service/dim-user.service';
-import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig, NgbModalOptions, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {ModifyAdminComponent} from '../modify-admin/modify-admin.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-user-list',
@@ -11,14 +13,22 @@ import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbModalConfig, NgbModal]
 })
 export class UserListComponent implements OnInit {
+
+
+  closeResult = '';
   private _stateUser: string;
   private _stateuser: Array<DimUser>;
   private _searsh: string;
   public page = 1;
   public pageSize = 5;
 
+  modalOptions: NgbModalOptions;
+
   constructor(private userService: DimUserService,
-              config: NgbModalConfig, private modalService: NgbModal) {
+              private config: NgbModalConfig,
+              private modalService: NgbModal,
+              private dialogRef: MatDialog
+  ) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;
@@ -28,12 +38,34 @@ export class UserListComponent implements OnInit {
       this.userService.findAll();
   }
 
-
-  open(content) {
-    this.modalService.open(content);
+  openDialog(user: DimUser){
+    this.dialogRef.open(ModifyAdminComponent,{
+      data : {
+        userModify: user
+      }
+    });
   }
 
+  open(content) {
+    this.modalService.open(content,
+      {ariaLabelledBy: 'modal-basic-title'}).result.then(
+        (result) => {
+      this.closeResult = 'Closed with: ${result}';
+    }, (reason) => {
+      this.closeResult =
+        'Dismissed ${this.getDismissReason(reason)}';
+    });
+  }
 
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return 'with: ${reason}';
+    }
+  }
 
 
 

@@ -21,11 +21,12 @@ import {CalendarModule, DateAdapter} from 'angular-calendar';
 import {adapterFactory} from 'angular-calendar/date-adapters/moment';
 import {CommonModule} from '@angular/common';
 import {FlatpickrModule} from 'angularx-flatpickr';
-import {NativeDateModule} from '@angular/material/core';
 import { AproposComponent } from './apropos/apropos.component';
 import { UsersModifyComponent } from './projet/users/users-modify/users-modify.component';
 import { DimProrityComponent } from './projet/categories/dim-prority/dim-prority.component';
-
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {ModalModule} from "ngx-bootstrap/modal";
+import { ModifyAdminComponent } from './projet/users/modify-admin/modify-admin.component';
 @NgModule({
   declarations: [
     routingsComponents,
@@ -40,23 +41,29 @@ import { DimProrityComponent } from './projet/categories/dim-prority/dim-prority
     AproposComponent,
     UsersModifyComponent,
     DimProrityComponent,
+    ModifyAdminComponent,
 
   ],
   imports: [
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    BrowserModule,
-    NgbModule,
     MatIconModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     CommonModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
     NgbModalModule,
+    ModalModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,

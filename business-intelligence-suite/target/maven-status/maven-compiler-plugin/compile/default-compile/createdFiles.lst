@@ -40,7 +40,6 @@ uninfz\ifrozet\ma\security\service\Dim_categorieService.class
 uninfz\ifrozet\ma\security\service\Dim_countryService.class
 uninfz\ifrozet\ma\security\service\Dim_email_stateService.class
 uninfz\ifrozet\ma\beans\Dim_email_state.class
-uninfz\ifrozet\ma\controller\Dim_userWs.class
 uninfz\ifrozet\ma\controller\Dim_countryWs.class
 uninfz\ifrozet\ma\repository\UserRepository.class
 uninfz\ifrozet\ma\beans\DataCheck.class

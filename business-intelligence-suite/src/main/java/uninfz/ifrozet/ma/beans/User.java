@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
@@ -41,7 +42,8 @@ public class User {
 	private String adresse;
 	private String codePoste;
 	private String phone;
-	private Boolean state;
+	
+	private Boolean state = false;
 
 	@ManyToOne
 	private Dim_country ct_id;

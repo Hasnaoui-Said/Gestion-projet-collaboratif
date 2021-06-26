@@ -134,7 +134,10 @@ public class AuthController {
 
 		user.setRoles(roles);
 		user.setState(false);
+		System.out.println("---------------"+user.getState());
 		userRepository.save(user);
+		System.out.println("---------next------"+user.getState()+"-----------"
+				+ userRepository.findByEmail(user.getEmail()).getState());
 
 		return ResponseEntity.ok(new MessageResponse("Votre inscription a bien été pris en coupte!"));
 	}

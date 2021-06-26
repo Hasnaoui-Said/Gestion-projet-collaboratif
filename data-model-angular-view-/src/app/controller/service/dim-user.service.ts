@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {environment} from '../../../environments/environment';
 import {AuthService} from './auth.service';
+import {Observable} from "rxjs";
 
 
 const baseUrlData = 'http://localhost:8095/news-lettre-app';
@@ -180,5 +181,9 @@ export class DimUserService {
 
   set isExit(value: string) {
     this._isExit = value;
+  }
+
+  updateUser(user: DimUser): Observable<any>  {
+    return this.http.post(baseUrlData + '/dim-user/searshUser/' , user);
   }
 }

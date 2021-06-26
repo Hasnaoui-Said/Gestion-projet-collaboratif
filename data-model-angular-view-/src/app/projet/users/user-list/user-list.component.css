@@ -1,3 +1,10 @@
+.content{
+  margin: 150px;
+  width: 1500px;
+  height: 400px;
+  z-index: 2;
+}
+
 .table-user ul li input{
   font-size: 18px;
   margin-top: 10px;
@@ -40,11 +47,11 @@ table {
 }
 
 
-.inactive{
+.false{
   background-color: red;
 }
 
-.active{
+.true{
   background-color: green;
 }
 
