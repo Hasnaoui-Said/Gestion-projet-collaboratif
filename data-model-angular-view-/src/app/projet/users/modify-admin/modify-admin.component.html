@@ -7,7 +7,7 @@
   <div *ngIf="isClic" class="alert alert-info alert-dismissable">
     <a class="panel-close close" data-dismiss="alert">×</a>
     <i class="fa fa-coffee"></i>
-    <small>hello</small>
+    <small>{{error}}</small>
   </div>
   <hr>
   <div class="row">
@@ -46,17 +46,14 @@
 
     <!-- left column -->
     <div class="col-md-5 personal-info">
-      <h3>Information</h3>
 
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label class="col-lg-3 control-label">State :</label>
-          <div class="col-lg-8">
-            <div class="ui-select">
-              <select id="user_time_zone" class="form-control">
-                <option value="Hawaii">inactive</option>
-                <option value="Alaska">active</option>
-              </select>
+          <label class="col-lg-5 control-label">State :</label><br>
+          <div class="col-lg-7">
+            <div class="">
+              <button *ngIf="!user.state" type="button" class="btn btn-lg btn-primary align-content-lg-between" (click)="active()">Activer</button>
+              <button *ngIf="user.state" type="button" class="btn btn-lg btn-primary align-content-lg-between" (click)="inactive()">Desactiver</button>
             </div>
           </div>
         </div>
@@ -70,7 +67,7 @@
 <hr>
 <div class="form-group">
   <div class="text-center align-content-lg-between">
-    <button type="button" class="btn btn-lg btn-primary align-content-lg-between" (click)="updateUser()">save</button>
-    <button type="button" class="btn btn-secondary btn-lg align-content-lg-between" (click)="closeDialog()">Close</button>
+    <button type="button" class="btnmarg btn btn-lg btn-primary align-content-lg-between" (click)="updateUser()">save</button>
+    <button type="button" class="btnmarg btn btn-secondary btn-lg align-content-lg-between" (click)="closeDialog()">Close</button>
   </div>
 </div>

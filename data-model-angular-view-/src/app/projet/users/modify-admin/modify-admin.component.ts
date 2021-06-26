@@ -10,10 +10,14 @@ import {DimUserService} from "../../../controller/service/dim-user.service";
 })
 export class ModifyAdminComponent implements OnInit {
 
-  user: DimUser;
-  private _state: string;
-  private error: string;
-  private _isClic: boolean;
+  private _user: DimUser;
+  public state: 'null';
+  private _status: string;
+  public _error: string;
+  public _isClic: boolean;
+  public _boo: boolean;
+  activer: any;
+  Desactiver: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data,
               private dialogRef: MatDialog,
               private userService: DimUserService,
@@ -25,10 +29,13 @@ export class ModifyAdminComponent implements OnInit {
   }
   closeDialog(){
     this.dialogRef.closeAll();
+    this.reloadPage();
   }
-
+  reloadPage(): void {
+    window.location.reload();
+  }
   get isClic(): boolean {
-    if (this._isClic = null){
+    if (this._isClic == null){
       this._isClic = false;
     }
     return this._isClic;
@@ -38,31 +45,69 @@ export class ModifyAdminComponent implements OnInit {
     this._isClic = value;
   }
 
+  public active(): void {
+    this.boo = true;
+  }
+  public inactive(): void {
+    this.boo = false;
+  }
+
   public updateUser(): void {
-    if (this.state = 'active'){
-       this.user.state = true;
-    }
-    else {
-        this.user.state = false;
-    }
-    this.userService.updateUser(this.user).subscribe(
-      data => {
-
-      },
-      err => {
-      }
-    );
+    this.isClic = true;
+      this.userService.updateUsers( this.boo, this._user).subscribe(
+        data => {
+          this.error = " mise a jour effectue";
+        },
+        err => {
+          this.error = " erreur : l'utilisateur n'exist pas";
+        }
+      );
+      console.log('mesge' + this.error);
   }
 
 
-  get state(): string {
-    if (this._state = null){
-      this._state = '';
+  get user(): DimUser {
+    if (this._user == null){
+      this._user = new DimUser();
     }
-    return this._state;
+    return this._user;
   }
 
-  set state(value: string) {
-    this._state = value;
+  set user(value: DimUser) {
+    this._user = value;
   }
+
+  get status(): string {
+    if (this._status == null){
+      this._status = 'test';
+    }
+    return this._status;
+  }
+
+  set status(value: string) {
+    this._status = value;
+  }
+
+  get boo(): boolean {
+    if (this._boo == null){
+      this._boo = false;
+    }
+    return this._boo;
+  }
+
+  set boo(value: boolean) {
+    this._boo = value;
+  }
+
+  get error(): string {
+    if (this._error == null){
+      this._error = '';
+    }
+    return this._error;
+  }
+
+  set error(value: string) {
+    this._error = value;
+  }
+
 }

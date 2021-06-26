@@ -15,6 +15,7 @@ const baseUrlData = 'http://localhost:8095/news-lettre-app';
 export class DimUserService {
 
   private _user: DimUser;
+  private _usermodify: DimUser;
   private _usersearsh: DimUser;
   private _msg: string;
   private _users: Array<DimUser>;
@@ -61,6 +62,16 @@ export class DimUserService {
 
   set user(value: DimUser) {
     this._user = value;
+  }
+  get usermodify(): DimUser {
+    if (this._usermodify == null) {
+      this._usermodify = new DimUser();
+    }
+    return this._user;
+  }
+
+  set usermodify(value: DimUser) {
+    this._usermodify = value;
   }
 
 
@@ -110,6 +121,19 @@ export class DimUserService {
         }
       }, error => {
         console.log('notFounded dim user ' + this.username);
+      }
+    );
+  }
+  public findByUsernamemodify(userName: string) {
+    this.http.get<DimUser>(baseUrlData + '/dim-user/username/' + userName).subscribe(
+      data => {
+        if (data != null) {
+          this.usermodify = data;
+          console.log('this name is dim user ' + userName);
+          console.log('this name  ' + this.usermodify.email);
+        }
+      }, error => {
+        console.log('notFounded dim user ' + userName);
       }
     );
   }
@@ -185,5 +209,9 @@ export class DimUserService {
 
   updateUser(user: DimUser): Observable<any>  {
     return this.http.post(baseUrlData + '/dim-user/searshUser/' , user);
+  }
+
+  updateUsers(id: any, data: any): Observable<any> {
+    return this.http.put(baseUrlData + '/dim-user/user/' + id, data);
   }
 }

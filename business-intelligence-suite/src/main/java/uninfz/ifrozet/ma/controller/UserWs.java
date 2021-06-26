@@ -3,6 +3,8 @@ package uninfz.ifrozet.ma.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,10 +38,15 @@ public class UserWs {
 	public int putuser(@PathVariable Long id,@RequestBody User user){
 		return dim_userService.putuser(id,user);
 	}
-	@PostMapping("update-user/{state}")  
+	/*@PostMapping("update-user/{state}")  
     public boolean updateUser(@RequestBody User user,@PathVariable Boolean state) {   
         return dim_userService.updateUser(user, state);  
-    }  
+    }*/ 
+
+	  @PutMapping("/user/{id}")
+	  public ResponseEntity<User> updateUser(@PathVariable("id") Boolean state, @RequestBody User user) {
+	    return dim_userService.updateUser( state, user);
+	  }
 
 	@GetMapping("/email/{email}/password/{password}")
 	public User findByEmailAndPassword(@PathVariable String email,@PathVariable String password) {

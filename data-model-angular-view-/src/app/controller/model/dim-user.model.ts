@@ -12,6 +12,7 @@ export class DimUser {
   public adresse: string;
   public email: string;
   public username: string;
+  public status: string;
   public state: boolean;
   // tslint:disable-next-line:variable-name
   public ct_id: DimCountry;
@@ -21,7 +22,8 @@ export class DimUser {
     this.adresse = '';
     this.firstname = '';
     this.username = '';
-    this.state = false;
+    this.status = '';
+    this.state = false ;
     this.phone = '';
     this.dateNess = '';
     this.ville = '';

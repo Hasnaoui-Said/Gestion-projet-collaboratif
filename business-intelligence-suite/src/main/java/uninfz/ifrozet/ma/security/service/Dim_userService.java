@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.support.Repositories;
 import org.springframework.stereotype.Service;
 
 import uninfz.ifrozet.ma.beans.Dim_country;
 import uninfz.ifrozet.ma.beans.User;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import uninfz.ifrozet.ma.repository.UserRepository;
 import uninfz.ifrozet.ma.util.request.UserRepoVo;
 
@@ -106,6 +110,31 @@ public class Dim_userService {
 		User user2 = findByEmail(user.getEmail());
 		user2.setState(state);
 		return true;
+	}
+
+	public ResponseEntity<User> updateUser(Boolean state, User user) {
+		if(existsById(user.getId())) {
+			User user2 = findByEmail(user.getEmail());
+			System.out.println("----2----avant-------"+user2.getState());
+			System.out.println("----3----avant-------"+state);
+			user2.setState(state);
+			userVo.save(user2);
+			System.out.println("----4----apres-------"+user2.getState());
+			return new ResponseEntity<>(userVo.save(user2), HttpStatus.OK);
+		}
+		return new ResponseEntity<>( HttpStatus.NOT_FOUND);
+	}
+
+	public Boolean existsByUsername(String username) {
+		return dim_userDao.existsByUsername(username);
+	}
+
+	public Boolean existsByEmail(String email) {
+		return dim_userDao.existsByEmail(email);
+	}
+
+	public boolean existsById(Long id) {
+		return dim_userDao.existsById(id);
 	}
 
 
