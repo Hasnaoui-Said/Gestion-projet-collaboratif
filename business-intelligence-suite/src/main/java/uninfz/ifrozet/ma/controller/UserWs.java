@@ -76,6 +76,11 @@ public class UserWs {
 		return dim_userService.deleteByEmail(email);
 	}
 
+	@DeleteMapping("/emails/{email}")
+	public int deleteByEmailTestgit(@PathVariable String email) {
+		return dim_userService.deleteByEmail(email);
+	}
+
 	@PostMapping("/")
 	public int save(@RequestBody User dim_user) {
 		return dim_userService.save(dim_user);
