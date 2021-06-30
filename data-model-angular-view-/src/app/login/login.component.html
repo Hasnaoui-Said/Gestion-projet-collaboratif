@@ -118,15 +118,38 @@ height: 100%;">
           <a href="#"><p>password oublié ?</p></a>
         </div>
       </div>-->
+      <div class="row mb-5 mt-5">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+          <div class="form-check">
+            <input
+              class="Remember form-check-input mt-3"
+              type="checkbox"
+              value=""
+              id="forRemember"
+              checked
+              style="width:20px; height:20px;"
+            />
+            <label class="Remember form-check-label ml-5 mb-3 " for="forRemember"> Remember me </label>
+          </div>
+        </div>
+
+        <div class="col">
+          <!-- Simple link -->
+          <a href="#!">Forgot password?</a>
+        </div>
+      </div>
+
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
       <div>
         <a routerLink="/menu" routerLinkActive="active">Go to menu</a>
-        <a routerLink="/menu" routerLinkActive="active">Go to menu</a>
         <p routerLink="/menu" routerLinkActive="active">login user-name --> {{email}}</p>
       </div>
-      Logged in as {{ roles }}.
+      <div *ngFor="let r of roles">
+      Logged in as {{ r }}.
+      </div>
     </div>
   </div>
 </div>

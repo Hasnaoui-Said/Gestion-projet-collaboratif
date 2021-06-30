@@ -27,6 +27,7 @@ import { DimProrityComponent } from './projet/categories/dim-prority/dim-prority
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {ModalModule} from "ngx-bootstrap/modal";
 import { ModifyAdminComponent } from './projet/users/modify-admin/modify-admin.component';
+import { PopupDialogComponent } from './projet/popup-dialog/popup-dialog.component';
 @NgModule({
   declarations: [
     routingsComponents,
@@ -42,6 +43,7 @@ import { ModifyAdminComponent } from './projet/users/modify-admin/modify-admin.c
     UsersModifyComponent,
     DimProrityComponent,
     ModifyAdminComponent,
+    PopupDialogComponent,
 
   ],
   imports: [

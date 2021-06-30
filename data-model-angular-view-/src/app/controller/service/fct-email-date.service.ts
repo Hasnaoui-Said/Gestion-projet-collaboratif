@@ -63,17 +63,7 @@ export class FctEmailDateService {
     );
   }
   public save() {
-    this.http.post<number>(baseUrlData + '/fct-email-data/', this.emailData).subscribe(
-      data => {
-        if (data > 0) {
-          this.emailDatas.push(this.clone(this.emailData));
-
-        }
-      }, error => {
-        alert('error lors du loading users');
-        this.isExist = 'e_mail deja exist';
-      }
-    );
+    return this.http.post<number>(baseUrlData + '/fct-email-data/', this.emailData);
   }
   public checked(){
     this.http.post<FctEmailData>(this.url + '/fct-email-data/checked/', this.emailData).subscribe(

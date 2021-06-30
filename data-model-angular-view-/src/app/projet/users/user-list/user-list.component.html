@@ -37,7 +37,8 @@
         <td>Homme</td>
         <td type="name">{{u.firstname}}</td>
         <td type="name">{{u.lastname}}</td>
-        <td><div class="state {{u.state}}">{{u.state}}</div></td>
+        <td *ngIf="u.state"><div class="state {{u.state}}">Active</div></td>
+        <td *ngIf="!u.state"><div class="state {{u.state}}">Inactive</div></td>
         <td type="email">{{u.email}}</td>
         <td class="edit"  (click)="openDialog(u)"><a class="nav-link"><i class="fas fa-edit"></i></a></td>
         <td class="infos" ><a class="nav-link"><i class="fas fa-info"></i></a></td>

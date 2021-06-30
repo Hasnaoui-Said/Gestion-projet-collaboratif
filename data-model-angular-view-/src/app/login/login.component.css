@@ -54,6 +54,11 @@ form input{
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+.Remember{
+  font-size: 10px;
+  color: black;
+}
+
 
 /*
 !*login avant!*

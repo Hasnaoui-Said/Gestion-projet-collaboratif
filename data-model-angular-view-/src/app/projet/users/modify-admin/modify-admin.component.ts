@@ -26,10 +26,11 @@ export class ModifyAdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userService.findAll();
   }
   closeDialog(){
     this.dialogRef.closeAll();
-    this.reloadPage();
+    this.userService.findAll();
   }
   reloadPage(): void {
     window.location.reload();

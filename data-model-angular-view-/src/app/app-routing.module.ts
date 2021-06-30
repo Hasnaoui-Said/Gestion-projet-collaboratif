@@ -67,7 +67,7 @@ const routes: Routes = [
       {path: 'category', component: CategoriesComponent},
       {path: 'chek-mail', component: ChekEmailComponent},
       {path: 'calendar', component: CalendarComponent},
-      {path: '', component: CalendarComponent},
+      {path: '', component: ParametresComponent},
       {path: 'modify-mail', component: EmailModefyComponent},
       {path: 'check-test', component: CheckTestComponent},
       {path: 'parametres', component: ParametresComponent},
