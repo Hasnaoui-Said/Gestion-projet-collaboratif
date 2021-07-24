@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import uninfz.ifrozet.ma.beans.DataCheck;
-import uninfz.ifrozet.ma.beans.Fct_email_data;
+import uninfz.ifrozet.ma.beans.*;
 import uninfz.ifrozet.ma.security.service.Fct_email_dataService;
 
 
@@ -36,10 +35,10 @@ public class Fct_email_dataRest {
 	}
 
 	@PostMapping("/checkedtest/")
-	public DataCheck ckeckedTest(@RequestBody DataCheck  data) {
+	public DataCheck ckeckedTest(@RequestBody DataCheck data) {
 		return email_dataService.ckeckedTest(data);
 	}
-	
+
 	@PostMapping("/checked/")
 	public Fct_email_data checked(@RequestBody Fct_email_data  data) {
 		return email_dataService.ckecked(data);

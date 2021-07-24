@@ -9,12 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import uninfz.ifrozet.ma.beans.DataCheck;
-import uninfz.ifrozet.ma.beans.Dim_categorie;
-import uninfz.ifrozet.ma.beans.Dim_country;
-import uninfz.ifrozet.ma.beans.Dim_email_state;
-import uninfz.ifrozet.ma.beans.Fct_email_data;
-import uninfz.ifrozet.ma.beans.User;
+import uninfz.ifrozet.ma.beans.*;
 import uninfz.ifrozet.ma.repository.DataCkeckDao;
 import uninfz.ifrozet.ma.repository.Fct_email_dataDao;
 import uninfz.ifrozet.ma.util.request.Fct_email_dataVo;

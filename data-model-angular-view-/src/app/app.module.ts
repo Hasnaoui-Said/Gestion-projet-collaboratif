@@ -28,6 +28,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {ModalModule} from "ngx-bootstrap/modal";
 import { ModifyAdminComponent } from './projet/users/modify-admin/modify-admin.component';
 import { PopupDialogComponent } from './projet/popup-dialog/popup-dialog.component';
+import { MoreMailsComponent } from './projet/email/more-mails/more-mails.component';
 @NgModule({
   declarations: [
     routingsComponents,
@@ -44,6 +45,7 @@ import { PopupDialogComponent } from './projet/popup-dialog/popup-dialog.compone
     DimProrityComponent,
     ModifyAdminComponent,
     PopupDialogComponent,
+    MoreMailsComponent,
 
   ],
   imports: [

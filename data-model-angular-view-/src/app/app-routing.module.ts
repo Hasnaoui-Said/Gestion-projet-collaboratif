@@ -34,6 +34,7 @@ import {AllTableComponent} from './projet/all-table/all-table.component';
 import {CalendarComponent} from './projet/calendar/calendar.component';
 import {AproposComponent} from './apropos/apropos.component';
 import {UsersModifyComponent} from './projet/users/users-modify/users-modify.component';
+import {MoreMailsComponent} from "./projet/email/more-mails/more-mails.component";
 
 export const  routingsComponents = [AppComponent , EmailModefyComponent , ChekEmailComponent, MenuComponent, CategoriesComponent, CountryComponent, CategorieListComponent, CategorieCreateComponent, CountryListComponent, CountryCreateComponent, PrioritiesComponent, PrioritieListComponent, PrioritieCreateComponent, EmailComponent, FctEmailDataComponent, LoginComponent, FctEmailDataDetailComponent, FctEmailDataSearchComponent, DashboardComponent, UniNfzComponent, HomeComponent, ProfilComponent, NotFoundComponent];
 
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent,
     children: [
       {path: 'dashboard', component: DashboardComponent},
+      {path: 'AddMoreMails', component: MoreMailsComponent},
       {path: 'modifier-profil', component: UsersModifyComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'cat', component: CategoriesComponent},
