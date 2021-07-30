@@ -3,6 +3,7 @@ package uninfz.ifrozet.ma.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,6 +59,12 @@ public class Fct_email_dataRest {
 	@PostMapping("/")
 	public int save(@RequestBody Fct_email_data email_data) {
 		return email_dataService.save(email_data);
+	}
+
+	@PostMapping("/moreMail")
+	public int saveMoreMail(@RequestBody Fct_email_data email_data) {
+		System.out.println(email_data.getEmail());
+		return email_dataService.saveMoreMail(email_data);
 	}
 
 	@GetMapping("/")

@@ -65,6 +65,9 @@ export class FctEmailDateService {
   public save() {
     return this.http.post<number>(baseUrlData + '/fct-email-data/', this.emailData);
   }
+  public saveMoreMail() {
+    return this.http.post<number>(baseUrlData + '/fct-email-data/moreMail', this.emailData);
+  }
   public checked(){
     this.http.post<FctEmailData>(this.url + '/fct-email-data/checked/', this.emailData).subscribe(
       data => {

@@ -82,7 +82,28 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		return x;
 
 	}
-	
+
+	public int saveMoreMail(Fct_email_data email_data) {
+		System.out.println("etap 2");
+		List<String> list_email_data =  stringToArraylist(email_data.getEmail());
+		int x = list_email_data.size();
+		System.out.println(x);
+		for (String email : list_email_data) {
+			System.out.println(" this mail ----- "+email);
+			Fct_email_data is_email_data = findByEmail(email);
+			if(is_email_data != null) {
+				x--;
+			}else {
+				Fct_email_data  email_data2 = new Fct_email_data();
+				email_data2.setEmail(email);
+				//email_dataDao.save(email_data2);
+			}
+		}
+		System.out.println(x);
+		return x;
+
+	}
+
 	public DataCheck ckeckedTest(DataCheck data) {
 		List<String> listDebut =  stringToArraylist(data.getEmail());
 		data.setEmail(null);
