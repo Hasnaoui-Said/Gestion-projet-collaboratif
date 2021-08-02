@@ -88,18 +88,19 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		List<String> list_email_data =  stringToArraylist(email_data.getEmail());
 		int x = list_email_data.size();
 		System.out.println(x);
-		for (String email : list_email_data) {
-			System.out.println(" this mail ----- "+email);
+		for (String email : list_email_data) {/*
+			System.out.println(" this mail ----- "+email);*/
 			Fct_email_data is_email_data = findByEmail(email);
 			if(is_email_data != null) {
 				x--;
 			}else {
 				Fct_email_data  email_data2 = new Fct_email_data();
 				email_data2.setEmail(email);
-				//email_dataDao.save(email_data2);
+				email_dataDao.save(email_data2);/*
+				System.out.println("----test save--- "+ email_data2.getEmail());*/
 			}
-		}
-		System.out.println(x);
+		}/*
+		System.out.println("----test save number --- "+x);*/
 		return x;
 
 	}
@@ -110,12 +111,12 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		int taillStart = listDebut.size();
 		
 		String stri="";
-		for (String email : listDebut) {
-			System.out.println(" this mail ----- " + email);
+		for (String email : listDebut) {/*
+			System.out.println(" this mail ----- " + email);*/
 			DataCheck is_email_data = findByEmailTest(email);
 			if(is_email_data == null) {
-				stri+=email+"\n";
-				System.out.println("this is ligghhhhh ---> "+stri);
+				stri+=email+"\n";/*
+				System.out.println("this is ligghhhhh ---> "+stri);*/
 			}
 		}
 		
@@ -135,12 +136,12 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		int taillStart = listDebut.size();
 		
 		String stri="";
-		for (String email : listDebut) {
-			System.out.println(" this mail ----- " + email);
+		for (String email : listDebut) {/*
+			System.out.println(" this mail ----- " + email);*/
 			Fct_email_data is_email_data = findByEmail(email);
 			if(is_email_data == null) {
-				stri+=email+"\n";
-				System.out.println("this is ligghhhhh ---> "+stri);
+				stri+=email+"\n";/*
+				System.out.println("this is ligghhhhh ---> "+stri);*/
 			}
 		}
 		
@@ -167,8 +168,8 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 
 			Date aujourdhui = new Date();
 
-			formater = new SimpleDateFormat("dd-MM-yyyy");
-			System.out.println(formater.format(aujourdhui));
+			formater = new SimpleDateFormat("dd-MM-yyyy");/*
+			System.out.println(formater.format(aujourdhui));*/
 
 			email_data.setEmailDate(formater.format(aujourdhui));
 			email_data.setCat_id(cat);

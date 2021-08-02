@@ -63,7 +63,7 @@ public class Fct_email_dataRest {
 
 	@PostMapping("/moreMail")
 	public int saveMoreMail(@RequestBody Fct_email_data email_data) {
-		System.out.println(email_data.getEmail());
+		/*System.out.println(email_data.getEmail());*/
 		return email_dataService.saveMoreMail(email_data);
 	}
 
