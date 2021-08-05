@@ -44,6 +44,8 @@ export class ChekEmailComponent implements OnInit {
   public checked() {
     this.cleccheked = true;
     return this.fctEmailDateService.checked();
+    this.emailDataReturn.part = 0;
+    this.emailDataReturn.versandCounte = 0;
   }
   public checkedtest() {
     this.cleccheked = true;

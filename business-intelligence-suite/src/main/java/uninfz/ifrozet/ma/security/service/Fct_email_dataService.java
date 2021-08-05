@@ -42,16 +42,16 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		return email_dataDao.deleteByEmail(ref);
 	}
 
-	public List<String> stringToArraylist(String st){
-		System.out.println("etap 3");
+	public List<String> stringToArraylist(String st){/*
+		System.out.println("etap 3");*/
 		List<String> list = new ArrayList<String>();
-		System.out.println(st);
+		/*System.out.println(st);*/
 		String s = st.replace("\n", ",");
-		System.out.println(s);
+		/*System.out.println(s);*/
 		String  string_email_data = s.replace(" ","");
-		System.out.println(string_email_data);
+		/*System.out.println(string_email_data);*/
 		Collections.addAll(list , string_email_data.split(","));
-		System.out.println(list);
+		/*System.out.println(list);*/
 		return list ;
 	}
 
@@ -87,21 +87,25 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		System.out.println("etap 2");
 		List<String> list_email_data =  stringToArraylist(email_data.getEmail());
 		int x = list_email_data.size();
+		int y = 0;
 		System.out.println(x);
 		for (String email : list_email_data) {/*
 			System.out.println(" this mail ----- "+email);*/
 			Fct_email_data is_email_data = findByEmail(email);
 			if(is_email_data != null) {
+				System.out.println("----count email isExist x =  "+ x);
 				x--;
 			}else {
 				Fct_email_data  email_data2 = new Fct_email_data();
 				email_data2.setEmail(email);
+				System.out.println("----count email y =  "+ y);
+				y++;
 				email_dataDao.save(email_data2);/*
 				System.out.println("----test save--- "+ email_data2.getEmail());*/
 			}
 		}/*
 		System.out.println("----test save number --- "+x);*/
-		return x;
+		return y;
 
 	}
 
@@ -135,11 +139,12 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		data.setEmail(null);
 		int taillStart = listDebut.size();
 		
-		String stri="";
+		String stri = "";
+		String nonNull = "";
 		for (String email : listDebut) {/*
 			System.out.println(" this mail ----- " + email);*/
 			Fct_email_data is_email_data = findByEmail(email);
-			if(is_email_data == null) {
+			if(is_email_data == null || !is_email_data.equals(nonNull) ) {
 				stri+=email+"\n";/*
 				System.out.println("this is ligghhhhh ---> "+stri);*/
 			}
@@ -150,6 +155,9 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		data.setVersandCounte(taillFin);
 		data.setPart(taillStart);
 		data.setEmail(stri);
+
+		System.out.println(" this mail 1 taillStart ----- " + taillStart);
+		System.out.println(" this mail 2 taillFin ----- " + taillFin);
 		return data;
 	}
 	

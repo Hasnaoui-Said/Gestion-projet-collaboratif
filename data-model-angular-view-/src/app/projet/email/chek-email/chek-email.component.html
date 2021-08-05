@@ -19,33 +19,39 @@
       </span>
       <p>There's no space between tow mail in this input but retern to line !!!</p><br>
     </strong>
-    <h4  *ngIf="cleccheked">The beginning number : {{emailDataReturn.part}}</h4>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
+        <h4  *ngIf="cleccheked">The beginning number : {{emailDataReturn.part}}</h4>
+        <div class="row">
+          <div class="col-md-4">
         <textarea class="textAreaMultiline"
                   placeholder="Hello, \ncopy/paste the text here"
-                  rows="4" cols="50"
+                  rows="4" cols="40"
                   [(ngModel)]="emailData.email">
         </textarea>
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-          <button type="submit" class="btn btn-dark" name="checked" (click)="checked()">Checked</button>
-          <button type="submit" class="btn btn-danger" name="clear" (click)="clear()">Clear</button>
-          <button type="submit" class="btn btn-info" name="return" (click)="return()"><-Back</button>
-          <button type="submit" class="btn btn-primary" name="copy" >Copy</button>
+          </div>
         </div>
-    </div>
-    <br><br>
-    <h4  *ngIf="cleccheked">The return number : {{emailDataReturn.versandCounte}}</h4>
-    <div class="row" *ngIf="cleccheked">
-      <div class="col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-dark" name="checked" (click)="checked()">Checked</button>
+            <button type="submit" class="btn btn-danger" name="clear" (click)="clear()">Clear</button>
+            <button type="submit" class="btn btn-info" name="return" (click)="return()"><-Back</button>
+            <button type="submit" class="btn btn-primary" name="copy" >Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4  *ngIf="cleccheked">The return number : {{emailDataReturn.versandCounte}}</h4>
+        <div class="row" *ngIf="cleccheked">
+          <div class="col-md-4">
         <textarea class="textAreaMultiline"
-                  rows="4" cols="50">{{emailDataReturn.email}}
+                  rows="4" cols="40">{{emailDataReturn.email}}
         </textarea>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 <br>
