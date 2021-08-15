@@ -134,18 +134,17 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 	
 	/* ---------------------------------------*/
 
-	public Fct_email_data ckecked(Fct_email_data data) {
-		List<String> listDebut =  stringToArraylist(data.getEmail());
-		data.setEmail(null);
+	public Fct_email_data ckecked(Fct_email_data datas) {
+		List<String> listDebut =  stringToArraylist(datas.getEmail());
+		Fct_email_data data = new Fct_email_data();
 		int taillStart = listDebut.size();
-		
 		String stri = "";
 		String nonNull = "";
 		for (String email : listDebut) {/*
 			System.out.println(" this mail ----- " + email);*/
 			Fct_email_data is_email_data = findByEmail(email);
-			if(is_email_data == null || !is_email_data.equals(nonNull) ) {
-				stri+=email+"\n";/*
+			if(is_email_data == null) {
+				stri += email+"\n";/*
 				System.out.println("this is ligghhhhh ---> "+stri);*/
 			}
 		}
@@ -155,9 +154,9 @@ public class Fct_email_dataService implements Fct_email_dataVo {
 		data.setVersandCounte(taillFin);
 		data.setPart(taillStart);
 		data.setEmail(stri);
-
+/*
 		System.out.println(" this mail 1 taillStart ----- " + taillStart);
-		System.out.println(" this mail 2 taillFin ----- " + taillFin);
+		System.out.println(" this mail 2 taillFin ----- " + taillFin);*/
 		return data;
 	}
 	
