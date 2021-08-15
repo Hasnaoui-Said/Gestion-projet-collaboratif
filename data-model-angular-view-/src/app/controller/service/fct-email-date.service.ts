@@ -13,6 +13,7 @@ export class FctEmailDateService {
   private _emailDataReturn: FctEmailData;
   private _emailDataBack: FctEmailData;
   private _isExist: string;
+  private _cleccheked: boolean;
   private _isExit: string;
   private _emailDatas: Array<FctEmailData>;
 
@@ -73,13 +74,26 @@ export class FctEmailDateService {
       data => {
         if (data != null){
           this.emailDataReturn = data;
+          this.cleccheked = true;
+          /*
           console.log('passed' + data.email);
-          console.log('passed' + data.versandCounte);
+          console.log('passed' + data.versandCounte);*/
         }
       }, error => {
         console.log('error');
       }
     );
+  }
+
+  get cleccheked(): boolean {
+    if (this._cleccheked == null){
+      this._cleccheked = false;
+    }
+    return this._cleccheked;
+  }
+
+  set cleccheked(value: boolean) {
+    this._cleccheked = value;
   }
 
   public checkedtest(){

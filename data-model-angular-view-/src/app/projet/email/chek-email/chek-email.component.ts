@@ -9,21 +9,17 @@ import {DimUserService} from '../../../controller/service/dim-user.service';
   styleUrls: ['./chek-email.component.css']
 })
 export class ChekEmailComponent implements OnInit {
-  private _cleccheked: boolean;
   private _isNull: boolean;
 
   constructor(private fctEmailDateService: FctEmailDateService , private userService: DimUserService) {
   }
 
   get cleccheked(): boolean {
-    if (this._cleccheked == null){
-      this._cleccheked = false;
-    }
-    return this._cleccheked;
+    return this.fctEmailDateService.cleccheked;
   }
 
   set cleccheked(value: boolean) {
-    this._cleccheked = value;
+    this.fctEmailDateService.cleccheked = value;
   }
 
   ngOnInit(): void {
@@ -41,11 +37,11 @@ export class ChekEmailComponent implements OnInit {
     return this.fctEmailDateService.emailDataReturn;
   }
 
-  public checked() {
-    this.cleccheked = true;
-    return this.fctEmailDateService.checked();
+  public checked() {/*
     this.emailDataReturn.part = 0;
-    this.emailDataReturn.versandCounte = 0;
+    this.emailDataReturn.versandCounte = 0;*/
+    this.cleccheked = false;
+    return this.fctEmailDateService.checked();
   }
   public checkedtest() {
     this.cleccheked = true;
